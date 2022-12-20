@@ -1,13 +1,10 @@
 import React from 'react';
-
-import { Counter } from './features/counter/Counter';
+import AppRouter from './routes/AppRouter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Counter />
-      </header>
+      <AppRouter />
     </div>
   );
 }
