@@ -7,7 +7,7 @@ import 'swiper/swiper-bundle.css';
 SwiperCore.use([Navigation, Pagination, Thumbs]);
 
 function Partners(){
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [thumbsSwiper] = useState(null);
     const slides = [];
     for (let i = 0; i < 16; i += 1) {
       slides.push(
