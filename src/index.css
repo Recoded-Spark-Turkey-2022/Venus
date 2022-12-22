@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.text-partners{
+  font-family: 'Roboto';
+}
 
 body {
   margin: 0;
