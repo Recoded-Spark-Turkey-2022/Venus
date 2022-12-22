@@ -1,8 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState } from 'react';
 import SwiperCore, { Navigation, Pagination, Thumbs} from 'swiper';
-import World from '../assets/world_map_ 1.svg'
+import view from '../assets/Placeholder_view_vector.svg'
 import 'swiper/swiper-bundle.css';
+import '../index.css'
+
 
 SwiperCore.use([Navigation, Pagination, Thumbs]);
 
@@ -13,7 +15,7 @@ function Partners(){
       slides.push(
         <SwiperSlide key={`slide-${i}`} tag="li">
           <img
-            src={World}
+            src={view}
             style={{ listStyle: 'none' }}
             alt={`Slide ${i}`}
           />
@@ -23,17 +25,34 @@ function Partners(){
       for (let i = 0; i < 16; i += 1) {
         thumbs.push(
           <SwiperSlide key={`thumb-${i}`} tag="li" style={{ listStyle: 'none' }}>
-            <img src={World}
+            <img src={view}
               alt={`Thumbnail ${i}`}/>
           </SwiperSlide>
         );
       }
 
     return(
-        <div>
-            <div><h4>Our Partners</h4></div>
+      <div>
+        
+        <div className='mt-4'>
+            <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>Our Partners</h4></div>
+            <div className='mt-6'>
             <Swiper
-        id="main"
+        id="swiper"
+        breakpoints={{
+          320: {
+            
+            slidesPerView: 4,
+          },
+          576: {
+            
+            slidesPerView: 4,
+          },
+          768: {
+            
+            slidesPerView: 8,
+          },
+        }}
         thumbs={{ swiper: thumbsSwiper }}
         tag="section"
         wrapperTag="ul"
@@ -48,8 +67,10 @@ function Partners(){
       >
         {slides}
       </Swiper>
+      </div>
 
 
+        </div>
         </div>
 
     )
