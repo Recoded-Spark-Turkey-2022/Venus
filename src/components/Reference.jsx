@@ -14,7 +14,7 @@ function Reference (){
             <div className="pb-8 lg:pb-0 flex justify-center items-center">
                 <img className="w-2/3" src={worldMap} alt="World Map"  />
             </div>
-            <div className="flex justify-center items-center w-full md:w-1/2 ">
+            <div className="flex justify-center w-full md:w-1/2 ">
             <Swiper
          spaceBetween={30}
          pagination={{
@@ -23,7 +23,7 @@ function Reference (){
          modules={[Pagination]}
          className="mySwiper">
             <SwiperSlide>
-                <div className="w-1/2 reference-div">
+                <div className="w-1/2 reference-div text-left">
                     <h3 className="pt-2">Two lines of a short testimonial from someone want to say something, and can
                      say more to explain.</h3>
                     <p className="text-darkGrey pt-2">Louis Li</p>
@@ -31,7 +31,7 @@ function Reference (){
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="w-1/2 reference-div">
+                <div className="w-1/2 reference-div text-left">
                     <h3 className="pt-2">Two lines of a short testimonial from someone want to say something, and can
                      say more to explain.</h3>
                     <p className="text-darkGrey pt-2">Louis Li</p>
@@ -39,7 +39,7 @@ function Reference (){
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="w-1/2 reference-div">
+                <div className="w-1/2 reference-div text-left">
                     <h3 className="pt-2">Two lines of a short testimonial from someone want to say something, and can
                      say more to explain.</h3>
                     <p className="text-darkGrey pt-2">Louis Li</p>
