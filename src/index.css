@@ -39,7 +39,9 @@ top:0
   .image-hero{
     transform: rotate(-90deg);
    top:200px;
-  left: 0;
+  left: -20px;
+  width: 100%;
+  overflow: hidden;
   
   }
 

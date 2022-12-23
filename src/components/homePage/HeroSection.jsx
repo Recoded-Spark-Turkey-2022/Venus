@@ -6,7 +6,7 @@ import Button from '../UI/Button';
 
 const HeroSection = () => {
   return (
-    <section className="   h-[90vh] relative">
+    <section className="   h-[90vh] relative overflow-hidden md:overflow-visible">
       <img
         src={circleLogo}
         className="absolute image-hero z-0 left-[-500px] top-[0px]  w-[100%] h-[90vh]"
