@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import logo from '../../assets/homePage-graphic.svg';
 import Button from '../UI/Button';
@@ -6,7 +7,12 @@ const HeroSection = () => {
   return (
     <section className="min-h-[90vh] flex items-center justify-center">
       <div className=" w-full flex flex-col-reverse md:flex-row  justify-center md:justify-between lg:justify-around ">
-        <div className="text-center md:text-left">
+        <motion.div
+          initial={{ x: '-1000px', scale: 0.5 }}
+          animate={{ x: '0px', scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center md:text-left"
+        >
           <h1 className="text-5xl lg:text-7xl font-bold text-mediumBlue my-5">
             RefuBook
           </h1>
@@ -19,14 +25,18 @@ const HeroSection = () => {
             officia?
           </p>
           <Button>Sign-up</Button>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ x: '1000px', scale: 0.5 }}
+          animate={{ x: '0px', scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <img
             className="mx-auto w-[500px] md:w-full md:mx-0"
             src={logo}
             alt="hero-logo"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
