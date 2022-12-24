@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative, Pagination } from "swiper";
+import {Pagination, Autoplay } from "swiper";
 import 'swiper/swiper-bundle.css';
 
 import '../index.css'
@@ -17,24 +17,16 @@ function Reference (){
             </div>
             <div className="flex justify-end w-full md:w-1/2 ">
             <Swiper
-          
-          grabCursor='true'
-        effect="creative"
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: [0, 0, -400],
-          },
-          next: {
-            translate: ["100%", 0, 0],
-          },
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-          loop="true"
+    
           pagination={{
             clickable: true,  dynamicBullets: true 
           }}
           
-          modules={[EffectCreative,Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mySwiper">
             <SwiperSlide>
                 <div className="w-1/2 reference-div text-center sm:text-left">
