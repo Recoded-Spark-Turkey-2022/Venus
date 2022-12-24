@@ -3,6 +3,9 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
@@ -55,3 +58,32 @@ code {
 .reference-div{
   font-family: 'Roboto';
 }
+
+.text{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color:#333;
+}
+
+
+.image-hero{
+  transform: rotate(0deg) !;
+top:0;
+left: -500px;
+top:0
+
+
+}
+
+@media screen and  (max-width:768px) {
+  .image-hero{
+    transform: rotate(-90deg);
+   top:200px;
+  left: -20px;
+  width: 100%;
+  overflow: hidden;
+  
+  }
+
+}
+
