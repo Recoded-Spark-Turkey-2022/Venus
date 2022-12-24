@@ -10,8 +10,8 @@ function Reference (){
 
 
     return(
-        <div className="flex flex-col md:flex-row justify-center items-center py-8 lg:py-20">
-            <div className="pb-8 lg:pb-0 flex justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center py-6 ">
+            <div className="pb-6 flex justify-center items-center">
                 <img className="w-2/3" src={worldMap} alt="World Map"  />
             </div>
             <div className="flex justify-center w-full md:w-1/2 ">
