@@ -16,6 +16,11 @@ module.exports = {
       mediumBlue: '#4699c2',
       openRose: '#fc8476',
     },
+    fontFamily: {
+      'sans': 'Helvetica , Arial, sans-serif',
+      'serif': 'ui-serif , Georgia',
+      'roboto': 'Roboto',
+    },
   },
   plugins: [],
 };
