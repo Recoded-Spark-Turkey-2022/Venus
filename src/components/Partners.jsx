@@ -1,77 +1,97 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useState } from 'react';
-import SwiperCore, { Navigation, Pagination, Thumbs} from 'swiper';
-import view from '../assets/Placeholder_view_vector.svg'
+import {Pagination, EffectCoverflow } from "swiper";
+import p1 from '../assets/1.png'
+import p2 from '../assets/2.png'
+import p3 from '../assets/3.png'
+import p4 from '../assets/4.png'
+import p5 from '../assets/5.png'
+import p6 from '../assets/6.png'
+import p7 from '../assets/7.png'
+import p8 from '../assets/8.png'
 import 'swiper/swiper-bundle.css';
 import '../index.css'
+import '../Partners.css'
 
 
-SwiperCore.use([Navigation, Pagination, Thumbs]);
 
 function Partners(){
-    const [thumbsSwiper] = useState(null);
-    const slides = [];
-    for (let i = 0; i < 16; i += 1) {
-      slides.push(
-        <SwiperSlide key={`slide-${i}`} tag="li">
-          <img
-            src={view}
-            style={{ listStyle: 'none' }}
-            alt={`Slide ${i}`}
-          />
-        </SwiperSlide>
-      );}
-      const thumbs = [];
-      for (let i = 0; i < 16; i += 1) {
-        thumbs.push(
-          <SwiperSlide key={`thumb-${i}`} tag="li" style={{ listStyle: 'none' }}>
-            <img src={view}
-              alt={`Thumbnail ${i}`}/>
-          </SwiperSlide>
-        );
-      }
-
+   
     return(
       <div>
         
         <div className='mt-4'>
             <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>Our Partners</h4></div>
-            <div className='mt-6'>
+            <div className='flex justify-center  items-center w-full mt-5'>
             <Swiper
-        id="swiper"
-        breakpoints={{
-          320: {
-            
-            slidesPerView: 4,
-          },
-          576: {
-            
-            slidesPerView: 4,
-          },
-          768: {
-            
-            slidesPerView: 8,
-          },
+        
+        effect="coverflow"
+       
+        centeredSlides='true'
+        
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         }}
-        thumbs={{ swiper: thumbsSwiper }}
-        tag="section"
-        wrapperTag="ul"
-        pagination
+        pagination={{
+          clickable: true,  dynamicBullets: true 
+        }}
         spaceBetween={0}
-        slidesPerView={8}
-        onInit={(swiper) => console.log('Swiper initialized!', swiper)}
-        onSlideChange={(swiper) => {
-          console.log('Slide index changed to: ', swiper.activeIndex);
-        }}
-        onReachEnd={() => console.log('Swiper end reached')}
+        slidesPerView={4}
+        className="mySwiper"
+        modules={[Pagination, EffectCoverflow]}
+        
       >
-        {slides}
+         <SwiperSlide>
+          <div className=''>
+            <img   className=" w-full md:w-1/2 mx-auto" src={p1} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p2} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p3} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p4} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p5} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p6} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p7} alt=''/>
+          </div>
+         </SwiperSlide>
+         <SwiperSlide>
+          <div className=''>
+            <img  className=" w-full md:w-1/2 mx-auto" src={p8} alt=''/>
+          </div>
+         </SwiperSlide>
+        
       </Swiper>
+      </div>
       </div>
 
 
         </div>
-        </div>
+        
 
     )
 
