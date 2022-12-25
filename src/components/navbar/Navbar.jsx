@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/Logo.svg';
+import logo from '../../assets/Logo.svg';
 
 const Navbar = () => {
-
-  return <div id="navbar">Navbar</div>;
-=======
   const Links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -67,7 +64,6 @@ border-mediumBlue
       </div>
     </nav>
   );
-
 };
 
 export default Navbar;
