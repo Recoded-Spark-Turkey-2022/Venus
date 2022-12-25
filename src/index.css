@@ -3,22 +3,28 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-*{
+* {
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 .swiper {
   width: 100%;
@@ -60,18 +66,18 @@ code {
 }
 
 .text{
+
   font-size: 1.2rem;
   font-weight: 400;
-  color:#333;
+  color: #333;
 }
 
-
-.image-hero{
+.image-hero {
   transform: rotate(0deg) !;
-top:0;
-left: -500px;
 
-
+  top: 0;
+  left: -500px;
+  top: 0;
 
 }
 
@@ -86,6 +92,8 @@ left: -500px;
   }
 
 }
+
 nav{
   z-index: 99999;
 }
+
