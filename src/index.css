@@ -70,7 +70,7 @@ code {
   transform: rotate(0deg) !;
 top:0;
 left: -500px;
-top:0
+
 
 
 }
@@ -78,7 +78,7 @@ top:0
 @media screen and  (max-width:768px) {
   .image-hero{
     transform: rotate(-90deg);
-   top:200px;
+   top:300px;
   left: -20px;
   width: 100%;
   overflow: hidden;
