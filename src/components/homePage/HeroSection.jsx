@@ -6,13 +6,13 @@ import Button from '../UI/Button';
 
 const HeroSection = () => {
   return (
-    <section className="   h-[90vh] relative overflow-hidden md:overflow-visible">
+    <section className=" mt-[700px]   min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
         src={circleLogo}
-        className="absolute image-hero z-0 left-[-500px] top-[0px]  w-[100%] h-[90vh]"
+        className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-500px] top-[0px]  w-[100%] h-[90vh]"
         alt="circle-logo"
       />
-      <div className=" w-full h-full items-center  flex  flex-col-reverse md:flex-row  justify-center md:justify-between lg:justify-around ">
+      <div className=" items-center  flex  flex-col-reverse md:flex-row  justify-center md:justify-between lg:justify-between ">
         <motion.div
           initial={{ x: '-1000px', scale: 0.5 }}
           animate={{ x: '0px', scale: 1 }}
@@ -40,7 +40,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <img
-            className="mx-auto w-[900px] md:mx-0"
+            className="mx-auto  w-full xl:w-[700px] md:mx-0  md:aspect-square"
             src={logo}
             alt="hero-logo"
           />
