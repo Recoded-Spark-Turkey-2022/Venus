@@ -10,9 +10,9 @@ const Home = () => {
     <Container>
 
       <h1 className="text-darkOrange bg-lightBlue">Hello</h1>
-      <Partners/>
       <HeroSection />
       <Reference />
+      <Partners/>
 
     </Container>
   );
