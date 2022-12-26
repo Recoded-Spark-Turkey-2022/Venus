@@ -1,40 +1,93 @@
 import React from 'react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper";
+
+import {StarIcon} from '@heroicons/react/24/outline'
 import AboutImg from '../assets/about-image.svg'
+import Button from './UI/Button'
+
+
+import 'swiper/swiper-bundle.css';
+import '../topics.css'
+
+
+
+
 
 function About() {
   return (
-    <div className='w-full my-32 ' > 
-        <div className=' flex justify-center flex-col bg-lightBlue'>
-            <div className='text-center flex-col'>
-               <h2 className='text-4xl font-bold'>About</h2> 
-               <p className='text-3xl py-3 text-gray-500'>In quo quaerimus, non emolumento aliquo, sed ipsius honestatis decore laudandis, id est et quas molestias excepturi sint, obcaecati cupiditate non numquam eius modi tempora incidunt, ut earum rerum hic tenetur a natura ipsa natura incorrupte atque integre iudicante itaque aiunt hanc quasi involuta aperiri.</p> 
+    <div > 
+        <div className='aboutfont flex flex-col'>
+            <div className=' self-center'>
+               <h2 className='text-center text-darkBlue font-bold text-[28px] mt-[43px]'>About</h2> 
+               <p className=' text-center text-[14px] max-w-[637px] p-[7px] leading-5'>In quo quaerimus, non emolumento aliquo, sed ipsius honestatis decore laudandis, id est et quas molestias excepturi sint, obcaecati cupiditate non numquam eius modi tempora incidunt, ut earum rerum hic tenetur a natura ipsa natura incorrupte atque integre iudicante itaque aiunt hanc quasi involuta aperiri.</p>
             </div>
-             <button className='bg-darkBlue text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3' >Learn more</button>
+            <div className=' self-center'>
+            <Button >Learn more</Button> 
+
+            </div>
         </div>
-        <div>
-            <div className= 'grid grid-rows-2 columns-2 '>
-                <div>
-                    <div>
-                        <h5>Reliability</h5>
-                        <p>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+        <div className='flex flex-col-reverse self-center lg:flex-row w-full '>
+            <div className='w-1/2 '>
+            
+                    <Swiper
+                      centeredSlides="true"
+                      autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
+                     
+                      pagination={{
+
+                        clickable: true,
+                        }}
+                      
+                      modules={[Autoplay, Pagination]}
+                     className="mySwiper  lg:w-full"
+                    >
+                     <SwiperSlide><div>
+                        <div className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+            
+                            <h5 className='font-bold text-[16px] p-[13px]'>Reliability</h5>
+                        </div>
+                        <p className='text-left max-w-[224px]' >Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
                     </div>
-                    <div>
-                        <h5>Motivation</h5>
-                        <p>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                    </SwiperSlide>
+                     <SwiperSlide>
+                        <div>
+                          <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Motivation</h5>
+                        </div>
+                        <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                        </div>
+                    </SwiperSlide>
+                     <SwiperSlide>
+                        <div>
+                         <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Efficiency</h5>
+                         </div> 
+                         <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <h5>Efficiency</h5>
-                        <p>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                        <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Creativity</h5>
+                        </div>
+                        <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
                     </div> 
-                    <div>
-                        <h5>Creativity</h5>
-                        <p>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                    
+                    </Swiper>
             </div>
-            <img  src={AboutImg} alt='/' />
+            <div className='flex w-1/2 justify-center' >
+                <img className=' ' src={AboutImg} alt='/' />
+            </div>
         </div>
     </div>
   )
