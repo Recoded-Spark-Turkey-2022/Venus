@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {Pagination, EffectCoverflow } from "swiper";
+import {Pagination,  Autoplay} from "swiper";
 import p1 from '../assets/1.png'
 import p2 from '../assets/2.png'
 import p3 from '../assets/3.png'
@@ -9,9 +9,8 @@ import p6 from '../assets/6.png'
 import p7 from '../assets/7.png'
 import p8 from '../assets/8.png'
 import 'swiper/swiper-bundle.css';
-import '../index.css'
-import '../Partners.css'
 
+import '../Partners.css'
 
 
 function Partners(){
@@ -21,27 +20,30 @@ function Partners(){
         
         <div className='mt-4'>
             <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>Our Partners</h4></div>
-            <div className='flex justify-center  items-center w-full mt-5'>
+            <div className='flex justify-center  items-center w-full  px-6 mt-0 md:mt-5 '>
             <Swiper
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    breakpoints = {{
+      300: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+    }}
+
+      pagination={{
+        clickable: true,  dynamicBullets: true 
+      }}
+      
+      modules={[Pagination, Autoplay]}
+      className="mySwiper"
         
-        effect="coverflow"
-       
-        centeredSlides='true'
-        
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={{
-          clickable: true,  dynamicBullets: true 
-        }}
-        spaceBetween={0}
-        slidesPerView={4}
-        className="mySwiper"
-        modules={[Pagination, EffectCoverflow]}
         
       >
          <SwiperSlide>
@@ -88,8 +90,6 @@ function Partners(){
       </Swiper>
       </div>
       </div>
-
-
         </div>
         
 
