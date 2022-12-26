@@ -15,7 +15,7 @@ const storyDetails = {
 
 export default function StoryComponent() {
   return (
-    <div className="flex flex-wrap justify-between mt-[50px] md:mt-[78px] pb-[24px] mx-[10px] md:mx-[0px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-36 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]">
       <div>
         <img className='rounded' src={storyDetails.mainImage} alt="" />
       </div>
