@@ -15,16 +15,16 @@ const storyDetails = {
 
 export default function StoryComponent() {
   return (
-    <div className="flex flex-wrap justify-between mt-[78px] pb-[24px] ">
+    <div className="flex flex-wrap justify-between mt-[50px] md:mt-[78px] pb-[24px] mx-[10px] md:mx-[0px]">
       <div>
         <img className='rounded' src={storyDetails.mainImage} alt="" />
       </div>
       <div className='flex-col text-[#ffffff] max-w-[400px] min-h-[140px]'>
-        <button  type="button" className='bg-[#FEDB9B] rounded-[3px] text-[10px] text-[#4699C2] px-[10px] py-[2px] mt-[25px]'>Language</button>
-        <p className='text-4xl font-light mt-[18px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]'>{storyDetails.description}</p>
-        <div className='flex mt-10 mb-5' width={30}>
+        <button  type="button" className='bg-[#FEDB9B] rounded-[3px] text-[10px] text-[#4699C2] px-[10px] py-[2px] mt-[17px] md:mt-[25px]'>Language</button>
+        <p className='text-[18px] md:text-4xl font-light mt-[10px] md:mt-[20px] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-w-[231px] md:max-w-[400px]'>{storyDetails.description}</p>
+        <div className='flex mt-[30px] md:mt-10' width={30}>
           <div className="bg-[#FEDB9B] rounded-full mr-[21px] self-center">
-            <img  className=' rounded-full w-[35px] height-[35px]' src={storyDetails.user.userImage} alt=""/>
+            <img  className=' rounded-full w-[30px] h-[28px] md:w-[35px] md:h-[35px]' src={storyDetails.user.userImage} alt=""/>
           </div>
           <div>
             <a href="#home" className='mb-[6px] font-bold text-[14px]'>{storyDetails.user.userName}</a>
