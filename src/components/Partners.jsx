@@ -9,7 +9,6 @@ import p6 from '../assets/6.png'
 import p7 from '../assets/7.png'
 import p8 from '../assets/8.png'
 import 'swiper/swiper-bundle.css';
-
 import '../Partners.css'
 
 
@@ -20,10 +19,10 @@ function Partners(){
         
         <div className='mt-4'>
             <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>Our Partners</h4></div>
-            <div className='flex justify-center  items-center w-full  px-6 mt-0 md:mt-5 '>
+            <div className='swiper-div flex justify-center  items-center w-full  px-6 mt-0 md:mt-5 pb-10'>
             <Swiper
     autoplay={{
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false,
     }}
     breakpoints = {{
@@ -32,8 +31,8 @@ function Partners(){
         spaceBetween: 20,
       },
       768: {
-        slidesPerView: 5,
-        spaceBetween: 20,
+        slidesPerView: 6,
+        spaceBetween: 30,
       },
     }}
 
@@ -43,7 +42,6 @@ function Partners(){
       
       modules={[Pagination, Autoplay]}
       className="mySwiper"
-        
         
       >
          <SwiperSlide>
