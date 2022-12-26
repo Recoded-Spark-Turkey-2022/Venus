@@ -8,7 +8,7 @@
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.1",
     "firebase": "^9.15.0",
-    "framer-motion": "^7.10.3",
+    "framer-motion": "^4.1.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
