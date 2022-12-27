@@ -1,5 +1,10 @@
 
-
+.swiper-div .swiper-wrapper {
+  height: 250px;
+  }
+  .swiper-div img {
+    max-height: 180px;
+    }
 
 .swiper-slide {
   text-align: center;
@@ -19,6 +24,17 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+@media screen and  (max-width:768px) {
+  .swiper-div .swiper-wrapper {
+    height: 150px;
+    }
+}
+
+@media screen and  (max-width:1024) {
+  .swiper-div .swiper-wrapper {
+    height: 180px;
+    }
 }
 
 
