@@ -28,7 +28,7 @@ function About() {
 
             </div>
         </div>
-        <div className='flex flex-col-reverse self-center lg:flex-row w-full '>
+        <div className='flex flex-col-reverse self-center lg:flex-row w-full flex justify-center'>
             <div className='w-1/2 '>
             
                     <Swiper
