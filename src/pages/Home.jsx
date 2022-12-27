@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/homePage/HeroSection';
 import Container from '../components/UI/Container';
-import Partners from '../components/Partners';
+import Partners from '../components/Partners/Partners';
 import Reference from '../components/Reference';
 
 
