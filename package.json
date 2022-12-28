@@ -9,15 +9,19 @@
     "@testing-library/user-event": "^14.1.1",
     "firebase": "^9.15.0",
     "framer-motion": "^7.10.3",
+    "i18next": "^22.4.6",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.1",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.5.0",
+    "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "swiper": "^8.4.5",
-    "web-vitals": "^2.1.0",
-    "react-scripts": "5.0.1"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,6 +52,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
+    "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
@@ -56,7 +61,6 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.17",
     "prettier": "2.7.1",
-    "tailwindcss": "^3.1.8",
-    "eslint": "^7.32.0 || ^8.2.0"
+    "tailwindcss": "^3.1.8"
   }
 }
