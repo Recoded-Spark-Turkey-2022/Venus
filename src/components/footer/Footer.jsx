@@ -1,8 +1,18 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
+import i18next from 'i18next';
+
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/Logo.svg';
 
 const Footer = () => {
+
+  const { t } = useTranslation();
+  
+  const handleLanguageChange = (e) => {
+		i18next.changeLanguage(e.target.value);
+	};
+
   return (
     <footer className=" flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5">
       <div className="flex justify-center items-center  mt-5 mb-5 md:mt-1 md:mb-1 mx-auto flex-shrink-0">
@@ -17,22 +27,22 @@ const Footer = () => {
         <ul className="flex gap-8 items-center font-medium justify-center">
           <li className="">
             <Link className="text-darkGrey hover:text-darkBlue" to="/">
-              Home
+             {t("Footer.home")} 
             </Link>
           </li>
           <li className="">
             <Link className="text-darkGrey hover:text-darkBlue" to="/about">
-              About
+            {t("Footer.about")}
             </Link>
           </li>
           <li className="">
             <Link className="text-darkGrey hover:text-darkBlue" to="/contact">
-              Contact
+            {t("Footer.contact")}
             </Link>
           </li>
           <li className="">
             <Link className="text-darkGrey hover:text-darkBlue" to="/blogs">
-              Blogs
+            {t("Footer.blogs")}
             </Link>
           </li>
         </ul>
@@ -46,15 +56,15 @@ const Footer = () => {
      hover:border-mediumBlue hover:text-mediumBlue"
               type="button"
             >
-              Sign up
+              {t("Button.su")}
             </button>
           </div>
           <div className="">
-            <select className="rounded-full border border-solid outline-none text-darkGrey font-medium border-mediumBlue px-8">
+            <select onChange={handleLanguageChange} className="rounded-full border border-solid outline-none text-darkGrey font-medium border-mediumBlue px-8" >
               <option className="border-mediumBlue " value="en">
                 English
               </option>
-              <option value="ar">Arabic</option>
+              <option value="tr">Türkçe</option>
             </select>
           </div>
         </div>

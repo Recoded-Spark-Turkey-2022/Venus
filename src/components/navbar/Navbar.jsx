@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/Logo.svg';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const Links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'BLog', link: '/blogs' },
-    { name: 'Contact', link: '/contact' },
+    { name: t("Footer.home"), link: '/' },
+    { name: t("Footer.about"), link: '/about' },
+    { name: t("Footer.blogs"), link: '/blogs' },
+    { name: t("Footer.contact"), link: '/contact' },
   ];
   const [open, setOpen] = useState(true);
   return (
@@ -58,7 +60,7 @@ border-mediumBlue
      text-white font-bold px-6 rounded-2xl  py-1"
             type="button"
           >
-            Sign in
+            {t('Button.si')}
           </button>
         </ul>
       </div>
