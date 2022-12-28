@@ -1,0 +1,13 @@
+{
+    "Footer": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "blogs": "Blog"
+        
+    },
+    "Button": {
+        "su": "Sign up",
+        "si": "Sign in"
+    }
+}
