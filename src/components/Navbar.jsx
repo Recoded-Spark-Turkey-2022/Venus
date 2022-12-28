@@ -35,7 +35,7 @@ const Navbar = () => {
           ))
         }
         <Button>
-          Sign in
+          Sign in 2
         </Button>
       </ul>
       </div>
