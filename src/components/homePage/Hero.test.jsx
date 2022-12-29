@@ -1,5 +1,4 @@
-import { toBeInTheDocument } from "@testing-library/jest-dom/dist/matchers";
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen} from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from './HeroSection'
 
