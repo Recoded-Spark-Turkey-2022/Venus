@@ -31,8 +31,8 @@ test('renders sign up button correctly', ()=>{
 
 test('onChange is called when user change the option', ()=>{
     render(<Router>
-        <Footer/>
-    </Router>);
+             <Footer/>
+           </Router>);
     const selectLang = screen.getByRole('combobox')
     fireEvent.change(selectLang, {target: {value: 'English'}})
     expect(selectLang.value).toBe('English')
