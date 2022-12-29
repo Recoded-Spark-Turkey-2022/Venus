@@ -12,6 +12,7 @@ const Home = () => {
       <h1 className="text-darkOrange bg-lightBlue">Hello</h1>
       <HeroSection />
       <Reference />
+      
       <Partners/>
 
     </Container>
