@@ -44,3 +44,7 @@ code {
     overflow: hidden;
   }
 }
+
+.blogs-swipper .swiper{
+  padding:30px !important;
+}
