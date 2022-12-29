@@ -17,6 +17,11 @@ module.exports = {
       openRose: '#fc8476',
       white: '#fff',
     },
+    fontFamily: {
+      'sans': 'Helvetica , Arial, sans-serif',
+      'serif': 'ui-serif , Georgia',
+      'roboto': 'Roboto',
+    },
   },
   plugins: [],
 };
