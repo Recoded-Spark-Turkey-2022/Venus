@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
 
         <button
-          type="button"
+          data-testid='h-menu' type="button"
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
@@ -32,7 +32,7 @@ const Navbar = () => {
         </button>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          data-testid='n-links' className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             open ? 'top-30 ' : 'top-[-490px]'
           }`}
         >
@@ -47,8 +47,9 @@ const Navbar = () => {
             </li>
           ))}
 
+        <Link to='./signin'>
           <button
-            className="bg-mediumBlue btn-default transition-colors
+            data-testid='si-button' className="bg-mediumBlue btn-default transition-colors
      hover:bg-white ease-in duration-300 
      hover:text-mediumBlue
 border
@@ -60,6 +61,7 @@ border-mediumBlue
           >
             Sign in
           </button>
+          </Link>
         </ul>
       </div>
     </nav>
