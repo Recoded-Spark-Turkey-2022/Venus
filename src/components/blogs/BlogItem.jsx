@@ -1,18 +1,30 @@
 import React from 'react';
+
 import './blogs.css';
 
+import { useNavigate } from 'react-router-dom';
+
 const BlogItem = (props) => {
-  const { ImageUrl, avatars, text, title, userName, fullWidth } = props;
+  const navigate = useNavigate();
+  const { ImageUrl, avatars, text, title, userName, fullWidth, userRef } =
+    props;
 
   return (
     <div
       className={`rounded 
     overflow-hidden ${fullWidth ? 'w-[60%]' : 'max-w-[18rem]'}
     flex
- 
+ cursor-pointer
     flex-col
    justify-between
+   brightness-100
+   transition-all
+   ease-in
+   duration-500
+   hover:brightness-75
      shadow-lg`}
+      onClick={() => navigate(`/blogs/${userRef}`)}
+      aria-hidden="true"
     >
       <div className="grow-0">
         <img

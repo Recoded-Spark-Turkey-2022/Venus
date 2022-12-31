@@ -7,7 +7,7 @@ import { db } from '../../firebase/firebase.config';
 
 const initialState = {
   listing: [],
-  loading: false,
+  loading: true,
   error: '',
 };
 export const fetchListsing = createAsyncThunk(
@@ -34,7 +34,7 @@ export const listingSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchListsing.fulfilled, (state, action) => {
-      state.loading = false;
+      state.loading = true;
       state.listing = action.payload;
       state.error = '';
     });

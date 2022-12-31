@@ -8,24 +8,30 @@ import 'swiper/swiper-bundle.css';
 import {
   fetchListsing,
   getAllListings,
+  loadingState,
 } from '../../features/listings/listingSlice';
 import BlogItem from './BlogItem';
+import Spinner from '../spinner/Spinner';
 
 const Bloglist = () => {
   const dispatch = useDispatch();
   const data = useSelector(getAllListings);
+  const loading = useSelector(loadingState);
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchListsing());
   }, []);
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <div>
       <div className="w-full blogs-swipper">
         <Swiper
           fadeEffect="fade"
           modules={[Pagination, Navigation, Autoplay, EffectFade]}
-          className="mySwiper"
+          className="mySwiper cursor-pointer"
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,

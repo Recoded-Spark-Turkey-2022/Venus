@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { useParams } from 'react-router-dom';
 import SingleBlog from '../components/singleBlog/SingleBlog';
 
-import { fetchListsing } from '../features/listings/listingSlice';
+import { fetchListsing, loadingState } from '../features/listings/listingSlice';
 import { db } from '../firebase/firebase.config';
 
 const SingleBlogPage = () => {
   const [listing, setListing] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const params = useParams();
   // const data = useSelector(getAllListings);
+  const loading = useSelector(loadingState);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchListsing());
@@ -40,12 +41,9 @@ const SingleBlogPage = () => {
 
         if (querySnap) {
           setListing(listingArr);
-          setLoading(false);
         } else {
           console.log('Could not fetch the data');
         }
-
-        setLoading(false);
       } catch (error) {
         console.log(error.message);
       }
@@ -55,7 +53,7 @@ const SingleBlogPage = () => {
   console.log(loading, listing);
   return (
     <div>
-      <SingleBlog />
+      <SingleBlog {...listing} />
     </div>
   );
 };
