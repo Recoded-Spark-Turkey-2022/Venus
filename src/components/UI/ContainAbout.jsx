@@ -1,5 +1,5 @@
 import React from 'react'
-import About from '../About'
+import About from '../about/About'
 import Container from './Container' 
 
 function ContainAbout() {

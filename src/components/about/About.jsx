@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 
 import {StarIcon} from '@heroicons/react/24/outline'
-import AboutImg from '../assets/about-image.svg'
-import Button from './UI/Button'
+import AboutImg from '../../assets/about-image.svg'
+import Button from '../UI/Button'
 
 
 import 'swiper/swiper-bundle.css';
-import '../topics.css'
+import '../about/about.css';
 
 
 
@@ -29,7 +29,42 @@ function About() {
             </div>
         </div>
         <div className='flex flex-col-reverse self-center lg:flex-row w-full flex justify-center'>
-            <div className='w-1/2 '>
+            <div className='lg:block self-center hidden '>
+                <div className='flex '>
+                        <div className='p-5'>
+                          <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Motivation</h5>
+                          </div>
+                            <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                        </div>
+                        <div className='p-5'>
+                        <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Efficiency</h5>
+                         </div> 
+                         <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                        </div>
+                </div>
+                <div className='flex'>
+                  <div className='p-5'>
+                        <div  className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Creativity</h5>
+                        </div>
+                        <p className='text-left max-w-[224px]'>Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                  </div>
+                  <div className='p-5'>
+                        <div className='flex'>
+                            <StarIcon className='w-7 mr-4'/>
+                            <h5 className='font-bold text-[16px] p-[13px]'>Reliability</h5>
+                        </div>
+                        <p className='text-left max-w-[224px]' >Certe, inquam, pertinax non recusandae itaque earum 	rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.</p>
+                  </div>
+                </div>
+            </div>
+
+            <div className='block lg:hidden  bg-inlightBlue w-full lg:w-1/2 '>
             
                     <Swiper
                       centeredSlides="true"
@@ -41,12 +76,14 @@ function About() {
                       pagination={{
 
                         clickable: true,
+
                         }}
                       
                       modules={[Autoplay, Pagination]}
-                     className="mySwiper  lg:w-full"
+                     className="mySwiper lg:w-full"
                     >
-                     <SwiperSlide><div>
+                     <SwiperSlide>
+                      <div>
                         <div className='flex'>
                             <StarIcon className='w-7 mr-4'/>
             
@@ -85,8 +122,8 @@ function About() {
                     
                     </Swiper>
             </div>
-            <div className='flex w-1/2 justify-center' >
-                <img className=' ' src={AboutImg} alt='/' />
+            <div className=' flex justify-center  w-full lg:w-1/2' >
+                <img className=' w-[500px] lg:w-full ' src={AboutImg} alt='/' />
             </div>
         </div>
     </div>
