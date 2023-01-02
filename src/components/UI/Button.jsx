@@ -10,12 +10,13 @@ const Button = ({ children }) => {
      border-mediumBlue
      hover:border-mediumBlue  
      my-9        
-     text-[#ffffff] font-bold px-6 rounded-2xl  py-1"
+     text-white font-bold px-6 rounded-2xl  py-1"
       type="button"
     >
       {children}
     </button>
   );
 };
+
 
 export default Button;
