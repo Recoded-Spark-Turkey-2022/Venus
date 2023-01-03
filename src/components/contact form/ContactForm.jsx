@@ -41,11 +41,13 @@ function ContactForm(){
                     Message
                 </label>
                <textarea value={message} onChange={(e)=>setMessage(e.target.value)} required id='message' className="border-1 p-2 rounded-md border border-darkGrey bg-slate-50 h-40" placeholder="Message"/>
-                <button type='submit' className="w-32 md:justify-items-start  text-[#FFFFFF] rounded-full bg-mediumBlue btn-default transition-colors
+                <div className='flex justify-center md:justify-start items-center'>
+                <button type='submit' className="w-32 text-[#FFFFFF] rounded-full bg-mediumBlue btn-default transition-colors
      hover:bg-white border border-mediumBlue mt-2  whitespace-nowrap
      hover:border-mediumBlue hover:text-mediumBlue py-2">
                     Send
                 </button>
+                </div>
 
             </form>
             <div className='flex justify-center md:justify-start'>
