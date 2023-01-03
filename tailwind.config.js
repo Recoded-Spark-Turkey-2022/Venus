@@ -16,6 +16,7 @@ module.exports = {
       mediumBlue: '#4699c2',
       openRose: '#fc8476',
       white: '#fff',
+      inlightBlue: '#E7fbff'
     },
     fontFamily: {
       'sans': 'Helvetica , Arial, sans-serif',
