@@ -34,7 +34,7 @@ export const listingSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchListsing.fulfilled, (state, action) => {
-      state.loading = true;
+      state.loading = false;
       state.listing = action.payload;
       state.error = '';
     });

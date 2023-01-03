@@ -11,7 +11,7 @@ const BlogItem = (props) => {
 
   return (
     <div
-      className={`rounded 
+      className={`rounded blogItem
     overflow-hidden ${fullWidth ? 'w-[60%]' : 'max-w-[18rem]'}
     flex
  cursor-pointer

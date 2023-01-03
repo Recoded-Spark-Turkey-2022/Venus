@@ -8,19 +8,19 @@ import SingleBlog from '../components/singleBlog/SingleBlog';
 
 import { fetchListsing, loadingState } from '../features/listings/listingSlice';
 import { db } from '../firebase/firebase.config';
+import Spinner from '../components/spinner/Spinner';
 
 const SingleBlogPage = () => {
   const [listing, setListing] = useState([]);
 
   const params = useParams();
-  // const data = useSelector(getAllListings);
+
   const loading = useSelector(loadingState);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchListsing());
-  }, []);
 
   useEffect(() => {
+    dispatch(fetchListsing());
+
     const fetchListingData = async () => {
       try {
         const listingRef = collection(db, 'listings');
@@ -29,14 +29,10 @@ const SingleBlogPage = () => {
           where('userRef', '==', params.blogId)
         );
 
-        // eslint-disable-next-line spaced-comment
-        //get Query Snap
-
         const querySnap = await getDocs(queryOflist);
         const listingArr = [];
         querySnap.forEach((document) => {
-          listingArr.push(document.data());
-          setListing(listingArr);
+          return listingArr.push(document.data());
         });
 
         if (querySnap) {
@@ -48,14 +44,15 @@ const SingleBlogPage = () => {
         console.log(error.message);
       }
     };
+
     fetchListingData();
   }, [params.blogId]);
-  console.log(loading, listing);
-  return (
-    <div>
-      <SingleBlog {...listing} />
-    </div>
-  );
+
+  if (loading && listing.length === 0) {
+    return <Spinner />;
+  }
+
+  return listing.length > 0 && <SingleBlog data={listing} />;
 };
 
 export default SingleBlogPage;
