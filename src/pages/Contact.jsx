@@ -4,7 +4,7 @@ import man from '../assets/concact.svg'
 
 const Contact = () => {
     return (
-      <div className="bg-transparent md:bg-inlightBlue mt-10 ">
+      <div className="bg-inlightBlue mt-10 ">
        <Container>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20">
          <div className="grid justify-items-center md:justify-items-start">
