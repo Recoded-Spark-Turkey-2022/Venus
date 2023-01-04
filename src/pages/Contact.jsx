@@ -6,7 +6,7 @@ const Contact = () => {
     return (
       <div className="bg-transparent md:bg-inlightBlue mt-10 ">
        <Container>
-        <div className=" drop-shadow-none md:drop-shadow-xl grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20">
          <div className="grid justify-items-center md:justify-items-start">
           <h1 className="text-darkBlue text-center md:text-left text-5xl font-bold mb-5">
             Get in Touch
