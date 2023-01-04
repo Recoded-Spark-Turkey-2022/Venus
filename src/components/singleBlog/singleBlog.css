@@ -12,3 +12,11 @@ padding-bottom: 20px;
 .blog-wrapper .blogItem{
     height: 100% !important;
 }
+.blog-aside .blogItem{
+    width: 90% !important;
+}
+@media screen and (max-width:991px) {
+    .blog-aside .blogItem{
+        width: 100% !important;
+    }
+}
