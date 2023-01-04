@@ -42,9 +42,7 @@ function ContactForm(){
                 </label>
                <textarea value={message} onChange={(e)=>setMessage(e.target.value)} required id='message' className="border-1 p-2 rounded-md border border-darkGrey bg-slate-50 h-40" placeholder="Message"/>
                 <div className='flex justify-center md:justify-start items-center'>
-                <button type='submit' className="w-32 text-[#FFFFFF] rounded-full bg-mediumBlue btn-default transition-colors
-     hover:bg-white border border-mediumBlue mt-2  whitespace-nowrap
-     hover:border-mediumBlue hover:text-mediumBlue py-2">
+                <button type='submit' className="w-32 bg-mediumBlue text-[#FFFFFF] rounded-full hover:bg-white hover:text-mediumBlue transition ease-out duration-500 border border-mediumBlue hover:border-mediumBlue mt-2 whitespace-nowrap py-2">
                     Send
                 </button>
                 </div>
