@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Twitter from '../../assets/Twitter.svg'
 import instagram from '../../assets/Instagram.svg'
 import facebook from '../../assets/Facebook.svg'
+import '../../index.css'
 
 // import db(app) from firebase...........................
 
@@ -42,7 +43,7 @@ function ContactForm(){
                 </label>
                <textarea value={message} onChange={(e)=>setMessage(e.target.value)} required id='message' className="border-1 p-2 rounded-md border border-darkGrey bg-slate-50 h-40" placeholder="Message"/>
                 <div className='flex justify-center md:justify-start items-center'>
-                <button type='submit' className="w-32 bg-mediumBlue text-[#FFFFFF] rounded-full hover:bg-white hover:text-mediumBlue transition ease-out duration-500 border border-mediumBlue hover:border-mediumBlue mt-2 whitespace-nowrap py-2">
+                <button type='submit' id='contact-button' className="w-32 rounded-full border border-mediumBlue mt-2 whitespace-nowrap py-2">
                     Send
                 </button>
                 </div>

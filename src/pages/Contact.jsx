@@ -1,10 +1,11 @@
 import ContactForm from "../components/contact form/ContactForm";
 import Container from "../components/UI/Container";
 import man from '../assets/concact.svg'
+import '../index.css'
 
 const Contact = () => {
     return (
-      <div className="bg-inlightBlue mt-10 ">
+      <div id='contact-div' className=" mt-10 ">
        <Container>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20">
          <div className="grid justify-items-center md:justify-items-start">

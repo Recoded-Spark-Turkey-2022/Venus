@@ -61,4 +61,24 @@ nav{
   z-index: 99999;
 }
 
+#contact-div{
+  background-color: #E8F9FF;
+}
+#contact-button{
+  background-color: #4699C1;
+  color: #FFFFFF;
+  transition: 0.3s ease-in-out 100ms;
+}
+
+#contact-button:hover{
+  background-color: #FFFFFF;
+  color: #4699C1;
+}
+@media screen and  (max-width:768px) {
+  #contact-div{
+    background-color: #FFFFFF;
+  }
+  
+
+}
 
