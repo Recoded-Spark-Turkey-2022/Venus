@@ -9,10 +9,10 @@ const HeroSection = () => {
     <section className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
         src={circleLogo}
-        className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-500px] top-[0px]  w-[100%] h-[90vh]"
+        className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[90vh]"
         alt="circle-logo"
       />
-      <div className=" items-center flex flex-col-reverse md:flex-row   md:w-full justify-between md:justify-between lg:justify-between ">
+      <div className=" items-center flex flex-col-reverse md:flex-row   md:w-full justify-between md:justify-between lg:justify-between">
         <motion.div
           initial={{ x: '-1000px', scale: 0.5 }}
           animate={{ x: '0px', scale: 1 }}
@@ -31,7 +31,9 @@ const HeroSection = () => {
               laboriosam iure dolores illo soluta cum aliquid minima quos culpa
               officia?
             </p>
+         
             <Button>Sign-up</Button>
+           
           </div>
         </motion.div>
         <motion.div

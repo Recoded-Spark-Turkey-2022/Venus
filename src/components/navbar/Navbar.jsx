@@ -10,7 +10,7 @@ const Navbar = () => {
     { name: 'BLog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <nav className="shadow-md w-full fixed z-1000 top-0 left-0">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
