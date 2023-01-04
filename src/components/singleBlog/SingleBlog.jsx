@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
   AiOutlineShareAlt,
   AiFillFacebook,
   AiOutlineTwitter,
-  AiFillInstagram,
 } from 'react-icons/ai';
 import Container from '../UI/Container';
 import { getAllListings } from '../../features/listings/listingSlice';
@@ -13,6 +12,7 @@ import './singleBlog.css';
 
 const SingleBlog = ({ data }) => {
   const dataStore = useSelector(getAllListings);
+  const [tooltip, setTooltip] = useState(true);
   const randomNumber = Math.floor(Math.random() * dataStore.length) - 1;
   const randomNum1 = randomNumber > 0 ? randomNumber : 0;
   const randomNum2 = randomNumber > 0 ? randomNumber + 1 : 5;
@@ -22,6 +22,23 @@ const SingleBlog = ({ data }) => {
 
   const { avatars, title, userName, text, content, ImageUrl } = data[0];
 
+  const currentUrl = window.location.href;
+  const handleCopy = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setTooltip(!tooltip);
+  };
+  const shareOnFacebook = () => {
+    const facebookShare = 'https://www.facebook.com/sharer/sharer.php?u=';
+    const navUrl = facebookShare + currentUrl;
+    console.log(navUrl);
+    window.open(navUrl, '_blank');
+  };
+  const shareOnTwitter = () => {
+    const twitterShare = 'https://twitter.com/intent/tweet?text=';
+    const navUrl = twitterShare + currentUrl;
+
+    window.open(navUrl, '_blank');
+  };
   return (
     <Container>
       <div className="flex flex-col-reverse gap-10 md:flex-row main-container">
@@ -35,11 +52,19 @@ const SingleBlog = ({ data }) => {
               src={ImageUrl}
               alt={title}
             />
-            <div className=" flex flex-col gap-5 absolute top-3 right-5">
-              <AiOutlineShareAlt className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer" />{' '}
-              <AiFillFacebook className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer" />{' '}
-              <AiFillInstagram className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer" />{' '}
-              <AiOutlineTwitter className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer" />
+            <div className=" flex flex-col gap-5 absolute top-6 right-5">
+              <AiOutlineShareAlt
+                onClick={handleCopy}
+                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+              />
+              <AiFillFacebook
+                onClick={shareOnFacebook}
+                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+              />
+              <AiOutlineTwitter
+                onClick={shareOnTwitter}
+                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+              />
             </div>
           </div>
           <p className="flex  align-middle self-center justify-center items-end mb-5">
