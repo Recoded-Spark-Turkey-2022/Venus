@@ -4,7 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
-
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+  background-color: unset ;
+  background-image: none;
+}
 
 
 * {
