@@ -5,6 +5,7 @@ import {
   AiFillFacebook,
   AiOutlineTwitter,
 } from 'react-icons/ai';
+import { Flip, toast, ToastContainer } from 'react-toastify';
 import Container from '../UI/Container';
 import { getAllListings } from '../../features/listings/listingSlice';
 import BlogItem from '../blogs/BlogItem';
@@ -26,11 +27,21 @@ const SingleBlog = ({ data }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href);
     setTooltip(!tooltip);
+    toast.success('Link Coppied!', {
+      position: 'top-left',
+      autoClose: 1200,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
   const shareOnFacebook = () => {
     const facebookShare = 'https://www.facebook.com/sharer/sharer.php?u=';
     const navUrl = facebookShare + currentUrl;
-    console.log(navUrl);
+
     window.open(navUrl, '_blank');
   };
   const shareOnTwitter = () => {
@@ -48,22 +59,22 @@ const SingleBlog = ({ data }) => {
           </h1>
           <div className="relative">
             <img
-              className="aspect-[2/1] object-cover rounded-xl"
+              className="w-[90%] object-cover rounded-xl"
               src={ImageUrl}
               alt={title}
             />
-            <div className=" flex flex-col gap-5 absolute top-6 right-5">
+            <div className=" flex flex-col gap-5 absolute top-6 right-0">
               <AiOutlineShareAlt
                 onClick={handleCopy}
-                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                className="text-darkBlue textShadow  text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
               />
               <AiFillFacebook
                 onClick={shareOnFacebook}
-                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
               />
               <AiOutlineTwitter
                 onClick={shareOnTwitter}
-                className="text-white text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
               />
             </div>
           </div>
@@ -95,6 +106,7 @@ const SingleBlog = ({ data }) => {
           </div>
         </aside>
       </div>
+      <ToastContainer transition={Flip} />
     </Container>
   );
 };
