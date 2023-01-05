@@ -61,4 +61,7 @@ nav{
   z-index: 99999;
 }
 
-
+#circle-img{
+  
+  z-index: -1;
+}
