@@ -1,7 +1,7 @@
 import ContactForm from "../components/contact form/ContactForm";
 import Container from "../components/UI/Container";
 import man from '../assets/concact.svg'
-import '../index.css'
+
 
 const Contact = () => {
     return (

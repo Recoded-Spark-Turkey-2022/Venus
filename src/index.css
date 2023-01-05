@@ -4,12 +4,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
-[type=button], [type=reset], [type=submit], button {
-  -webkit-appearance: button;
-  background-color: unset ;
-  background-image: none;
-}
-
 
 * {
   box-sizing: border-box;
@@ -68,15 +62,20 @@ nav{
 #contact-div{
   background-color: #E8F9FF;
 }
-#contact-button{
+#mediumBlue-button{
   background-color: #4699C1;
   color: #FFFFFF;
-  transition: 0.3s ease-in-out 100ms;
+  font-weight: bold;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: #4699C1;
+  transition: 0.3s ease-in-out ;
 }
 
-#contact-button:hover{
+#mediumBlue-button:hover{
   background-color: #FFFFFF;
   color: #4699C1;
+  
 }
 @media screen and  (max-width:768px) {
   #contact-div{
