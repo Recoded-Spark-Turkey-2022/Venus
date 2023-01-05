@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="flex justify-between flex-row">
           <div className="flex justify-between items-center mr-3">
             <button
-              id='mediumBlue-button' className="px-8 whitespace-nowrap"
+              id='mediumBlue-button' className="px-8 whitespace-nowrap rounded-full"
               type="button"
             >
               Sign up
