@@ -3,7 +3,7 @@ import React from "react";
 const BlogsCard = ({title,name,image,text})=> {
 
     return(
-        <div className="max-w-sm flex justify-center rounded-3xl overflow-hidden shadow-md py-8 px-3 mb-2">
+        <div className="bg-white max-w-sm flex justify-center rounded-3xl overflow-hidden shadow-md py-8 px-3 mb-2">
             <div className="text-xl mb-2 ">
                 <div className="py-2">
             <p className="font-bold">{title}</p>
