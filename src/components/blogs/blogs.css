@@ -5,3 +5,23 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.filter{
+    border-top: 2px solid #ccc;
+
+  
+}
+.filter h2{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.form-filter{
+    margin-top: 12px;
+}
+.form-filter select,input{
+border: 1px solid #ccc;
+border-radius: 16px;
+margin-right: 10px;
+
+outline: none;
+}

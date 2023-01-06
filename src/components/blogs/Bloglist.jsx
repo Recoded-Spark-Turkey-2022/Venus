@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
-
+import './blogs.css';
 import {
   fetchListsing,
   getAllListings,
@@ -14,6 +14,7 @@ import BlogItem from './BlogItem';
 import Spinner from '../spinner/Spinner';
 
 const Bloglist = () => {
+  const [filter, setFilter] = useState('Popularity');
   const dispatch = useDispatch();
   const data = useSelector(getAllListings);
   const loading = useSelector(loadingState);
@@ -27,14 +28,36 @@ const Bloglist = () => {
   }
   return (
     <div>
+      <div className=" filter flex justify-between px-5 pt2">
+        <h2>{filter} </h2>
+        <div className="form-filter">
+          <select
+            className="py-1 px-2"
+            onChange={(e) => setFilter(e.currentTarget.value)}
+          >
+            <option className="py-1 px-2" value="Most Recent">
+              Most Recent
+            </option>
+            <option value="Popularity">Popularity</option>
+          </select>
+          <input
+            type="search"
+            className="py-1 px-2"
+            placeholder="Search by Title..."
+            name=""
+            id=""
+          />
+        </div>
+      </div>
+
       <div className="w-full blogs-swipper">
         <Swiper
           fadeEffect="fade"
           modules={[Pagination, Navigation, Autoplay, EffectFade]}
           className="mySwiper cursor-pointer"
           autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
+            delay: 10000,
+            disableOnInteraction: true,
           }}
         >
           {data?.map((singlePost) => (
