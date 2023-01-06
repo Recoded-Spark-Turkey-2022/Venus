@@ -84,7 +84,8 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <button
-            className="text-[#FFFFFF] rounded-full bg-mediumBlue px-8 btn-default transition-colors hover:bg-white ease-in duration-300 border border-mediumBlue  whitespace-nowrap hover:border-mediumBlue hover:text-mediumBlue"
+            className="px-8 whitespace-nowrap rounded-full"
+            id="mediumBlue-button"
             type="button"
           >
             Sign up

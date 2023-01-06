@@ -3,6 +3,9 @@ import HeroSection from '../components/homePage/HeroSection';
 import Container from '../components/UI/Container';
 import Partners from '../components/Partners/Partners';
 import Reference from '../components/Reference/Reference';
+import StoriesSection from '../components/UI/StoriesSection';
+import ContainAbout from '../components/UI/ContainAbout';
+
 
 
 const Home = () => {
