@@ -15,7 +15,6 @@ html {
 }
 body {
   margin: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 
@@ -63,3 +62,18 @@ nav{
 }
 
 
+#mediumBlue-button{
+  background-color: #4699C1;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: #4699C1;
+  transition: 0.3s ease-in-out ;
+}
+
+#mediumBlue-button:hover{
+  background-color: #FFFFFF;
+  color: #4699C1;
+  
+}
