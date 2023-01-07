@@ -48,15 +48,9 @@ const Navbar = () => {
           ))}
 
           <button
-            className="bg-mediumBlue btn-default transition-colors
-     hover:bg-white ease-in duration-300 
-     hover:text-mediumBlue
-border
-border-mediumBlue
-     hover:border-mediumBlue  
-     ml-0    md:ml-9
-     text-white font-bold px-6 rounded-2xl  py-1"
-            type="button"
+
+            id='mediumBlue-button' className="ml-0 md:ml-9 px-6 rounded-2xl py-1"type="button"
+
           >
             Sign in
           </button>

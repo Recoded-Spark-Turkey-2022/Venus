@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+
+
 
 * {
   box-sizing: border-box;
@@ -10,8 +15,9 @@ html {
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +28,9 @@ code {
     monospace;
 }
 
-.text {
+
+.text{
+
   font-size: 1.2rem;
   font-weight: 400;
   color: #333;
@@ -30,10 +38,13 @@ code {
 
 .image-hero {
   transform: rotate(0deg) !;
+
   top: 0;
   left: -500px;
   top: 0;
+
 }
+
 
 
 
@@ -52,15 +63,40 @@ code {
     width: 100%;
   }
 }
-@media screen and (max-width: 768px) {
-  .image-hero {
+
+@media screen and  (max-width:768px) {
+  .image-hero{
+
     transform: rotate(-90deg);
-    top: 200px;
-    left: -20px;
-    width: 100%;
-    overflow: hidden;
+   top:300px;
+  left: -20px;
+  width: 100%;
+  overflow: hidden;
+  
   }
+
   .blogs-swipper .swiper{
     padding:0px !important;
   }
+
 }
+
+nav{
+  z-index: 99999;
+}
+
+
+#mediumBlue-button{
+  background-color: #4699C1;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: #4699C1;
+  transition: 0.3s ease-in-out ;
+}
+
+#mediumBlue-button:hover{
+  background-color: #FFFFFF;
+  color: #4699C1;
+  

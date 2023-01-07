@@ -4,7 +4,11 @@ import { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
 
+
 import '../index.css';
+
+import '../Reference.css';
+
 import worldMap from '../assets/world_map_ 1.svg';
 
 function Reference() {
