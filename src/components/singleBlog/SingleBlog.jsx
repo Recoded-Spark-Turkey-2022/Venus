@@ -151,7 +151,7 @@ const SingleBlog = ({ data }) => {
 
   return (
     <Container>
-      <div className="flex mt-[60px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container">
+      <div className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container">
         <article className="flex flex-col w-full md:w-[60%] relative">
           <h1 className="text-3xl uppercase font-medium text-center mb-4">
             {title}{' '}

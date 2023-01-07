@@ -19,7 +19,7 @@ const Bloglist = () => {
   const [filter, setFilter] = useState('');
   const [allData, setData] = useState(data);
   // const [query, setQuery] = useState('');
-  const searchQuery = useRef(null);
+  const searchQuery = useRef();
   const dispatch = useDispatch();
   const loading = useSelector(loadingState);
   const navigate = useNavigate();
@@ -79,14 +79,12 @@ const Bloglist = () => {
       });
     }
   };
-  // const onSearchChange = (e) => {
 
-  // };
   if (loading) {
     return <Spinner />;
   }
   return (
-    <div>
+    <div className="pt-20">
       <div className=" filter flex justify-between px-5 pt2 mb-5">
         <h2>{filter} </h2>
         <div className="form-filter">
