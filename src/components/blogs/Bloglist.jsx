@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 import React, { useEffect, useState, useRef } from 'react';
 import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
@@ -85,9 +86,9 @@ const Bloglist = () => {
   }
   return (
     <div className="pt-20">
-      <div className=" filter flex justify-between px-5 pt2 mb-5">
-        <h2>{filter} </h2>
-        <div className="form-filter">
+      <div className=" filter flex  flex-col md:flex-row justify-between px-5 pt2 mb-5">
+        <h2 className="block text-center md:text-left">{filter} </h2>
+        <div className="form-filter flex  justify-center ">
           <select
             className="py-1 px-2"
             onChange={(e) => {
@@ -104,7 +105,7 @@ const Bloglist = () => {
             <option value="Popularity">Popularity</option>
           </select>
 
-          <form className="inline" onSubmit={(e) => handleSortbyQuery(e)}>
+          <form className=" inline" onSubmit={(e) => handleSortbyQuery(e)}>
             <input
               type="search"
               required
@@ -129,6 +130,7 @@ const Bloglist = () => {
             delay: 15000,
             disableOnInteraction: true,
           }}
+          autoHeight={true}
         >
           {(allData.length === 0 ? data : allData)?.map((singlePost) => (
             <SwiperSlide

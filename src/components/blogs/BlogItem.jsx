@@ -53,7 +53,7 @@ const BlogItem = (props) => {
           <div className="flex items-center">
             <img
               src={avatars[0]}
-              className="rounded-full w-[40px] md:w-[70px] h-13"
+              className="rounded-full !w-[40px] md:w-[70px] h-13"
               alt=""
             />
             <p className="text-xl inline-block">{userName} </p>
