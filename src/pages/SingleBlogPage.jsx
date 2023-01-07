@@ -24,6 +24,7 @@ const SingleBlogPage = () => {
     const fetchListingData = async () => {
       try {
         const listingRef = collection(db, 'listings');
+
         const queryOflist = query(
           listingRef,
           where('userRef', '==', params.blogId)
