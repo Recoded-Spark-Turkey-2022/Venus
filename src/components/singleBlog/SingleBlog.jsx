@@ -56,6 +56,7 @@ const SingleBlog = ({ data }) => {
     const output = new Date(seconds * 1000).toLocaleDateString();
     setDate(output);
     setVote(vote);
+    setTooltip(false);
   }, [seconds]);
   useEffect(() => {
     const fetchListingData = async () => {
