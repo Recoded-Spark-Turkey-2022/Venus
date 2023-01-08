@@ -1,18 +1,32 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, Pagination} from "swiper";
+import { useState } from 'react';
+// import Partners from '../components/Partners/Partners'----import Profile Edit Form-------
 import Container from "../components/UI/Container";
 import BlogsCard from "../components/userProfile/BlogsCard";
+import Avatar from '../components/userProfile/Avatar';
 import article from '../data/Article'
 import circleLogo from '../assets/signup-vector.svg';
 import '../components/userProfile/userProfile.css'
 
 const UserProfile = () => {
 
+  const [open, setOpen] = useState(false);
 
+  const handleOpen= ()=>{
+    setOpen(!open);
+  }
+  /* if (open) {
+    return <Partners isOpen={handleOpen} />; ----Profile Edit Form-------
+  } 
+
+  else{ */
     return (
-        <div className="mt-20 w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
+        <div className="mt-20 flex items-center w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
         <Container>
-       {/* Add Avatar Component */}
+          <div className='relative z-10 flex justify-center object-center'>
+         <Avatar name={article.userName} image={article.ImageUrl} isOpen={handleOpen}/>
+         </div>
            <img
         src={circleLogo}
         className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-500px] top-[0px]  w-[100%] h-[90vh]"
@@ -65,6 +79,7 @@ const UserProfile = () => {
         
         </div>
     );
+  // }
 };
 
 export default UserProfile;
