@@ -92,6 +92,7 @@ const SingleBlog = ({ data }) => {
     toast.success('Link Coppied!', {
       position: 'top-left',
       autoClose: 1200,
+      className: 'mt-20',
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -126,7 +127,7 @@ const SingleBlog = ({ data }) => {
         draggable: true,
         hideProgressBar: true,
         theme: 'light',
-        className: 'thanks-tooltip',
+        className: 'thanks-tooltip mt-20',
       });
     }
 
@@ -163,7 +164,7 @@ const SingleBlog = ({ data }) => {
               alt={title}
             />
           </div>
-          <div className="flex items-center justify-around my-2">
+          <div className="flex flex-col sm:flex-row  gap-5 sm:gap-1 items-center justify-around my-2">
             <p className="flex  align-middle self-center justify-center items-end ">
               <span>by</span>{' '}
               <img
@@ -173,23 +174,25 @@ const SingleBlog = ({ data }) => {
               />{' '}
               <span> {userName} </span>
             </p>
-            <div className=" flex  gap-5 ">
-              <AiOutlineShareAlt
-                onClick={handleCopy}
-                className="text-darkBlue textShadow  text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
-              />
-              <AiFillFacebook
-                onClick={shareOnFacebook}
-                className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
-              />
-              <AiOutlineTwitter
-                onClick={shareOnTwitter}
-                className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
-              />
-            </div>
-            <div className="date flex gap-3 items-center">
-              <FaCalendarAlt className="text-darkBlue textShadow  self-baseline text-3xl font-bold duration-300 brightness-110 hover:brightness-50" />
-              <span className="self-baseline">{date} </span>
+            <div className="flex gap-3 sm:gap-1 items-end">
+              <div className=" flex  gap-5  mr-2">
+                <AiOutlineShareAlt
+                  onClick={handleCopy}
+                  className="text-darkBlue textShadow  text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                />
+                <AiFillFacebook
+                  onClick={shareOnFacebook}
+                  className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                />
+                <AiOutlineTwitter
+                  onClick={shareOnTwitter}
+                  className="text-darkBlue text-3xl font-bold duration-300 brightness-110 hover:brightness-50 cursor-pointer"
+                />
+              </div>
+              <div className="date flex gap-3 items-end">
+                <FaCalendarAlt className="text-darkBlue textShadow  self-end text-3xl font-bold duration-300 brightness-110 hover:brightness-50" />
+                <span className="self-end">{date} </span>
+              </div>
             </div>
           </div>
           <div>
