@@ -47,11 +47,13 @@ const Navbar = () => {
             </li>
           ))}
 
+          <Link to='/signin'>
           <button
             id='mediumBlue-button' className="ml-0 md:ml-9 px-6 rounded-2xl py-1"type="button"
           >
             Sign in
           </button>
+          </Link>
         </ul>
       </div>
     </nav>

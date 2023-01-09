@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/homePage-graphic.svg';
 import circleLogo from '../../assets/signup-vector.svg';
 import Button from '../UI/Button';
@@ -31,7 +32,9 @@ const HeroSection = () => {
               laboriosam iure dolores illo soluta cum aliquid minima quos culpa
               officia?
             </p>
+            <Link to="/signup">
             <Button>Sign-up</Button>
+            </Link>
           </div>
         </motion.div>
         <motion.div
