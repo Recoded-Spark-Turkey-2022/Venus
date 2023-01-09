@@ -1,0 +1,184 @@
+
+.ContainerBox{
+    background-color: white;
+    height: 50%;
+    width: 50%;
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)); 
+    border-radius: 10%; 
+    position: absolute;
+    right: 25%;
+    top: 25%;
+    flex: 1;
+}
+.Title{
+    color: #4699C2;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 5%;
+}
+.ContainerBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 12%;
+    
+    
+}
+.Container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15%;
+    
+
+}
+.FacebookBtn{
+    color: white;
+    background-color: #3b5998 !important;
+    text-align: center; 
+    width: 30%;
+    height: 5%;
+    border-radius: 9999px; 
+    padding-top: 1%;
+
+}
+.FacebookBtn:hover{
+    background-color: #293d69 !important;
+}
+
+.GoogleBtn{
+    color: white;
+    background-color: #E93F2E !important;
+    text-align: center; 
+    width: 30%;
+    height: 5%;
+    border-radius: 9999px; 
+    padding-top: 1%;
+}
+.GoogleBtn:hover{
+    background-color: #a32a1f !important;
+}
+.or{
+    color: #4699C2;
+    
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 1%;
+}
+.Already{
+    color: #70cdd6;
+    
+    font-size: x-large;
+
+}
+.LastBtm{
+        background-color: white !important;
+        color: #70cdd6;
+        font-weight: bold;
+        font-size: x-large;
+        border-style: none;
+        border-radius: 9999px;
+       
+    }
+    .LastBtm:hover{
+        color: #287a81;
+    }
+
+@media screen and  (max-width:1350px){
+   .Title{
+    margin-top: 7%;
+   }
+   .ContainerBtn{
+    margin-top: 17%;
+   }
+   .Container3{
+    margin-top: 20%;
+   }
+
+}
+@media screen and  (max-width:1150px){
+    .Title{
+     margin-top: 9%;
+    }
+    .ContainerBtn{
+     margin-top: 20%;
+    }
+    .Container3{
+     margin-top: 24%;
+    }
+ 
+ }
+ @media screen and  (max-width:1000px){
+    .Title{
+     margin-top: 12%;
+    }
+    .ContainerBtn{
+     margin-top: 25%;
+    }
+    .Container3{
+     margin-top: 28%;
+    }
+ 
+ }
+ @media screen and  (max-width:768px){
+    .Title{
+     margin-top: 14%;
+    }
+    .ContainerBtn{
+     margin-top: 29%;
+    }
+    .Container3{
+     margin-top: 34%;
+    }
+ 
+ }
+ @media screen and  (max-width:	640px){
+    .Title{
+     margin-top: 17%;
+    }
+    .ContainerBtn{
+     margin-top: 30%;
+     flex-direction: column;
+     align-items: center;
+     
+    }
+    .FacebookBtn, .GoogleBtn{
+        width: 65%;
+    }
+    .GoogleBtn{
+        margin-bottom: 10%;
+    }
+    .or{
+        margin-bottom: 10%;
+    }
+    .Container3{
+     margin-top: 70%;
+     flex-direction: column;
+     align-items: center;
+    }
+    .Already{
+        margin-bottom: 6%;
+        font-size: large;
+    }
+    .LastBtm{
+        background-color: #4699C2 !important;
+        color: white ;
+        border: #4699C2 solid 1px;
+        height: 40px;
+        width: 110px;
+        font-size: large;
+    }
+    .LastBtm:hover{
+        color: #4699C2;
+        background-color: white !important;
+        
+        font-size: large;
+    }
+ 
+ }
+
+
+   
+  
+  

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import img from '../assets/signup-vector.svg'
 import './Signup-in.css'
@@ -6,7 +5,7 @@ import './Signup-in.css'
 
 
 
-const Signup = () => {
+const Signin = () => {
     return (
         <section className=' w-screen h-screen relative '>
           <div>
@@ -15,7 +14,7 @@ const Signup = () => {
              className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[90vh] "
              alt="circle-logo"/>  
              <div className='ContainerBox'>
-                <h1 className='Title'>SIGN UP WITH</h1>
+                <h1 className='Title'>SIGN IN WITH</h1>
                 <div className='ContainerBtn' >
                    <button className='GoogleBtn' type='button'>
                      <ion-icon size='large' name="logo-google" />
@@ -28,9 +27,9 @@ const Signup = () => {
                   
                  </div>
                  <div className='Container3 '>
-                    <h1 className='Already ' >Already a member?</h1>
+                    <h1 className='Already ' >Want to be a member?</h1>
                     <button className='LastBtm' type='button'>
-                        Sign in
+                        Sign up
                     </button>
                  </div>
              </div>
@@ -40,5 +39,4 @@ const Signup = () => {
       )
   };
   
-  export default Signup;
-  
+  export default Signin;
