@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, Pagination} from "swiper";
 import { useState } from 'react';
-// import Partners from '../components/Partners/Partners'----import Profile Edit Form-------
+import Partners from '../components/Partners/Partners'
 import Container from "../components/UI/Container";
 import BlogsCard from "../components/userProfile/BlogsCard";
 import Avatar from '../components/userProfile/Avatar';
@@ -16,11 +16,11 @@ const UserProfile = () => {
   const handleOpen= ()=>{
     setOpen(!open);
   }
-  /* if (open) {
-    return <Partners isOpen={handleOpen} />; ----Profile Edit Form-------
+   if (open) {
+    return <Partners isOpen={handleOpen} />; 
   } 
 
-  else{ */
+  else{ 
     return (
         <div className="mt-20 flex items-center w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
         <Container>
@@ -79,7 +79,7 @@ const UserProfile = () => {
         
         </div>
     );
-  // }
+   }
 };
 
 export default UserProfile;
