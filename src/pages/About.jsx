@@ -5,6 +5,7 @@ import OurStory from '../components/aboutPage/OurStory';
 import OurTeamSection from '../components/aboutPage/OurTeamSection';
 import Container from '../components/UI/Container';
 import ReferenceSection from '../components/UI/ReferenceSection';
+import Partners from '../components/Partners/Partners';
 
 const About = () => {
   return (
@@ -16,6 +17,7 @@ const About = () => {
       <OurTeamSection />
       <ReferenceSection/>
       <Container>
+        <Partners/>
         <Share />
       </Container>
     </>
