@@ -19,6 +19,7 @@ const Bloglist = () => {
   const data = useSelector(getAllListings);
   const [filter, setFilter] = useState('');
   const [allData, setData] = useState(data);
+  const [reset, setReset] = useState(false);
   // const [query, setQuery] = useState('');
   const searchQuery = useRef();
   const dispatch = useDispatch();
@@ -59,13 +60,33 @@ const Bloglist = () => {
     const { value } = searchQuery.current;
 
     const re = /^[A-Za-z]+$/;
-    if (value === '' || re.test(value)) {
+    if (re.test(value) || !value === '') {
       const newData = data.map((obj) =>
         obj.title.toLowerCase().includes(value.toLowerCase()) ? obj : ''
       );
+      setReset(true);
       const filteredArr = newData.filter((a) => a !== '');
+      console.log(filteredArr);
       setData(filteredArr);
-    } else {
+      if (filteredArr.length === 0) {
+        setReset(true);
+        toast.warn("We couldn't find related match 😔", {
+          position: 'top-left',
+
+          autoClose: 1200,
+
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          hideProgressBar: true,
+          theme: 'light',
+          className: 'thanks-tooltip mt-12',
+        });
+        return;
+      }
+    }
+
+    if (!re.test(value) && value !== '') {
       toast.warning('Please write a  valid query', {
         position: 'top-left',
 
@@ -76,7 +97,7 @@ const Bloglist = () => {
         draggable: true,
         hideProgressBar: true,
         theme: 'light',
-        className: 'thanks-tooltip',
+        className: 'thanks-tooltip mt-12',
       });
     }
   };
@@ -108,11 +129,11 @@ const Bloglist = () => {
           <form className=" inline" onSubmit={(e) => handleSortbyQuery(e)}>
             <input
               type="search"
-              required
               className="py-1 px-2"
               placeholder="Search by Title..."
               ref={searchQuery}
               name=""
+              required
               id=""
               min={5}
               max={20}
@@ -120,16 +141,34 @@ const Bloglist = () => {
           </form>
         </div>
       </div>
-
+      <div>
+        {' '}
+        {reset && (
+          <button
+            type="button"
+            className="rounded-full px-3 w-full md:w-fit mr-0 md:mr-7 py-1   mb-5 float-right"
+            id="mediumBlue-button"
+            onClick={() => {
+              setData(data);
+              setReset(false);
+              searchQuery.current.value = '';
+            }}
+          >
+            Reset Filter{' '}
+          </button>
+        )}{' '}
+      </div>
       <div className="w-full blogs-swipper">
         <Swiper
           fadeEffect="fade"
+          effect="fade"
           modules={[Pagination, Navigation, Autoplay, EffectFade]}
-          className="mySwiper cursor-pointer"
+          className="mySwiper cursor-pointer  pb-16 mb-5"
           autoplay={{
-            delay: 15000,
+            delay: 1000,
             disableOnInteraction: true,
           }}
+          pagination={{ clickable: true, dynamicBullets: true }}
           autoHeight={true}
         >
           {(allData.length === 0 ? data : allData)?.map((singlePost) => (
