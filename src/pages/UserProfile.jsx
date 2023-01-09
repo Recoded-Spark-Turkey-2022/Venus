@@ -20,7 +20,7 @@ const UserProfile = () => {
     return <Partners isOpen={handleOpen} />; 
   } 
 
-  else{ 
+   
     return (
         <div className="mt-20 flex items-center w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
         <Container>
@@ -79,7 +79,7 @@ const UserProfile = () => {
         
         </div>
     );
-   }
+   
 };
 
 export default UserProfile;

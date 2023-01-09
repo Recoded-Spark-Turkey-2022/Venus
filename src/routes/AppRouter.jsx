@@ -27,11 +27,7 @@ const AppRouter = () => {
         <Route path="/sign-in" element={<SignIn />} />
 
         <Route path="/about" element={<About />} />
-<<<<<<< HEAD
         <Route path="/userProfile" element={<UserProfile />} />
-=======
-
->>>>>>> 3d0328ad553893423d91befed9ae4978d06fe695
       </Routes>
       <Footer />
     </BrowserRouter>
