@@ -7,7 +7,7 @@ const Navbar = () => {
   const Links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'BLog', link: '/blogs' },
+    { name: 'Blog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
   const [open, setOpen] = useState(true);
@@ -48,7 +48,9 @@ const Navbar = () => {
           ))}
 
           <button
-            id='mediumBlue-button' className="ml-0 md:ml-9 px-6 rounded-2xl py-1"type="button"
+            id="mediumBlue-button"
+            className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+            type="button"
           >
             Sign in
           </button>
