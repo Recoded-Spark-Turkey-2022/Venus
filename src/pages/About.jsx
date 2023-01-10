@@ -17,7 +17,9 @@ const About = () => {
       <OurTeamSection />
       <ReferenceSection/>
       <Container>
+        <div className='text-[#025594]'>
         <Partners/>
+        </div>
         <Share />
       </Container>
     </>

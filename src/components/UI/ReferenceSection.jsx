@@ -4,7 +4,7 @@ import Reference from '../Reference'
 
 export default function StoriesSection() {
   return (
-    <div className='bg-[#4699C2] py-[67px]'>
+    <div className='bg-[#4699C2] py-[67px] text-[#ffffff]'>
         <Container>
             <Reference/>
         </Container>
