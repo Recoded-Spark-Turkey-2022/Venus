@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from '../assets/signup-vector.svg'
 import './Signup-in.css'
 
@@ -29,9 +30,11 @@ const Signup = () => {
                  </div>
                  <div className='Container3 '>
                     <h1 className='Already ' >Already a member?</h1>
+                    <Link to='/signin'>
                     <button className='LastBtm' type='button'>
                         Sign in
                     </button>
+                    </Link>
                  </div>
              </div>
 
