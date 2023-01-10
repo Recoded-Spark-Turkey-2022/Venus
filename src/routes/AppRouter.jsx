@@ -5,6 +5,8 @@ import Home from '../pages/Home';
 import Footer from '../components/footer/Footer';
 import Signup from '../components/Signup';
 import Signin from '../components/Signin';
+import Form from '../components/Form';
+
 
 
 
@@ -16,6 +18,7 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Signin" element={<Signin />} />
+        <Route path="/Form" element={<Form />} />
       </Routes>
       <Footer />
 

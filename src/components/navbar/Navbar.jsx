@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-
+<Link to='/signin'>
           <button
             className="bg-mediumBlue btn-default transition-colors
      hover:bg-white ease-in duration-300 
@@ -62,6 +62,7 @@ border-mediumBlue
           >
             Sign in
           </button>
+          </Link>
         </ul>
       </div>
     </nav>
