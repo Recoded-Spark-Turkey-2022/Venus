@@ -22,7 +22,7 @@ export default function OurTeamSection() {
                 <TeamMembersNavigator setter={setShowByCountry} output={showByCountry}/>
                 <div className='grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 gap-x-[50px] gap-y-[93px] max-w-[768px] content-center'>
                     {itemsToDisplay.map(teamMember =>
-         <TeamMemberCard key={teamMember.id} name={teamMember.name} title={teamMember.jobTitle}/>)}
+         <TeamMemberCard key={teamMember.id} name={teamMember.name} title={teamMember.jobTitle} href={teamMember.linkedin}/>)}
                 </div>
                 
             </div>

@@ -1,13 +1,9 @@
 const TeamMembers = [
-    { id: 1, name: "Epimetheus Wilson",jobTitle: "Team Leader", country: "USA" },
-    { id: 2, name: "Carl Niamh",jobTitle: "Care assistant", country: "Lebanon" },
-    { id: 3, name: "Levi Casilda",jobTitle: "Director, Office of Emergency Programmes", country: "" },
-    { id: 4, name: "Georgette Androcles",jobTitle: "Director, Health, Programme Group", country: "USA" },
-    { id: 5, name: "Louane Wyot",jobTitle: "Director, Supply Division", country: "Lebanon" },
-    { id: 6, name: "Adam Phanouel",jobTitle: "Director, Public Partnerships Division", country: "USA" },
-    { id: 7, name: "Ninniau Calliope",jobTitle: "Director of Evaluation", country: "Turkey" },
-    { id: 8, name: "Sanjay Dana",jobTitle: "Associate Director, Gender Equality, Programme Group", country: "Turkey" },
-    { id: 9, name: "Gobán Muirchertach",jobTitle: "General Counsel and Director of the Legal Office", country: "Turkey" },
+    { id: 1, name: "Abdullah Naifeh",jobTitle: "Web Developer", country: "USA", linkedin : "https://www.linkedin.com/in/abdullah-naifeh-9a82a1149/"},
+    { id: 2, name: "Dilara Çetinberk",jobTitle: "Web Developer", country: "Turkey", linkedin : "https://www.linkedin.com/in/dilaracetinberk" },
+    { id: 3, name: "Mohammad Saeed Alsaiyed",jobTitle: "Web Developer", country: "Lebanon", linkedin : "https://www.linkedin.com/in/mohammad-saeed-alsaiyed/" },
+    { id: 4, name: "Halil Ibrahim",jobTitle: "Web Developer", country: "Turkey", linkedin : "https://www.linkedin.com/in/halil-ibrahim-celik/" },
+    { id: 5, name: "Tasnim Al Hallak",jobTitle: "Web Developer", country: "Lebanon", linkedin : "https://github.com/tasnimalhallak" }
   ];
   
   export default TeamMembers;
