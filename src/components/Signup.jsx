@@ -7,6 +7,7 @@ import './Signup-in.css'
 
 
 
+
 const Signup = () => {
     return (
         <section className=' w-screen h-screen relative '>
