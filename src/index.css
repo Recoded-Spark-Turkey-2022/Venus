@@ -117,3 +117,20 @@ nav{
 .blog-div textarea {
   height: 150px;
 }
+
+.image-div{
+width: 400px;
+}
+
+.image-div input{
+  border: none;
+  border-radius: 0px;
+
+}
+
+@media screen and  (max-width:768px) {
+  .image-div{
+    width: 200px;
+    }
+
+}
