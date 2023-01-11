@@ -1,12 +1,10 @@
 import React from 'react'
-// Import Swiper React components
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-
-import {StarIcon} from '@heroicons/react/24/outline'
+import { StarIcon } from '@heroicons/react/24/outline'
 import AboutImg from '../../assets/about-image.svg'
 import Button from '../UI/Button'
-
 
 import 'swiper/swiper-bundle.css';
 import "./about.css";
