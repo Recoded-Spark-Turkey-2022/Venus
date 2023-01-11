@@ -16,7 +16,7 @@ const Home = () => {
      </Container>
            <ContainAbout />
      <Container>
-      <Reference />
+      <Reference/>
       <Partners/>
      </Container>
      <StoriesSection/>
