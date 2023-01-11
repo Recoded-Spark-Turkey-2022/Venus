@@ -4,8 +4,7 @@ import userIcon from "../assets/man.png"
 
 const storyDetails = {
   mainImage: imageIcon,
-  description:
-    'How I learned Turkish quickly and what are the best places to learn.',
+  description:'How I learned Turkish quickly and what are the best places to learn.',
   user: {
     userImage: userIcon,
     userName: 'Ahmad Faysal',
