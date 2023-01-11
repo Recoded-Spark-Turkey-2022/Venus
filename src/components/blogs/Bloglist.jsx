@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-boolean-value */
 import React, { useEffect, useState, useRef } from 'react';
-import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper';
+import { Pagination, Navigation, Autoplay, EffectFlip } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
@@ -160,12 +160,11 @@ const Bloglist = () => {
       </div>
       <div className="w-full blogs-swipper">
         <Swiper
-          fadeEffect="fade"
-          effect="fade"
-          modules={[Pagination, Navigation, Autoplay, EffectFade]}
+          effect="flip"
+          modules={[Pagination, Navigation, Autoplay, EffectFlip]}
           className="mySwiper cursor-pointer  pb-16 mb-5"
           autoplay={{
-            delay: 1000,
+            delay: 5000,
             disableOnInteraction: true,
           }}
           pagination={{ clickable: true, dynamicBullets: true }}
