@@ -11,7 +11,7 @@ const WriteBlog=()=> {
     return(
         <div id='' className=" mt-10 bg-inlightBlue">
         <Container>
-         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20">
+         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12 md:p-20 pb-5">
           <div className="grid justify-items-center md:justify-items-start">
            <h1 className="text-darkBlue text-center md:text-left text-5xl font-bold mb-5">
              Write a Blog
