@@ -42,9 +42,7 @@ const Footer = () => {
           <div className="flex justify-between items-center mr-3">
             <Link to='/signup'>
             <button
-              className="text-[#FFFFFF] rounded-full bg-mediumBlue px-8 btn-default transition-colors
-     hover:bg-white ease-in duration-300 border border-mediumBlue  whitespace-nowrap
-     hover:border-mediumBlue hover:text-mediumBlue"
+              id='mediumBlue-button' className="px-8 whitespace-nowrap rounded-full"
               type="button"
             >
               Sign up
