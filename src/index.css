@@ -113,9 +113,12 @@ nav{
 
 .input-div input {
   height: 40px;
+  border-radius: 12px;
+  
 }
 .blog-div textarea {
   height: 150px;
+  border-radius: 12px;
 }
 
 .image-div{
