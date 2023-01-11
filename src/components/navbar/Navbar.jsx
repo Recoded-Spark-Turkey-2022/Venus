@@ -7,7 +7,7 @@ const Navbar = () => {
   const Links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'BLog', link: '/blogs' },
+    { name: 'Blog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
   const [open, setOpen] = useState(false);
@@ -50,14 +50,8 @@ const Navbar = () => {
           ))}
 <Link to='/signin '>
           <button
-            className="bg-mediumBlue btn-default transition-colors
-     hover:bg-white ease-in duration-300 
-     hover:text-mediumBlue
-border
-border-mediumBlue
-     hover:border-mediumBlue  
-     ml-0    md:ml-9
-     text-white font-bold px-6 rounded-2xl  py-1"
+            id="mediumBlue-button"
+            className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
             type="button"
           >
             Sign in
