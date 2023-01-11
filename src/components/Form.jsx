@@ -1,7 +1,9 @@
-import React from "react";
+
+
 import './form.css'
 import man from '../assets/man.png'
 import img from '../assets/signup-vector.svg'
+
 
 
 
@@ -19,11 +21,52 @@ const Form = () => {
            <button className='cam-btn' type='button'>
             <ion-icon size='large' name="camera-outline" />
                    </button>
-                   <h1 className="name">tasnim al hallak</h1>
+                   <h1 className="name">Hi I am Here</h1>
                    
            </div> 
-           <div className="Container2">awe</div>
-           <div className="Container4">awe</div>
+           <div className="Container2">
+            <form>
+                <div className='name-sur'>
+                <div className='name-div'><h1>Name:</h1>
+                <input
+                type='text'
+                name="name"
+                className="nameform"
+                />
+                </div>
+                <div className='sur-div'>
+                <h1>Surname:</h1>
+                 <input
+                type='text'
+                name="surname"
+                className="surname"
+                /></div>
+                </div>
+                <div className='Bio'>
+                    <div className='Bio-div'>
+                <h1>Biography:</h1>
+                 <input
+                type='text'
+                name="Biography"
+                className="Biography"
+                />
+                </div>
+                <div className='Loc-div'>
+                <h1>Location:</h1>
+                 <input
+                type='text'
+                name="Location"
+                className="Location"
+                />
+                </div>
+                </div>
+            </form>
+           </div>
+           <div className="Container4">
+            <button type='submit' className='save-btn'>SAVE</button>
+            <button type='submit' className='cancel-btn'>CANCEL</button>
+            
+           </div>
           </div>
           
 

@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-<Link to='/signin'>
+<Link to='/signin '>
           <button
             className="bg-mediumBlue btn-default transition-colors
      hover:bg-white ease-in duration-300 
