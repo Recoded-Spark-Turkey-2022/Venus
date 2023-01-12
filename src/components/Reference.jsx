@@ -20,7 +20,7 @@ function Reference() {
       className="flex flex-col md:flex-row justify-around items-center py-12 "
     >
       <div className="flex justify-center items-center ">
-        <img className="w-2/3 md:w-full" src={worldMap} alt="World Map" />
+        <img className="w-2/3 md:w-full" src={worldMap} alt="World Map " />
       </div>
       <div className="flex justify-end w-full md:w-1/2 ">
         <Swiper
@@ -33,36 +33,33 @@ function Reference() {
             dynamicBullets: true,
           }}
           modules={[Pagination, Autoplay]}
-          className="mySwiper"
+          className="mySwiper pt-[100px]"
         >
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              RefuBook has been invaluable for me as a Syrian refugee, helping me navigate my new surroundings and build a better future.
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">Ghaith</p>
+              <p className="text-[#b7b7b7] text-sm">Syria, member at Refubook</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              As a Eritrean refugee, RefuBook has been an essential resource for finding information and resources for my new home.
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">Dellina</p>
+              <p className="text-[#b7b7b7] text-sm">Eritrea, member at Refubook</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              The community on RefuBook has been a lifesaver for me as a Venezuelan refugee, connecting me with others and providing support.
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">Jose</p>
+              <p className="text-[#b7b7b7] text-sm">Venezuela, member at Refubook</p>
             </div>
           </SwiperSlide>
         </Swiper>

@@ -27,9 +27,7 @@ const HeroSection = () => {
               Express Freely
             </h2>
             <p className="text  w-full  md:max-w-[25rem]">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              laboriosam iure dolores illo soluta cum aliquid minima quos culpa
-              officia?
+            Connect and support refugees worldwide with Refubook. A community where individuals can find belonging, share experiences, and learn about different cultures and countries. Join us in making a difference in the lives of refugees today.
             </p>
             <Button>Sign-up</Button>
           </div>
