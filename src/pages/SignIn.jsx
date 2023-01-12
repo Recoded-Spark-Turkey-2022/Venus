@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
@@ -11,6 +11,7 @@ import {
   googleProvider,
 } from '../firebase/firebase.config';
 import {
+  selectUserLoggedIn,
   selectUserName,
   setUserLoggedIn,
   setUserLoggedOut,
@@ -21,18 +22,18 @@ import {
 
 const SignIn = () => {
   const dispatch = useDispatch();
+  const userloggedIn = useSelector(selectUserLoggedIn);
   const userName = useSelector(selectUserName);
-  //  const userEmail = useSelector(selectUserEmail);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+
   const navigate = useNavigate();
 
   const onGoogleAuth = async () => {
     try {
       const result = await signInWithPopup(authentication, googleProvider);
       const { user } = result;
-      if (user.uid) {
-        setLoggedIn(true);
-      }
+      // if (user.uid) {
+
+      // }
 
       const docRef = doc(db, 'users', user.uid);
       const docSnap = await getDoc(docRef);
@@ -55,11 +56,11 @@ const SignIn = () => {
   const handleSignOut = async () => {
     try {
       await authentication.signOut();
-      setLoggedIn(false);
+      // setLoggedIn(false);
 
       dispatch(
         setUserLoggedIn({
-          isLoggedIn: false,
+          userloggedIn: false,
         })
       );
 
@@ -83,9 +84,9 @@ const SignIn = () => {
           timeStamp: serverTimestamp(),
         });
       } else {
-        alert('you already signed in');
+        console.log('you already signed in');
       }
-
+      navigate(-1);
       console.log(user);
     } catch (error) {
       console.log(error);
@@ -94,8 +95,6 @@ const SignIn = () => {
   useEffect(() => {
     const unsub = onAuthStateChanged(authentication, (user) => {
       if (user) {
-        setLoggedIn(true);
-
         dispatch(
           setUserLoggedIn({
             userName: user.displayName,
@@ -155,7 +154,7 @@ const SignIn = () => {
         {' '}
         Facebook{' '}
       </button>
-      {isLoggedIn && (
+      {userloggedIn && (
         <button type="button" onClick={handleSignOut}>
           Sign Out{' '}
         </button>

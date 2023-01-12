@@ -1,12 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { onAuthStateChanged } from 'firebase/auth';
 import { serverTimestamp } from 'firebase/firestore';
+import { authentication } from '../../firebase/firebase.config';
 
 const initialState = {
   userName: null,
   userEmail: null,
   timeStamp: null,
   isLoggedIn: null,
+  userStatus: false,
 };
+
+export const checkUserStatus = createAsyncThunk(
+  'user/checkUserStatus',
+  async () => {
+    try {
+      onAuthStateChanged(authentication, (user) => {
+        if (user) {
+          console.log(user, 'redux-toolkit');
+          return true;
+        }
+        return false;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const userSlice = createSlice({
   name: 'user',
@@ -24,6 +44,18 @@ const userSlice = createSlice({
       state.userEmail = null;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(checkUserStatus.pending, (state) => {
+      state.userStatus = false;
+    });
+    builder.addCase(checkUserStatus.fulfilled, (state, action) => {
+      console.log(action.payload);
+      state.userStatus = action.payload;
+    });
+    builder.addCase(checkUserStatus.rejected, (state) => {
+      state.userStatus = false;
+    });
+  },
 });
 
 export const { setUserLoggedIn, setUserLoggedOut } = userSlice.actions;
@@ -32,4 +64,5 @@ export const { setUserLoggedIn, setUserLoggedOut } = userSlice.actions;
 export const selectUserName = (state) => state.user.userName;
 export const selectUserEmail = (state) => state.user.userEmail;
 export const selectUserLoggedIn = (state) => state.user.isLoggedIn;
+export const selectUserStatus = (state) => state.user.userStatus;
 export default userSlice.reducer;
