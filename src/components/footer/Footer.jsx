@@ -4,7 +4,7 @@ import Logo from '../../assets/Logo.svg';
 
 const Footer = () => {
   return (
-    <footer className=" flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5">
+    <footer className=" relative z-10 flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5">
       <div className="flex justify-center items-center  mt-5 mb-5 md:mt-1 md:mb-1 mx-auto flex-shrink-0">
         <a
           href="#navbar"
@@ -40,12 +40,15 @@ const Footer = () => {
       <div className="mx-auto mt-5 sm:mt-1 flex lg:justify-center">
         <div className="flex justify-between flex-row">
           <div className="flex justify-between items-center mr-3">
-            <button
-              id='mediumBlue-button' className="px-8 whitespace-nowrap rounded-full"
-              type="button"
-            >
-              Sign up
-            </button>
+            <Link to="/signup">
+              <button
+                id="mediumBlue-button"
+                className="px-8 whitespace-nowrap rounded-full"
+                type="button"
+              >
+                Sign up
+              </button>
+            </Link>
           </div>
           <div className="">
             <select className="rounded-full border border-solid outline-none text-darkGrey font-medium border-mediumBlue px-8">

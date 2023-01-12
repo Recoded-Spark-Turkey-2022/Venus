@@ -7,10 +7,10 @@ const Navbar = () => {
   const Links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'BLog', link: '/blogs' },
+    { name: 'Blog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <nav className="shadow-md w-full fixed z-1000 top-0 left-0">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
@@ -40,16 +40,19 @@ const Navbar = () => {
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               <Link
                 to={link.link}
-                className="text-gray-800 hover:text-cyan-600 duration-500"
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
+                "
+          
               >
                 {link.name}
               </Link>
             </li>
           ))}
-
-          <Link to='/signin'>
+<Link to='/signin '>
           <button
-            id='mediumBlue-button' className="ml-0 md:ml-9 px-6 rounded-2xl py-1"type="button"
+            id="mediumBlue-button"
+            className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+            type="button"
           >
             Sign in
           </button>

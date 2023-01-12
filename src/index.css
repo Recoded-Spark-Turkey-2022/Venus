@@ -45,14 +45,38 @@ code {
 
 }
 
+
+
+
+.blogs-swipper .swiper{
+  padding:30px 0 !important;
+}
+.blogs-swipper .swiper .blogItem{
+  width: 80%;
+  height: auto !important;
+}
+.blogs-swipper .swiper .swiper-slide{
+  /* align-self: stretch !important */
+}
+@media screen and (max-width: 991px){
+  .blogs-swipper .swiper .blogItem{
+    width: 100%;
+  }
+}
+
 @media screen and  (max-width:768px) {
   .image-hero{
+
     transform: rotate(-90deg);
    top:300px;
   left: -20px;
   width: 100%;
   overflow: hidden;
   
+  }
+
+  .blogs-swipper .swiper{
+    padding:0px !important;
   }
 
 }
@@ -76,4 +100,17 @@ nav{
   background-color: #FFFFFF;
   color: #4699C1;
   
+}
+.LastBtm{
+  background-color: white !important;
+  color: #70cdd6;
+  font-weight: bold;
+  font-size: x-large;
+  border-style: none;
+  border-radius: 9999px;
+  padding-left: 12px;
+ 
+}
+.LastBtm:hover{
+  color: #287a81;
 }
