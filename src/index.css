@@ -121,19 +121,13 @@ nav{
   border-radius: 12px;
 }
 
-.image-div{
-width: 400px;
-}
+
 
 .image-div input{
   border: none;
-  border-radius: 0px;
+  border-radius: 12px;
 
 }
 
-@media screen and  (max-width:768px) {
-  .image-div{
-    width: 200px;
-    }
 
-}
+  

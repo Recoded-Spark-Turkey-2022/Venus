@@ -22,12 +22,14 @@ const WriteBlogC=()=>{
           { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
           <label className="" htmlFor="image">Choose a banner image:</label>
           <input 
+          className="bg-white px-3 py-2.5"
           type="file" 
           id="image" 
           name="image" 
           accept="image/png, image/jpeg" 
           required
           onChange={handleChangeBanner}/>
+          
           </div>
           <div className='input-div flex flex-col justify-center md:justify-start mt-5 gap-2 my-2 '>
           { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
@@ -38,7 +40,7 @@ const WriteBlogC=()=>{
             placeholder='Write Title' 
             required 
             onChange={(e)=> setTitle(e.target.value)} 
-            className="border-1 p-2 rounded-2xl border border-darkGrey"/>
+            className="border-1 p-2 border border-darkGrey"/>
             </div>
             <div className='blog-div flex flex-col justify-center md:justify-start mt-5 gap-2 my-2'>
             { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
