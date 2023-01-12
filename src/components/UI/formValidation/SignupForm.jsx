@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 
-const SignUp= ()=> {
+const SignUpForm= ()=> {
 
     const { register, handleSubmit } = useForm();
 
@@ -11,7 +11,7 @@ const SignUp= ()=> {
 
     return(
        
-         <form className="flex flex-col gap-4 mt-20  items-center justify-center py-12 px-4  " onSubmit={handleSubmit(onSubmit)}>
+         <form className="flex flex-col gap-4 items-center justify-center py-5 px-4" onSubmit={handleSubmit(onSubmit)}>
            <input
            type='text' 
            placeholder="Name"
@@ -31,4 +31,4 @@ const SignUp= ()=> {
 
     )
 }
-export default SignUp;
+export default SignUpForm;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SignUpForm from '../UI/formValidation/SignupForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
 
@@ -14,6 +15,7 @@ const Signup = () => {
         />
         <div className="ContainerBox">
           <h1 className="Title">SIGN UP WITH</h1>
+          <SignUpForm/>
           <div className="ContainerBtn">
             <button className="GoogleBtn" type="button">
               <ion-icon size="large" name="logo-google" />
