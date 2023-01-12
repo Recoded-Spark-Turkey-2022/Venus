@@ -23,11 +23,7 @@ const AppRouter = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/form" element={<Form />} />
-=======
+
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
@@ -42,7 +38,7 @@ const AppRouter = () => {
 
         <Route path="/about" element={<About />} />
 
->>>>>>> 51a66dd00e453df8048f68a9c3d2e05cb05008db
+
       </Routes>
       <Footer />
 
