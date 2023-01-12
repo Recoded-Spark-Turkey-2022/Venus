@@ -94,7 +94,7 @@
     margin-top: 17%;
    }
    .Container3{
-    margin-top: 20%;
+    margin-top:30px;
    }
 
 }
@@ -106,7 +106,7 @@
      margin-top: 20%;
     }
     .Container3{
-     margin-top: 24%;
+     margin-top: 30px;
     }
  
  }
@@ -118,7 +118,7 @@
      margin-top: 25%;
     }
     .Container3{
-     margin-top: 28%;
+     margin-top: 30px;
     }
  
  }
@@ -130,7 +130,11 @@
      margin-top: 29%;
     }
     .Container3{
-     margin-top: 34%;
+     /* margin-top: 34%; */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
     }
  
  }
@@ -156,7 +160,7 @@
     .Container3{
      margin-top: 70%;
      flex-direction: column;
-     align-items: center;
+    
     }
     .Already{
         margin-bottom: 6%;
@@ -177,4 +181,23 @@
         font-size: large;
     }
  
+ }
+ @media screen and  (max-width:	640px){
+   
+    .Container3{
+        margin-top: 100%;
+     
+   
+       }
+       .Already{
+        white-space: nowrap
+       }
+ }
+
+ @media screen and (min-width:1699px) {
+    .Container3{
+        margin-top: 40px;
+     
+   
+       }
  }
