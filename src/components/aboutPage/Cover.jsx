@@ -7,7 +7,8 @@ function Cover(){
     return (
 
         <div className='flex justify-center'>
-            <img src={AboutUs} alt="/" />
+
+            <img src={AboutUs} alt="/" className='w-full h-1/2'/>
 
         </div>
     );
