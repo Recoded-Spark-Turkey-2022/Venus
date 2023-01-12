@@ -29,7 +29,7 @@ const Signin = () => {
                   
                  </div>
                  <div className='Container3 '>
-                    <h1 className='Already ' >Want to be a member?</h1>
+                    <h1 className='Already' >Want to be a member?</h1>
                     <Link to='/signup'>
                     <button className='LastBtm' type='button'>
                         Sign up
