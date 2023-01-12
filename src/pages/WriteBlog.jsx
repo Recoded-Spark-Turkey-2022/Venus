@@ -11,12 +11,12 @@ const WriteBlog=()=> {
     return(
         <div className=" mt-10 bg-inlightBlue">
         <Container>
-         <div id='writeB-div' className="grid grid-cols-1 md:grid-cols-2  gap-6 pt-12  pb-5">
-          <div className="grid justify-items-center md:justify-items-start">
-           <h1 className="text-darkBlue text-center md:text-left text-5xl font-bold mb-5">
+         <div  className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12 pb-5 w-full justify-items-center md:justify-items-start">
+          <div className="grid min-w-full">
+           <h1 className="text-darkBlue text-center md:text-left text-5xl  mt-0 md:mt-20 font-bold w-full">
              Write a Blog
            </h1>
-          <div className="grid justify-items-start md:justify-items-center w-full ">
+          <div className="component-write w-full">
           <WriteBlogC/>
           </div>
           </div>

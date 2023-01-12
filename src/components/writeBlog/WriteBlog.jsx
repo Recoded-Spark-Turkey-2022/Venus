@@ -17,8 +17,8 @@ const WriteBlogC=()=>{
 
     return(
         <div className='w-full'>
-        <form name="contact" className='flex flex-col justify-center md:justify-start mt-5 ' onSubmit={submitBlog}>
-        <div className="image-div flex flex-col justify-center md:justify-start mt-5 gap-2 my-2 text-darkGrey">
+        <form name="contact" className='flex flex-col justify-center md:justify-start ' onSubmit={submitBlog}>
+        <div className="image-div flex flex-col  gap-2 my-2 text-darkGrey">
           { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
           <label className="" htmlFor="image">Choose a banner image:</label>
           <input 
@@ -31,7 +31,7 @@ const WriteBlogC=()=>{
           onChange={handleChangeBanner}/>
           
           </div>
-          <div className='input-div flex flex-col justify-center md:justify-start mt-5 gap-2 my-2 '>
+          <div className='input-div flex flex-col  mt-5 gap-2 my-2 '>
           { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
             <label className="text-darkGrey">
                 Title:
@@ -40,9 +40,9 @@ const WriteBlogC=()=>{
             placeholder='Write Title' 
             required 
             onChange={(e)=> setTitle(e.target.value)} 
-            className="border-1 p-2 border border-darkGrey"/>
+            className="border-1 border border-darkGrey"/>
             </div>
-            <div className='blog-div flex flex-col justify-center md:justify-start mt-5 gap-2 my-2'>
+            <div className='blog-div flex flex-col  mt-5 gap-2 my-2'>
             { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
             <label className="text-darkGrey">
                 Blog:
@@ -51,9 +51,11 @@ const WriteBlogC=()=>{
             placeholder='Write Blog' 
             required 
             onChange={(e)=> setBlogText(e.target.value)}
-            className='p-2 rounded-full border border-1 border-darkGrey'/>
+            className='rounded-full border border-1 border-darkGrey'/>
             </div>
+            <div className='flex justify-center md:justify-start items-center '>
             <button onClick={submitBlog} id='mediumBlue-button' className='w-32 rounded-full mt-2 whitespace-nowrap py-2' type='submit'>Submit Blog</button>
+            </div>
             </form>
             </div>
     )
