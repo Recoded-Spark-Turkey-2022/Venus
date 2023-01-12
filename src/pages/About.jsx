@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Cover from '../components/aboutPage/Cover';
 import Share from '../components/aboutPage/Share';
@@ -27,3 +28,4 @@ const About = () => {
 };
 
 export default About;
+

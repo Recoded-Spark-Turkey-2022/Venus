@@ -40,12 +40,14 @@ const Footer = () => {
       <div className="mx-auto mt-5 sm:mt-1 flex lg:justify-center">
         <div className="flex justify-between flex-row">
           <div className="flex justify-between items-center mr-3">
+            <Link to='/signup'>
             <button
               id='mediumBlue-button' className="px-8 whitespace-nowrap rounded-full"
               type="button"
             >
               Sign up
             </button>
+            </Link>
           </div>
           <div className="">
             <select className="rounded-full border border-solid outline-none text-darkGrey font-medium border-mediumBlue px-8">
