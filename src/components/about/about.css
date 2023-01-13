@@ -1,13 +1,18 @@
 
-.swiper {
+.swipperContainer .swipper {
+    height: 300px !important;
+   
+}
+
+.about-swiper .swiper {
     width: 100%;
-    height: 100%;
+    height: 1000%;
   }
   
-  .swiper-slide {
+  .about-swiper .swiper-slide{
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #E7fbff !important;
   
     /* Center slide text vertically */
     display: -webkit-box;
@@ -22,18 +27,12 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    height: 225px;
   }
   
-  .swiper-slide img {
+  .about-swiper .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .swiper-wrapper{
-   height: 240px;
-  }
-  .reference-div{
-    font-family: 'Roboto';
   }
