@@ -4,10 +4,10 @@ import img from '../../assets/signup-vector.svg';
 
 const Form = () => {
   return (
-    <section className=" w-screen h-screen relative ">
+    <section className="h-[130vh] section-form overflow-hidden w-screen md:h-screen relative ">
       <img
         src={img}
-        className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[90vh] "
+        className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[110%] "
         alt="circle-logo"
       />
       <div className="BigContainer">

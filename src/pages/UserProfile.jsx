@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, Pagination} from "swiper";
 import { useState } from 'react';
-import Partners from '../components/Partners/Partners'
+import Form from '../components/form/Form'
 import Container from "../components/UI/Container";
 import BlogsCard from "../components/userProfile/BlogsCard";
 import Avatar from '../components/userProfile/Avatar';
@@ -17,7 +17,7 @@ const UserProfile = () => {
     setOpen(!open);
   }
    if (open) {
-    return <Partners isOpen={handleOpen} />; 
+    return <Form isOpen={handleOpen} />; 
   } 
 
    
