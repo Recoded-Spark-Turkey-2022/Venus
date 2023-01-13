@@ -1,16 +1,43 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/Logo.svg';
+import {
+  selectUserLoggedIn,
+  setUserLoggedIn,
+  setUserLoggedOut,
+} from '../../features/userSlice/userSlice';
+import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
+  const isLoggedIn = useSelector(selectUserLoggedIn);
+  const dispatch = useDispatch();
   const Links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
     { name: 'Blog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
-  const [open, setOpen] = useState(false);
+
+  const [open, setOpen] = useState(true);
+  const handleSignOut = async () => {
+    try {
+      await authentication.signOut();
+
+      dispatch(
+        setUserLoggedIn({
+          isLoggedIn: false,
+        })
+      );
+
+      dispatch(setUserLoggedOut());
+      localStorage.setItem('token', '');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <nav className="shadow-md w-full fixed z-1000 top-0 left-0">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
@@ -56,7 +83,18 @@ const Navbar = () => {
           >
             Sign in
           </button>
-          </Link>
+           </Link>
+          {isLoggedIn && (
+            <button
+              id="mediumBlue-button"
+              className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+              type="button"
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </button>
+          )}
+
         </ul>
       </div>
     </nav>
