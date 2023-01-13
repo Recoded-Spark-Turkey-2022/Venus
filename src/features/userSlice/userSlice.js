@@ -7,7 +7,7 @@ const initialState = {
   userName: null,
   userEmail: null,
   timeStamp: null,
-  isLoggedIn: null,
+  isLoggedIn: localStorage.getItem('token') ? true : null,
   userStatus: false,
 };
 
@@ -49,7 +49,6 @@ const userSlice = createSlice({
       state.userStatus = false;
     });
     builder.addCase(checkUserStatus.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.userStatus = action.payload;
     });
     builder.addCase(checkUserStatus.rejected, (state) => {

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { onAuthStateChanged, signInWithPopup } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,6 @@ const SignIn = () => {
   const handleSignOut = async () => {
     try {
       await authentication.signOut();
-      // setLoggedIn(false);
 
       dispatch(
         setUserLoggedIn({
@@ -92,52 +91,6 @@ const SignIn = () => {
       console.log(error);
     }
   };
-  useEffect(() => {
-    const unsub = onAuthStateChanged(authentication, (user) => {
-      if (user) {
-        dispatch(
-          setUserLoggedIn({
-            userName: user.displayName,
-            userEmail: user.email,
-            isLoggedIn: true,
-          })
-        );
-        const userInfo = {
-          name: user.displayName,
-          email: user.email,
-        };
-
-        localStorage.setItem('token', JSON.stringify(user.uid));
-        localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      }
-      return () => {
-        unsub();
-      };
-    });
-  }, []);
-  // const onGoogleAuth = async () => {
-  //   try {
-  //     const provider = new GoogleAuthProvider();
-
-  //     const result = await signInWithPopup(auth, provider);
-  //     const { user } = result;
-  //     console.log(user);
-  //     /* Checking if we have a reference to that user */
-  //     const docRef = doc(db, 'users', user.uid);
-  //     const docSnap = await getDoc(docRef);
-  //     if (!docSnap.exists()) {
-  //       await setDoc(docRef, {
-  //         name: user.displayName,
-  //         email: user.email,
-  //         timeStamp: serverTimestamp(),
-  //       });
-  //     } else {
-  //       alert('you already signed in');
-  //     }
-  //   } catch (error) {
-  //     console.error(error.message, '22');
-  //   }
-  // };
 
   return (
     <div className="mt-20 mx-auto w-20">
