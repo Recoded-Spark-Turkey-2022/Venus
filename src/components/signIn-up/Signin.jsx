@@ -6,7 +6,7 @@ import './Signup-in.css';
 
 const Signin = () => {
   return (
-    <section className="h-[110vh]  mb-300px w-screen md:h-screen   relative  flex justify-center items-center">
+    <section className="h-[110vh]  mb-300px w-screen md:h-screen  relative  flex justify-center items-center">
       <div>
         <img
           src={img}

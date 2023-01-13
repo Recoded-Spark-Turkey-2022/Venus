@@ -25,7 +25,7 @@ const Signup = () => {
               <ion-icon size="large" className="" name="logo-facebook" />
             </button>
           </div>
-          <div className="Container3 ">
+          <div className="Container3">
             <h1 className="Already ">Already a member?</h1>
             <Link to="/signin">
               <button className="LastBtm" type="button">
