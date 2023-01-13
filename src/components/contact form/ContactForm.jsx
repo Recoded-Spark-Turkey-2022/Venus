@@ -43,16 +43,16 @@ function ContactForm(){
                 </label>
                <textarea value={message} onChange={(e)=>setMessage(e.target.value)} required id='message' className="border-1 p-2 rounded-md border border-darkGrey bg-slate-50 h-40" placeholder="Message"/>
                 <div className='flex justify-center md:justify-start items-center'>
-                <button type='submit' id='mediumBlue-button' className="w-32 rounded-full mt-2 whitespace-nowrap py-2">
+                <button type='submit' id='mediumBlue-button' className="w-32 rounded-full mt-5 whitespace-nowrap py-2">
                     Send
                 </button>
                 </div>
 
             </form>
             <div className='flex justify-center md:justify-start'>
-                <button type="button" className="mt-8"><img src={Twitter} alt="Twitter-logo" /></button>
-                <button type="button" className="mt-8 pl-4"><img src={instagram} alt="Instagram-logo" /></button>
-                <button type="button" className="mt-8 pl-4"><img src={facebook} alt="Facebook-logo" /></button>
+                <button type="button" className="mt-5"><img src={Twitter} alt="Twitter-logo" /></button>
+                <button type="button" className="mt-5 pl-4"><img src={instagram} alt="Instagram-logo" /></button>
+                <button type="button" className="mt-5 pl-4"><img src={facebook} alt="Facebook-logo" /></button>
             </div>
         </div>
     )
