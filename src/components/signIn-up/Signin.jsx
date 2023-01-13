@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SignInForm from '../SigninForm/SigninForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
 
 const Signin = () => {
   return (
-    <section className="  h-[110vh]  mb-300px w-screen md:h-screen   relative  flex justify-center items-center">
+    <section className="h-[110vh]  mb-300px w-screen md:h-screen  relative  flex justify-center items-center">
       <div>
         <img
           src={img}
@@ -13,7 +14,8 @@ const Signin = () => {
           alt="circle-logo"
         />
         <div className="ContainerBox">
-          <h1 className="Title">SIGN IN WITH</h1>
+        <h1 className="Title">SIGN IN WITH</h1>
+          <SignInForm/>
           <div className="ContainerBtn">
             <button className="GoogleBtn" type="button">
               <ion-icon size="large" name="logo-google" />

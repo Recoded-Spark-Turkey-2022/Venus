@@ -8,8 +8,9 @@
     right: 25%;
     top: 25%;
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
+
 .Title{
     color: #4699C2;
     text-align: center;
@@ -21,7 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 12%;
+    margin-top: 3%;
     
     
 }
@@ -29,7 +30,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 15%;
+    
     
 
 }
@@ -88,37 +89,37 @@
 
 @media screen and  (max-width:1350px){
    .Title{
-    margin-top: 7%;
+    margin-top: 5%;
    }
    .ContainerBtn{
-    margin-top: 17%;
+    margin-top: 1%;
    }
    .Container3{
-    margin-top:30px;
+    margin-top:3px;
    }
 
 }
 @media screen and  (max-width:1150px){
     .Title{
-     margin-top: 9%;
+     margin-top: 3%;
     }
     .ContainerBtn{
-     margin-top: 20%;
+     margin-top: 2%;
     }
     .Container3{
-     margin-top: 30px;
+     margin-top: 2px;
     }
  
  }
  @media screen and  (max-width:1000px){
     .Title{
-     margin-top: 12%;
+     margin-top: 8%;
     }
     .ContainerBtn{
-     margin-top: 25%;
+     margin-top: 4%;
     }
     .Container3{
-     margin-top: 30px;
+     margin-top: 5%;
     }
  
  }
@@ -127,10 +128,10 @@
      margin-top: 14%;
     }
     .ContainerBtn{
-     margin-top: 29%;
+     margin-top: 8%;
     }
     .Container3{
-     /* margin-top: 34%; */
+     margin-top: 20%;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -140,10 +141,10 @@
  }
  @media screen and  (max-width:	640px){
     .Title{
-     margin-top: 17%;
+     margin-top: 10%;
     }
     .ContainerBtn{
-     margin-top: 30%;
+     margin-top: 3%;
      flex-direction: column;
      align-items: center;
      
@@ -152,13 +153,13 @@
         width: 65%;
     }
     .GoogleBtn{
-        margin-bottom: 10%;
+        margin-bottom: 6%;
     }
     .or{
-        margin-bottom: 10%;
+        margin-bottom: 6%;
     }
     .Container3{
-     margin-top: 70%;
+     margin-top: 60%;
      flex-direction: column;
     
     }
@@ -185,7 +186,8 @@
  @media screen and  (max-width:	640px){
    
     .Container3{
-        margin-top: 100%;
+        margin-top: 60%;
+        padding-bottom: 5%;
      
    
        }
@@ -196,7 +198,7 @@
 
  @media screen and (min-width:1699px) {
     .Container3{
-        margin-top: 40px;
+        margin-top: 2px;
      
    
        }

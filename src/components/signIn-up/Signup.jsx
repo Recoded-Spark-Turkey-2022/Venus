@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SignUpForm from '../SignupForm/SignupForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
 
@@ -14,6 +15,7 @@ const Signup = () => {
         />
         <div className="ContainerBox">
           <h1 className="Title">SIGN UP WITH</h1>
+          <SignUpForm/>
           <div className="ContainerBtn">
             <button className="GoogleBtn" type="button">
               <ion-icon size="large" name="logo-google" />
@@ -23,7 +25,7 @@ const Signup = () => {
               <ion-icon size="large" className="" name="logo-facebook" />
             </button>
           </div>
-          <div className="Container3 ">
+          <div className="Container3">
             <h1 className="Already ">Already a member?</h1>
             <Link to="/signin">
               <button className="LastBtm" type="button">

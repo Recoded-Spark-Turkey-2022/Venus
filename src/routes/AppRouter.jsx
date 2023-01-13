@@ -5,12 +5,10 @@ import Home from '../pages/Home';
 import Footer from '../components/footer/Footer';
 import Signup from '../components/signIn-up/Signup';
 import Signin from '../components/signIn-up/Signin';
-
 import Blogs from '../pages/Blogs';
 import ProtectedRoute from './ProtectedRoute';
 import SignIn from '../pages/SignIn';
 import SingleBlogPage from '../pages/SingleBlogPage';
-
 import About from '../pages/About';
 
 const AppRouter = () => {
@@ -30,6 +28,8 @@ const AppRouter = () => {
         <Route path="/sign-in" element={<SignIn />} />
 
         <Route path="/about" element={<About />} />
+        
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
       <Footer />
     </BrowserRouter>
