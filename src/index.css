@@ -67,11 +67,11 @@ height: 110%;
 @media screen and  (max-width:768px) {
   .image-hero{
 
-    transform: rotate(-90deg);
-   top:300px;
-  left: -20px;
-  width: 100%;
-  overflow: hidden;
+    transform: rotate(-90deg) !important;
+   top:300px !important;
+  left: -20px !important;
+  width: 100% !important;
+  overflow: hidden !important;
   
   }
 
