@@ -88,7 +88,7 @@ const SignIn = () => {
       navigate(-1);
       console.log(user);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 
