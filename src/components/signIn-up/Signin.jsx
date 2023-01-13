@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SignInForm from '../UI/formValidation/SigninForm';
+import SignInForm from '../SigninForm/SigninForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
 
