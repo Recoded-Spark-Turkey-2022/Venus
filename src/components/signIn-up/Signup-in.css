@@ -1,6 +1,6 @@
 .ContainerBox{
     background-color: white;
-    height: 50%;
+
     width: 50%;
     filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)); 
     border-radius: 24px; 
@@ -8,7 +8,7 @@
     right: 25%;
     top: 25%;
     flex: 1;
-    padding: 10px;
+    padding: 20px;
 }
 
 .Title{
@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top:30px;
     
     
 
@@ -95,7 +96,7 @@
     margin-top: 1%;
    }
    .Container3{
-    margin-top:3px;
+    margin-top:20px;
    }
 
 }
@@ -107,7 +108,7 @@
      margin-top: 2%;
     }
     .Container3{
-     margin-top: 2px;
+     margin-top: 20px;
     }
  
  }
@@ -119,11 +120,15 @@
      margin-top: 4%;
     }
     .Container3{
-     margin-top: 5%;
+     margin-top: 20%;
     }
  
  }
  @media screen and  (max-width:768px){
+    .ContainerBox{
+        height: 63%;
+        top:15%;
+    }
     .Title{
      margin-top: 14%;
     }
@@ -131,11 +136,25 @@
      margin-top: 8%;
     }
     .Container3{
-     margin-top: 20%;
+     margin-top: 30%;
      display: flex;
      flex-direction: column;
      align-items: center;
 
+    }
+    .LastBtm{
+        background-color: #4699C2 !important;
+        color: white ;
+        border: #4699C2 solid 1px;
+        height: 40px;
+        width: 110px;
+        font-size: large;
+    }
+    .LastBtm:hover{
+        color: #4699C2;
+        background-color: white !important;
+        
+        font-size: large;
     }
  
  }
@@ -144,7 +163,7 @@
      margin-top: 10%;
     }
     .ContainerBtn{
-     margin-top: 3%;
+     margin-top: 20px;
      flex-direction: column;
      align-items: center;
      
@@ -153,13 +172,13 @@
         width: 65%;
     }
     .GoogleBtn{
-        margin-bottom: 6%;
+        margin-bottom: 10px;
     }
     .or{
-        margin-bottom: 6%;
+        margin-bottom: 10px;
     }
     .Container3{
-     margin-top: 60%;
+     margin-top: 30%;
      flex-direction: column;
     
     }
@@ -184,9 +203,15 @@
  
  }
  @media screen and  (max-width:	640px){
-   
+    .ContainerBox{
+        height: 100%;
+        position: unset;
+padding-top: 100px;
+        width: 100%;
+        margin: auto 0;
+    }
     .Container3{
-        margin-top: 60%;
+        margin-top: 30%;
         padding-bottom: 5%;
      
    
@@ -198,7 +223,7 @@
 
  @media screen and (min-width:1699px) {
     .Container3{
-        margin-top: 2px;
+        margin-top:30px;
      
    
        }

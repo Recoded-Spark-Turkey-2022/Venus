@@ -6,16 +6,16 @@ import './Signup-in.css';
 
 const Signup = () => {
   return (
-    <section className=" h-[110vh]  mb-300px md:mb-0 w-screen md:h-screen relative flex justify-center items-center">
+    <section className=" h-[100vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center">
       <div>
         <img
           src={img}
-          className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[90vh]"
+          className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[-20px]  w-[100%] h-[90vh]"
           alt="circle-logo"
         />
         <div className="ContainerBox">
           <h1 className="Title">SIGN UP WITH</h1>
-          <SignUpForm/>
+          <SignUpForm />
           <div className="ContainerBtn">
             <button className="GoogleBtn" type="button">
               <ion-icon size="large" name="logo-google" />
