@@ -17,6 +17,7 @@ module.exports = {
       openRose: '#fc8476',
       inlightBlue: '#E7fbff',
       white: '#fff',
+      inlightBlue: '#E7fbff'
     },
     fontFamily: {
       'sans': 'Helvetica , Arial, sans-serif',

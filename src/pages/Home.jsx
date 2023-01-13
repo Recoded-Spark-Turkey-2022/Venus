@@ -19,6 +19,7 @@ const Home = () => {
         <Partners />
       </Container>
       <StoriesSection />
+
     </>
   );
 };
