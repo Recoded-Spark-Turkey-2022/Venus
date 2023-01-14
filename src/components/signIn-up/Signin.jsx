@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Flip, ToastContainer } from 'react-toastify';
 import SignInForm from '../SigninForm/SigninForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
+import SocialLinks from './SocialLinks';
 
 const Signin = () => {
   return (
@@ -16,15 +18,7 @@ const Signin = () => {
         <div className="ContainerBox">
           <h1 className="Title">SIGN IN WITH</h1>
           <SignInForm />
-          <div className="ContainerBtn">
-            <button className="GoogleBtn" type="button">
-              <ion-icon size="large" name="logo-google" />
-            </button>
-            <h1 className="or">OR</h1>
-            <button className="FacebookBtn" type="button">
-              <ion-icon size="large" className="" name="logo-facebook" />
-            </button>
-          </div>
+          <SocialLinks />
           <div className="Container3 ">
             <h1 className="Already ">Want to be a member?</h1>
             <Link to="/signup">
@@ -35,6 +29,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
+      <ToastContainer transition={Flip} limit={3} />
     </section>
   );
 };

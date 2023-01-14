@@ -71,21 +71,22 @@ const Navbar = () => {
                 to={link.link}
                 className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
                 "
-          
               >
                 {link.name}
               </Link>
             </li>
           ))}
-<Link to='/signin '>
-          <button
-            id="mediumBlue-button"
-            className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
-            type="button"
-          >
-            {t('Button.si')}
-          </button>
-           </Link>
+          <Link to="/signin ">
+            {!isLoggedIn && (
+              <button
+                id="mediumBlue-button"
+                className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+                type="button"
+              >
+                {t('Button.si')}
+              </button>
+            )}
+          </Link>
           {isLoggedIn && (
             <button
               id="mediumBlue-button"
@@ -96,7 +97,6 @@ const Navbar = () => {
               Sign Out
             </button>
           )}
-
         </ul>
       </div>
     </nav>
