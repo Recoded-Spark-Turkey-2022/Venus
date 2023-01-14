@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 import SignUpForm from '../SignupForm/SignupForm';
 import img from '../../assets/signup-vector.svg';
-import './Signup-in.css';
+
+import SocialLinks from './SocialLinks';
 
 const Signup = () => {
   return (
@@ -16,15 +19,7 @@ const Signup = () => {
         <div className="ContainerBox">
           <h1 className="Title">SIGN UP WITH</h1>
           <SignUpForm />
-          <div className="ContainerBtn">
-            <button className="GoogleBtn" type="button">
-              <ion-icon size="large" name="logo-google" />
-            </button>
-            <h1 className="or">OR</h1>
-            <button className="FacebookBtn" type="button">
-              <ion-icon size="large" className="" name="logo-facebook" />
-            </button>
-          </div>
+          <SocialLinks />
           <div className="Container3">
             <h1 className="Already ">Already a member?</h1>
             <Link to="/signin">
@@ -35,6 +30,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

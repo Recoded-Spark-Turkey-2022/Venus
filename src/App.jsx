@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
     const unsub = onAuthStateChanged(authentication, (user) => {
       if (user) {
+        console.log(user);
         dispatch(
           setUserLoggedIn({
             userName: user.displayName,
