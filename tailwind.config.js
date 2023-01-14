@@ -15,7 +15,14 @@ module.exports = {
       turkishBlue: '#70cdd6',
       mediumBlue: '#4699c2',
       openRose: '#fc8476',
+      inlightBlue: '#E7fbff',
       white: '#fff',
+      inlightBlue: '#E7fbff'
+    },
+    fontFamily: {
+      'sans': 'Helvetica , Arial, sans-serif',
+      'serif': 'ui-serif , Georgia',
+      'roboto': 'Roboto',
     },
   },
   plugins: [],

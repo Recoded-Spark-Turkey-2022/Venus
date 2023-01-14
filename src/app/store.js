@@ -1,8 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+// eslint-disable-next-line no-unused-vars
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import listingReducer from '../features/listings/listingSlice';
+import userReducer from '../features/userSlice/userSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    listing: listingReducer,
+    user: userReducer,
   },
+  // eslint-disable-next-line no-shadow
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
