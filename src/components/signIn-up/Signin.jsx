@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Flip, ToastContainer } from 'react-toastify';
 import SignInForm from '../SigninForm/SigninForm';
 import img from '../../assets/signup-vector.svg';
 import './Signup-in.css';
@@ -28,6 +29,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
+      <ToastContainer transition={Flip} limit={3} />
     </section>
   );
 };

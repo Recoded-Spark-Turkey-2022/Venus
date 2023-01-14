@@ -8,7 +8,7 @@ const ProtectedRoute = () => {
   const isUserLoggedIn = useSelector(selectUserLoggedIn);
 
   console.log(isUserLoggedIn);
-  return isUserLoggedIn ? <Outlet /> : <Navigate to="/sign-in" />;
+  return isUserLoggedIn ? <Outlet /> : <Navigate to="/signin" />;
 };
 
 export default ProtectedRoute;

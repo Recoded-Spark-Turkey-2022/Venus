@@ -1,14 +1,52 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
+import { authentication, db } from '../../firebase/firebase.config';
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const userCredential = createUserWithEmailAndPassword(
+        authentication,
+        data.email,
+        data.password
+      );
+      const { user } = await userCredential;
+
+      // we update user's name with data we got from  the form
+      updateProfile(authentication.currentUser, { displayName: data.name });
+      const formData = {
+        name: data.name,
+        email: data.email,
+        timeStamo: serverTimestamp(),
+      };
+      const docRef = doc(db, 'users', user.uid);
+      await setDoc(docRef, formData);
+      navigate('/', { replace: false });
+    } catch (error) {
+      console.log(error);
+      toast.error('Something went wrong with Registration', {
+        position: 'top-left',
+        autoClose: 1200,
+        className: 'mt-20',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    }
   };
 
   return (
@@ -31,9 +69,7 @@ const SignUpForm = () => {
         aria-invalid={errors.name ? 'true' : 'false'}
         className="border border-gray-300 w-full md:w-[80%] px-0 md:px-3 m-0 py-1 md:py-2 text-gray-900 placeholder-gray-500 rounded"
       />
-      {/* {errors.name?.type === 'required' && (
-        <p role="alert">{errors.name?.message}</p>
-      )} */}
+
       {errors.name && <p role="alert">{errors.name?.message}</p>}
 
       <input
