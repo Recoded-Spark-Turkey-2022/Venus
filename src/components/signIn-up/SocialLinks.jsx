@@ -42,7 +42,7 @@ const SocialLinks = () => {
       } else {
         console.log('you already signed in');
       }
-      navigate(-1);
+      navigate(-1, { replace: true });
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +64,7 @@ const SocialLinks = () => {
       } else {
         console.log('you already signed in');
       }
-      navigate(-1);
+      navigate(-1, { replace: true });
       console.log(user);
     } catch (error) {
       console.log(error.message);
