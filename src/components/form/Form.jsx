@@ -1,8 +1,39 @@
+import { useEffect, useState } from "react";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+ import { storage } from "../../firebase/firebase.config";
 import './form.css';
-import man from '../../assets/man.png';
 import img from '../../assets/signup-vector.svg';
 
 const Form = ({setOpen}) => {
+
+  const [file, setFile] = useState("");
+ const [data, setData] = useState({});
+  
+
+  useEffect(() => {
+    const uploadFile = () => {
+      const name = new Date().getTime() + file.name;
+      console.log(name);
+      const storageRef = ref(storage, file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setData((prev) => ({ ...prev, img: downloadURL }));
+          });
+        }
+      );
+    };
+    file && uploadFile();
+  }, [file]);
+
+  console.log(data);
+
+
 
   const handleCancel=()=>{
     setOpen(false);
@@ -18,11 +49,20 @@ const Form = ({setOpen}) => {
       />
       <div className="BigContainer">
         <div className="Container1">
-          <img src={man} alt="p" className="manImg" />
+          <img src={
+                file ? URL.createObjectURL(file)
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              } alt="profile" className="manImg" />
 
-          <button className="cam-btn" type="button">
+          <label htmlFor="file" className="cam-btn" >
             <ion-icon size="large" name="camera-outline" />
-          </button>
+          </label>
+          <input
+                  type="file"
+                  id="file"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  style={{ display: "none" }}
+                />
           <h1 className="name">Hi I am Here</h1>
         </div>
         <div className="Container2">

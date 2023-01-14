@@ -12,6 +12,7 @@ import '../components/userProfile/userProfile.css'
 const UserProfile = () => {
 
   const [open, setOpen] = useState(false);
+  
 
   const handleOpen= ()=>{
     setOpen(true);
@@ -25,7 +26,7 @@ const UserProfile = () => {
         
         <Container>
           <div className='relative z-10 flex justify-center object-center'>
-         <Avatar name={article.userName} image={article.ImageUrl} isOpen={handleOpen}/>
+         <Avatar name={article.userName} isOpen={handleOpen}/>
          </div>
            <img
         src={circleLogo}
