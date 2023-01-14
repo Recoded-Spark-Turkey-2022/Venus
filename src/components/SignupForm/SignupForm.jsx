@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 import { authentication, db } from '../../firebase/firebase.config';
+import { setUserLoggedIn } from '../../features/userSlice/userSlice';
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -22,6 +24,13 @@ const SignUpForm = () => {
         data.password
       );
       const { user } = await userCredential;
+      dispatch(
+        setUserLoggedIn({
+          userName: data.name,
+          userEmail: data.email,
+          isLoggedIn: true,
+        })
+      );
 
       // we update user's name with data we got from  the form
       updateProfile(authentication.currentUser, { displayName: data.name });
