@@ -12,6 +12,7 @@ import {
 import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
+  const { t }= useTranslation();
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [

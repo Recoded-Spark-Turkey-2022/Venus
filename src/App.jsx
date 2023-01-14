@@ -5,6 +5,7 @@ import { setUserLoggedIn } from './features/userSlice/userSlice';
 import { authentication } from './firebase/firebase.config';
 import AppRouter from './routes/AppRouter';
 
+
 function App() {
   const dispatch = useDispatch();
 
