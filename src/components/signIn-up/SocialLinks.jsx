@@ -1,31 +1,26 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
-
-import { useNavigate } from 'react-router-dom';
 import {
   authentication,
   db,
   faceBookProvider,
   googleProvider,
-} from '../firebase/firebase.config';
+} from '../../firebase/firebase.config';
+
+import './Signup-in.css';
 import {
   selectUserLoggedIn,
   selectUserName,
-  setUserLoggedIn,
-  setUserLoggedOut,
-} from '../features/userSlice/userSlice';
+} from '../../features/userSlice/userSlice';
 
-// import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
-// import { db } from '../firebase/firebase.config';
-
-const SignIn = () => {
-  const dispatch = useDispatch();
+const SocialLinks = () => {
+  const navigate = useNavigate();
   const userloggedIn = useSelector(selectUserLoggedIn);
   const userName = useSelector(selectUserName);
-
-  const navigate = useNavigate();
+  console.log(userloggedIn, userName);
 
   const onGoogleAuth = async () => {
     try {
@@ -47,23 +42,7 @@ const SignIn = () => {
       } else {
         console.log('you already signed in');
       }
-      navigate(-1);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await authentication.signOut();
-
-      dispatch(
-        setUserLoggedIn({
-          userloggedIn: false,
-        })
-      );
-
-      dispatch(setUserLoggedOut());
+      navigate(-1, { replace: true });
     } catch (error) {
       console.log(error);
     }
@@ -85,36 +64,23 @@ const SignIn = () => {
       } else {
         console.log('you already signed in');
       }
-      navigate(-1);
+      navigate(-1, { replace: true });
       console.log(user);
     } catch (error) {
       console.log(error.message);
     }
   };
-
   return (
-    <div className="mt-20 mx-auto w-20">
-      <button
-        type="button"
-        id="mediumBlue-button"
-        onClick={onGoogleAuth}
-        className="mr-4"
-      >
-        {' '}
-        Google{' '}
+    <div className="ContainerBtn">
+      <button className="GoogleBtn" onClick={onGoogleAuth} type="button">
+        <ion-icon size="large" name="logo-google" />
       </button>
-      <button type="button" onClick={onFacebookAuth} id="mediumBlue-button">
-        {' '}
-        Facebook{' '}
+      <h1 className="or">OR</h1>
+      <button className="FacebookBtn" onClick={onFacebookAuth} type="button">
+        <ion-icon size="large" className="" name="logo-facebook" />
       </button>
-      {userloggedIn && (
-        <button type="button" onClick={handleSignOut}>
-          Sign Out{' '}
-        </button>
-      )}
-      {userName && <p>{userName}</p>}
     </div>
   );
 };
 
-export default SignIn;
+export default SocialLinks;

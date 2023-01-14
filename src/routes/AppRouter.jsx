@@ -11,7 +11,7 @@ import SignIn from '../pages/SignIn';
 import SingleBlogPage from '../pages/SingleBlogPage';
 import About from '../pages/About'
 import UserProfile from '../pages/UserProfile';
-
+import Contact from '../pages/Contact';
 
 const AppRouter = () => {
   return (
@@ -31,6 +31,9 @@ const AppRouter = () => {
 
         <Route path="/about" element={<About />} />
         <Route path="/userProfile" element={<UserProfile />} />
+        
+        <Route path="/signin" element={<SignIn />} />
+         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -38,3 +41,5 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+
+
