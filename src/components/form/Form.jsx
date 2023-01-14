@@ -2,7 +2,13 @@ import './form.css';
 import man from '../../assets/man.png';
 import img from '../../assets/signup-vector.svg';
 
-const Form = () => {
+const Form = ({setOpen}) => {
+
+  const handleCancel=()=>{
+    setOpen(false);
+    
+  }
+
   return (
     <section className="h-[130vh] section-form overflow-hidden w-screen md:h-screen relative ">
       <img
@@ -47,7 +53,7 @@ const Form = () => {
           <button type="submit" className="save-btn">
             SAVE
           </button>
-          <button type="submit" className="cancel-btn">
+          <button type="submit" className="cancel-btn" onClick={handleCancel}>
             CANCEL
           </button>
         </div>

@@ -14,15 +14,15 @@ const UserProfile = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen= ()=>{
-    setOpen(!open);
+    setOpen(true);
+    
   }
-   if (open) {
-    return <Form isOpen={handleOpen} />; 
-  } 
-
    
     return (
         <div className="mt-20 flex items-center w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
+          {open ? (
+        <Form setOpen={setOpen} /> ) : (
+        
         <Container>
           <div className='relative z-10 flex justify-center object-center'>
          <Avatar name={article.userName} image={article.ImageUrl} isOpen={handleOpen}/>
@@ -77,6 +77,7 @@ const UserProfile = () => {
            
         </Container>
         
+      )}
         </div>
     );
    
