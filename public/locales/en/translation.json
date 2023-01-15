@@ -8,6 +8,40 @@
     },
     "Button": {
         "su": "Sign up",
-        "si": "Sign in"
+        "si": "Sign in",
+        "so": "Sign out",
+        "learn": "Learn more"
+
+    },
+    "Nav": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "blogs": "Blog"
+    },
+    "Home": {
+        "hero": "Connect and support refugees worldwide with Refubook. A community where individuals can find belonging, share experiences, and learn about different cultures and countries. Join us in making a difference in the lives of refugees today.",
+        "about":"About",
+        "about-p": "RefuBook is a platform dedicated to supporting refugees as they navigate their new lives and communities. We offer a range of resources, connections, and support to empower individuals to thrive in their new surroundings. Join us in creating a welcoming and inclusive environment for all refugees.",
+        "p1": "Self-sufficiency",
+        "p1-p": "Providing refugees with the tools and resources they need to become independent and self-reliant in their new surroundings.",
+        "p2": "Advocacy",
+        "p2-p": "Speaking out for the rights and needs of refugees and raising awareness about their situation.",
+        "p3": "Diversity",
+        "p3-p": "Promoting and valuing diversity among refugees, creating an environment of acceptance and belonging for all.",
+        "p4": "Sustainability",
+        "p4-p": "Developing long-term solutions that support the ongoing integration and self-sufficiency of refugees.",
+        "r1": "RefuBook has been invaluable for me as a Syrian refugee, helping me navigate my new surroundings and build a better future.",
+        "r1-h": "Ghaith",
+        "r1-p": "Syria, member at Refubook",
+        "r2": "As a Eritrean refugee, RefuBook has been an essential resource for finding information and resources for my new home.",
+        "r2-h": "Dellina",
+        "r2-p":"Eritrea, member at Refubook",
+        "r3": " The community on RefuBook has been a lifesaver for me as a Venezuelan refugee, connecting me with others and providing support.",
+        "r3-h": "Jose",
+        "r3-p": "Venezuela, member at Refubook",
+        "partners": "Our Partners",
+        "last-stories": "Latest Stories",
+        "last-stories-p": "Home is behind, the world ahead and there are many paths to tread through shadows to the edge."
     }
 }

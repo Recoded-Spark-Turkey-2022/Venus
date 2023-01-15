@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import { StarIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import AboutImg from '../../assets/about-image.svg'
 import Button from '../UI/Button'
 
@@ -16,15 +17,16 @@ import "./about.css";
 
 
 function About() {
+  const { t }= useTranslation();
   return (
     <div > 
         <div className='aboutfont flex flex-col'>
             <div className=' self-center'>
-               <h2 className='text-center text-darkBlue font-bold text-[28px] mt-[43px]'>About</h2> 
-               <p className=' text-center text-[17px] max-w-[800px] p-[7px] leading-5'>RefuBook is a platform dedicated to supporting refugees as they navigate their new lives and communities. We offer a range of resources, connections, and support to empower individuals to thrive in their new surroundings. Join us in creating a welcoming and inclusive environment for all refugees.</p>
+               <h2 className='text-center text-darkBlue font-bold text-[28px] mt-[43px]'>{t("Home.about")}</h2> 
+               <p className=' text-center text-[17px] max-w-[800px] p-[7px] leading-5'>{t("Home.about-p")}</p>
             </div>
             <div className=' self-center'>
-            <Link to="/about"><Button > Learn more</Button > </Link>
+            <Link to="/about"><Button > {t("Button.learn")}</Button > </Link>
             </div>
         </div>
         <div className='flex flex-col-reverse self-center lg:flex-row w-full flex justify-center'>
@@ -33,32 +35,32 @@ function About() {
                         <div className='p-5'>
                           <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Self-sufficiency</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p1")}</h5>
                           </div>
-                            <p className='text-left max-w-[224px]'>Providing refugees with the tools and resources they need to become independent and self-reliant in their new surroundings.</p>
+                            <p className='text-left max-w-[224px]'>{t("Home.p1-p")}</p>
                         </div>
                         <div className='p-5'>
                         <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Advocacy</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p2")}</h5>
                          </div> 
-                         <p className='text-left max-w-[224px]'>Speaking out for the rights and needs of refugees and raising awareness about their situation.</p>
+                         <p className='text-left max-w-[224px]'>{t("Home.p2-p")}</p>
                         </div>
                 </div>
                 <div className='flex'>
                   <div className='p-5'>
                         <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Diversity</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p3")}</h5>
                         </div>
-                        <p className='text-left max-w-[224px]'>Promoting and valuing diversity among refugees, creating an environment of acceptance and belonging for all.</p>
+                        <p className='text-left max-w-[224px]'>{t("Home.p3-p")}</p>
                   </div>
                   <div className='p-5'>
                         <div className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Sustainability</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p4")}</h5>
                         </div>
-                        <p className='text-left max-w-[224px]' >Developing long-term solutions that support the ongoing integration and self-sufficiency of refugees.</p>
+                        <p className='text-left max-w-[224px]' >{t("Home.p4-p")}</p>
                   </div>
                 </div>
             </div>
@@ -86,36 +88,36 @@ function About() {
                         <div className='flex'>
                             <StarIcon className='w-7 mr-4'/>
             
-                            <h5 className='font-bold text-[16px] p-[13px]'>Self-sufficiency</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p1")}</h5>
                         </div>
-                        <p className='text-left max-w-[224px]' >Providing refugees with the tools and resources they need to become independent and self-reliant in their new surroundings.</p>
+                        <p className='text-left max-w-[224px]' >{t("Home.p1-p")}</p>
                     </div>
                     </SwiperSlide>
                      <SwiperSlide>
                         <div>
                           <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Advocacy</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p2")}</h5>
                         </div>
-                        <p className='text-left max-w-[224px]'>Speaking out for the rights and needs of refugees and raising awareness about their situation.</p>
+                        <p className='text-left max-w-[224px]'>{t("Home.p2-p")}</p>
                         </div>
                     </SwiperSlide>
                      <SwiperSlide>
                         <div>
                          <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Diversity</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p3")}</h5>
                          </div> 
-                         <p className='text-left max-w-[224px]'>Promoting and valuing diversity among refugees, creating an environment of acceptance and belonging for all.</p>
+                         <p className='text-left max-w-[224px]'>{t("Home.p3-p")}</p>
                     </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div>
                         <div  className='flex'>
                             <StarIcon className='w-7 mr-4'/>
-                            <h5 className='font-bold text-[16px] p-[13px]'>Sustainability</h5>
+                            <h5 className='font-bold text-[16px] p-[13px]'>{t("Home.p4")}</h5>
                         </div>
-                        <p className='text-left max-w-[224px]'>Developing long-term solutions that support the ongoing integration and self-sufficiency of refugees.</p>
+                        <p className='text-left max-w-[224px]'>{t("Home.p4-p")}</p>
                     </div> 
                     </SwiperSlide>
                     

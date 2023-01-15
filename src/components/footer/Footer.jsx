@@ -57,7 +57,7 @@ const Footer = () => {
                 className="px-8 whitespace-nowrap rounded-full"
                 type="button"
               >
-                Sign up
+                {t("Button.su")}
               </button>
             </Link>
 
