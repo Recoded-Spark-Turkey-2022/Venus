@@ -9,14 +9,15 @@
     "Button": {
         "su": "Sign up",
         "si": "Sign in",
-        "so": "Sign out"
+        "so": "Sign out",
+        "learn": "Learn more"
+
     },
     "Nav": {
         "home": "Home",
         "about": "About",
         "contact": "Contact",
-        "blogs": "Blog",
-        "learn": "Learn more"
+        "blogs": "Blog"
     },
     "Home": {
         "hero": "Connect and support refugees worldwide with Refubook. A community where individuals can find belonging, share experiences, and learn about different cultures and countries. Join us in making a difference in the lives of refugees today.",
