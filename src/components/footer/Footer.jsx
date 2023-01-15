@@ -67,7 +67,7 @@ const Footer = () => {
               <option className="border-mediumBlue " value="en">
                 English
               </option>
-              <option value="ar">عربي</option>
+              <option value="ar">العربية</option>
             </select>
           </div>
         </div>
