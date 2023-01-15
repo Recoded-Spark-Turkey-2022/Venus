@@ -28,7 +28,7 @@ const Form = ({setOpen}) => {
         }
       );
     };
-    file && uploadFile();
+   if( file){ uploadFile()};
   }, [file]);
 
   console.log(data);
@@ -53,7 +53,7 @@ const Form = ({setOpen}) => {
                 file ? URL.createObjectURL(file)
                   : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               } alt="profile" className="manImg" />
-
+          { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
           <label htmlFor="file" className="cam-btn" >
             <ion-icon size="large" name="camera-outline" />
           </label>

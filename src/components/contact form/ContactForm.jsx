@@ -32,12 +32,12 @@ function ContactForm(){
     return(
         <div className='w-full'>
             <form name="contact" className='flex flex-col justify-center md:justify-start mt-5 ' onSubmit={handleSubmit}>
-            <div>{ /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }</div>
+            { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
                 <label htmlFor="email" className="text-darkGrey mb-2">
                     Email
                 </label>
                 <input  required id='email' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" className="border-1 p-2 rounded-md border border-darkGrey bg-slate-50"/>
-                <div>{ /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }</div>
+                { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
                 <label htmlFor="message" className="text-darkGrey mb-2 mt-2">
                     Message
                 </label>
