@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+
 
 import '../../index.css';
 
@@ -11,6 +13,7 @@ import './Reference.css';
 import worldMap from '../../assets/world_map_ 1.svg';
 
 function Reference() {
+  const { t }= useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -37,37 +40,33 @@ function Reference() {
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                RefuBook has been invaluable for me as a Syrian refugee, helping
-                me navigate my new surroundings and build a better future.
+              {t("Home.r1")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Ghaith</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r1-h")}</p>
               <p className="text-[#b7b7b7] text-sm">
-                Syria, member at Refubook
+              {t("Home.r1-p")}
               </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                As a Eritrean refugee, RefuBook has been an essential resource
-                for finding information and resources for my new home.
+              {t("Home.r2")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Dellina</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r2-h")}</p>
               <p className="text-[#b7b7b7] text-sm">
-                Eritrea, member at Refubook
+              {t("Home.r2-p")}
               </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                The community on RefuBook has been a lifesaver for me as a
-                Venezuelan refugee, connecting me with others and providing
-                support.
+              {t("Home.r3")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Jose</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r3-h")}</p>
               <p className="text-[#b7b7b7] text-sm">
-                Venezuela, member at Refubook
+              {t("Home.r3-p")}
               </p>
             </div>
           </SwiperSlide>

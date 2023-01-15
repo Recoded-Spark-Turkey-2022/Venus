@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from "react-i18next";
+
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -16,10 +17,10 @@ const Navbar = () => {
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'Blog', link: '/blogs' },
-    { name: 'Contact', link: '/contact' },
+    { name: t("Nav.home"), link: '/' , },
+    { name: t("Nav.about"), link: '/about' },
+    { name: t("Nav.blogs"), link: '/blogs' },
+    { name: t("Nav.contact"), link: '/contact' },
   ];
 
   const [open, setOpen] = useState(true);
@@ -94,7 +95,7 @@ const Navbar = () => {
               type="button"
               onClick={handleSignOut}
             >
-              Sign Out
+             {t('Button.so')}
             </button>
           )}
         </ul>
