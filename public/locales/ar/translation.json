@@ -1,0 +1,13 @@
+{
+    "Footer": {
+        "home": "Anasayfa",
+        "about": "Hakkında",
+        "contact": "İletişim",
+        "blogs": "Blog"
+        
+    },
+    "Button": {
+        "su": "Üye Ol",
+        "si": "Giriş"
+    }
+}

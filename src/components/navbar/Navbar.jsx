@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ import {
 import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
+  const { t }= useTranslation();
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [
@@ -81,7 +83,7 @@ const Navbar = () => {
                 className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
                 type="button"
               >
-                Sign in
+                {t('Button.si')}
               </button>
             )}
           </Link>

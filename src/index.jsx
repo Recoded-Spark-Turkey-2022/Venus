@@ -7,6 +7,8 @@ import App from './App';
 import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import './i18next'
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
