@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,14 +13,14 @@ import {
 import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
-  const { t }= useTranslation();
+  const { t } = useTranslation();
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [
-    { name: t("Nav.home"), link: '/' , },
-    { name: t("Nav.about"), link: '/about' },
-    { name: t("Nav.blogs"), link: '/blogs' },
-    { name: t("Nav.contact"), link: '/contact' },
+    { name: t('Nav.home'), link: '/' },
+    { name: t('Nav.about'), link: '/about' },
+    { name: t('Nav.blogs'), link: '/blogs' },
+    { name: t('Nav.contact'), link: '/contact' },
   ];
 
   const [open, setOpen] = useState(true);
@@ -49,7 +49,9 @@ const Navbar = () => {
       text-cyan-600"
         >
           <span className="text-3xl text-cyan-600 mr-1 pt-2">
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </span>
         </div>
 
@@ -95,7 +97,7 @@ const Navbar = () => {
               type="button"
               onClick={handleSignOut}
             >
-             {t('Button.so')}
+              {t('Button.so')}
             </button>
           )}
         </ul>
