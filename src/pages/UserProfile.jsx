@@ -26,7 +26,7 @@ const UserProfile = () => {
         
         <Container>
           <div className='relative z-10 flex justify-center object-center'>
-         <Avatar name={article.userName} isOpen={handleOpen}/>
+         <Avatar name={article.userName} isOpen={handleOpen} image={article.ImageUrl}/>
          </div>
            <img
         src={circleLogo}
