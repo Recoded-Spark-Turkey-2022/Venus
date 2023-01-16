@@ -1,34 +1,10 @@
-import {  useState } from "react";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
- import { storage } from "../../firebase/firebase.config";
+
 import './form.css';
 import img from '../../assets/signup-vector.svg';
 
-const Form = ({setOpen}) => {
+const Form = ({setOpen, onChange, upload, file}) => {
 
-  const [file, setFile] = useState("");
- const [data, setData] = useState({});
-  
-    const uploadFile = () => {
-      const name = new Date().getTime() + file.name;
-      console.log(name);
-      const storageRef = ref(storage, file.name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
-      uploadTask.on(
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setData((prev) => ({ ...prev, img: downloadURL }));
-          });
-        }
-      );
-    };
-   
-
-  console.log(data);
+ 
 
   const handleCancel=()=>{
     setOpen(false);
@@ -54,7 +30,7 @@ const Form = ({setOpen}) => {
           <input
                   type="file"
                   id="file"
-                  onChange={(e) => setFile(e.target.files[0])}
+                  onChange={onChange}
                   style={{ display: "none" }}
                 />
           <h1 className="name">Hi I am Here</h1>
@@ -84,7 +60,7 @@ const Form = ({setOpen}) => {
           </form>
         </div>
         <div className="Container4">
-          <button onClick={uploadFile} type="submit" className="save-btn">
+          <button onClick={upload} type="submit" className="save-btn">
             SAVE
           </button>
           <button type="submit" className="cancel-btn" onClick={handleCancel}>

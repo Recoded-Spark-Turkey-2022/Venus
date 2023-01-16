@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, Pagination} from "swiper";
-import { useState } from 'react';
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+ import { storage } from "../firebase/firebase.config";
 import Form from '../components/form/Form'
 import Container from "../components/UI/Container";
 import BlogsCard from "../components/userProfile/BlogsCard";
@@ -12,21 +14,47 @@ import '../components/userProfile/userProfile.css'
 const UserProfile = () => {
 
   const [open, setOpen] = useState(false);
-  
+  const [file, setFile] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
+  const [data, setData] = useState({});
+   
+     const uploadFile = () => {
+       const name = new Date().getTime() + file.name;
+       console.log(name);
+       const storageRef = ref(storage, file.name);
+       const uploadTask = uploadBytesResumable(storageRef, file);
+ 
+       uploadTask.on(
+         (error) => {
+           console.log(error);
+         },
+         () => {
+           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+             setData((prev) => ({ ...prev, img: downloadURL }));
+           });
+         }
+       );
+
+     };
+    
+ 
+   console.log(data);
 
   const handleOpen= ()=>{
     setOpen(true);
-    
+  }
+
+  const handleChangeFile= (e)=>{
+    setFile(e.target.files[0]);
   }
    
     return (
         <div className="mt-20 flex items-center w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-0 md:mb-10">
           {open ? (
-        <Form setOpen={setOpen} /> ) : (
+        <Form setOpen={setOpen} onChange={handleChangeFile} upload={uploadFile} file={file}/> ) : (
         
         <Container>
           <div className='relative z-10 flex justify-center object-center'>
-         <Avatar name={article.userName} isOpen={handleOpen} image={article.ImageUrl}/>
+         <Avatar name={article.userName} isOpen={handleOpen} file={file}/>
          </div>
            <img
         src={circleLogo}
