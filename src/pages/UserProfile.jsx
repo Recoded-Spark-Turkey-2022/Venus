@@ -14,7 +14,7 @@ import '../components/userProfile/userProfile.css'
 const UserProfile = () => {
 
   const [open, setOpen] = useState(false);
-  const [file, setFile] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
+  const [file, setFile] = useState("");
   const [data, setData] = useState({});
    
      const uploadFile = () => {
@@ -89,16 +89,16 @@ const UserProfile = () => {
       className="mySwiper w-full" 
       >
         <SwiperSlide>
-           <BlogsCard name={article.userName} image={article.ImageUrl} title={article.title} text={article.text}/>
+           <BlogsCard name={article.userName} file={file} title={article.title} text={article.text}/>
         </SwiperSlide>
         <SwiperSlide>
-           <BlogsCard name={article.userName} image={article.ImageUrl} title={article.title} text={article.text}/>
+           <BlogsCard name={article.userName} file={file} title={article.title} text={article.text}/>
         </SwiperSlide>
         <SwiperSlide>
-           <BlogsCard name={article.userName} image={article.ImageUrl} title={article.title} text={article.text}/>
+           <BlogsCard name={article.userName} file={file} title={article.title} text={article.text}/>
         </SwiperSlide>
         <SwiperSlide>
-           <BlogsCard name={article.userName} image={article.ImageUrl} title={article.title} text={article.text}/>
+           <BlogsCard name={article.userName} file={file} title={article.title} text={article.text}/>
         </SwiperSlide>
            
            </Swiper>
