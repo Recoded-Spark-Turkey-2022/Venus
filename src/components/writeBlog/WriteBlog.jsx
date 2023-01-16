@@ -53,7 +53,7 @@ const WriteBlogC=()=>{
             onChange={(e)=> setBlogText(e.target.value)}
             className='rounded-full border border-1 border-darkGrey'/>
             </div>
-            <div className='flex justify-center md:justify-start items-center '>
+            <div className='flex justify-center md:justify-start items-center mt-2'>
             <button onClick={submitBlog} id='mediumBlue-button' className='w-32 rounded-full mt-2 whitespace-nowrap py-2' type='submit'>Submit Blog</button>
             </div>
             </form>
