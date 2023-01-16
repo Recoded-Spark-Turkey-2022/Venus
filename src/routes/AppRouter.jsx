@@ -9,7 +9,8 @@ import Blogs from '../pages/Blogs';
 import ProtectedRoute from './ProtectedRoute';
 import SignIn from '../pages/SignIn';
 import SingleBlogPage from '../pages/SingleBlogPage';
-import About from '../pages/About'
+import WriteBlog from '../pages/WriteBlog';
+import About from '../pages/About';
 import UserProfile from '../pages/UserProfile';
 import Contact from '../pages/Contact';
 
@@ -28,7 +29,7 @@ const AppRouter = () => {
           <Route path="" element={<SingleBlogPage />} />
         </Route>
         <Route path="/sign-in" element={<SignIn />} />
-
+        <Route path="/writeblog" element={<WriteBlog />} />
         <Route path="/about" element={<About />} />
         <Route path="/userProfile" element={<UserProfile />} />
         
