@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
  import { storage } from "../../firebase/firebase.config";
 import './form.css';
@@ -9,8 +9,6 @@ const Form = ({setOpen}) => {
   const [file, setFile] = useState("");
  const [data, setData] = useState({});
   
-
-  useEffect(() => {
     const uploadFile = () => {
       const name = new Date().getTime() + file.name;
       console.log(name);
@@ -28,16 +26,12 @@ const Form = ({setOpen}) => {
         }
       );
     };
-   if( file){ uploadFile()};
-  }, [file]);
+   
 
   console.log(data);
 
-
-
   const handleCancel=()=>{
     setOpen(false);
-    
   }
 
   return (
@@ -90,7 +84,7 @@ const Form = ({setOpen}) => {
           </form>
         </div>
         <div className="Container4">
-          <button type="submit" className="save-btn">
+          <button onClick={uploadFile} type="submit" className="save-btn">
             SAVE
           </button>
           <button type="submit" className="cancel-btn" onClick={handleCancel}>
