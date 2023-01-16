@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-
 import SignUpForm from '../SignupForm/SignupForm';
 import img from '../../assets/signup-vector.svg';
 

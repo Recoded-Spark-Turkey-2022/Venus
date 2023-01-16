@@ -60,5 +60,13 @@
         },
         "your-story" : "Share your story, help others and get help from others",
         "your-story-paragraph" : "RefuBook changed my life as a refugee by providing the resources and support to secure a job and support my family. Thanks to their help, I could give my children better opportunities and watch them thrive. I am grateful for the RefuBook community's support and generosity."
+    },
+    "Contact": {
+        "title" : "Get in Touch",
+        "paragraph" : "We would love to hear from you.",
+        "email" : "email",
+        "message" : "message",
+        "btn-text" : "Send"
+        
     }
 }

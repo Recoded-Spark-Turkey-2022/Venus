@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useRef } from 'react';
 import { Flip, toast, ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase/firebase.config';
-
 import Twitter from '../../assets/Twitter.svg';
 import instagram from '../../assets/Instagram.svg';
 import facebook from '../../assets/Facebook.svg';
@@ -13,6 +13,7 @@ import facebook from '../../assets/Facebook.svg';
 function ContactForm() {
   const emailInput = useRef();
   const messageInput = useRef();
+  const { t } = useTranslation()
   // const [email, setEmail]=useState('');
   // const [message, setMessage]=useState('');
 
@@ -54,7 +55,7 @@ function ContactForm() {
         onSubmit={handleSubmit}
       >
         <label htmlFor="email" className="text-darkGrey mb-2">
-          Email
+          {t("Contact.email")}
         </label>
         <input
           type="email"
@@ -66,7 +67,7 @@ function ContactForm() {
         />
 
         <label htmlFor="message-box" className="text-darkGrey mb-2 mt-6">
-          Message
+        {t("Contact.message")}
         </label>
         <textarea
           ref={messageInput}
@@ -81,7 +82,7 @@ function ContactForm() {
             id="mediumBlue-button"
             className="w-32 rounded-full mt-5 whitespace-nowrap py-2"
           >
-            Send
+            {t("Contact.btn-text")}
           </button>
         </div>
       </form>
