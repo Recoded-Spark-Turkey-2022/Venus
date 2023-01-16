@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { useRef  } from "react";
+
 
 const WriteBlogC=()=>{
+    const setTitle = useRef('');
+  const setBlogText = useRef('');
+  const setBanner= useRef('');
 
-    const[title, setTitle]=useState('');
-    const[blogText, setBlogText]=useState('');
-    const[banner, setBanner]=useState(null);
+  /* const handleChangeBanner=(e)=>{
+    console.log(e.target.files[0]);
+    setBanner(e.target.files[0]);
+} */
+
 
     const submitBlog= (e)=>{
         e.preventDefault();
  // Submit banner img, title, blog text with auth
     }
-    const handleChangeBanner=(e)=>{
-        console.log(e.target.files[0]);
-        setBanner(e.target.files[0]);
-    }
+   
 
     return(
         <div className='w-full'>
@@ -25,10 +28,10 @@ const WriteBlogC=()=>{
           className="bg-white px-3 py-2.5"
           type="file" 
           id="image" 
-          name="image" 
           accept="image/png, image/jpeg" 
           required
-          onChange={handleChangeBanner}/>
+          ref={setBanner}
+          />
           
           </div>
           <div className='input-div flex flex-col  mt-5 gap-2 my-2 '>
@@ -39,7 +42,8 @@ const WriteBlogC=()=>{
             <input 
             placeholder='Write Title' 
             required 
-            onChange={(e)=> setTitle(e.target.value)} 
+            ref={setTitle}
+        
             className="border-1 border border-darkGrey"/>
             </div>
             <div className='blog-div flex flex-col  mt-5 gap-2 my-2'>
@@ -50,7 +54,7 @@ const WriteBlogC=()=>{
             <textarea 
             placeholder='Write Blog' 
             required 
-            onChange={(e)=> setBlogText(e.target.value)}
+            ref={setBlogText}
             className='rounded-full border border-1 border-darkGrey'/>
             </div>
             <div className='flex justify-center md:justify-start items-center mt-2'>
