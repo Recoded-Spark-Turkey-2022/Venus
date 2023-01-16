@@ -50,17 +50,17 @@ exports[`renders correctly 1`] = `
           <h3
             className="pt-2"
           >
-            RefuBook has been invaluable for me as a Syrian refugee, helping me navigate my new surroundings and build a better future.
+            Home.r1
           </h3>
           <p
             className="text-[#b7b7b7] pt-2"
           >
-            Ghaith
+            Home.r1-h
           </p>
           <p
             className="text-[#b7b7b7] text-sm"
           >
-            Syria, member at Refubook
+            Home.r1-p
           </p>
         </div>
       </SwiperSlide>
@@ -71,17 +71,17 @@ exports[`renders correctly 1`] = `
           <h3
             className="pt-2"
           >
-            As a Eritrean refugee, RefuBook has been an essential resource for finding information and resources for my new home.
+            Home.r2
           </h3>
           <p
             className="text-[#b7b7b7] pt-2"
           >
-            Dellina
+            Home.r2-h
           </p>
           <p
             className="text-[#b7b7b7] text-sm"
           >
-            Eritrea, member at Refubook
+            Home.r2-p
           </p>
         </div>
       </SwiperSlide>
@@ -92,17 +92,17 @@ exports[`renders correctly 1`] = `
           <h3
             className="pt-2"
           >
-            The community on RefuBook has been a lifesaver for me as a Venezuelan refugee, connecting me with others and providing support.
+            Home.r3
           </h3>
           <p
             className="text-[#b7b7b7] pt-2"
           >
-            Jose
+            Home.r3-h
           </p>
           <p
             className="text-[#b7b7b7] text-sm"
           >
-            Venezuela, member at Refubook
+            Home.r3-p
           </p>
         </div>
       </SwiperSlide>
