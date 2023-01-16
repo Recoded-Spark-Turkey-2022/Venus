@@ -43,5 +43,22 @@
         "partners": "Our Partners",
         "last-stories": "Latest Stories",
         "last-stories-p": "Home is behind, the world ahead and there are many paths to tread through shadows to the edge."
+    },
+    "About": {
+        "our-story" : "Our Story",
+        "our-story-paragraph-p1" : "At RefuBook, we understand the challenges that come with being a refugee and that is why we are dedicated to providing comprehensive support and resources to individuals who have been forced to flee their homes due to conflict, persecution, or other life-threatening circumstances. We believe that every refugee deserves the opportunity to thrive in their new surroundings.",
+        "our-story-paragraph-p2" : "Through our platform, we connect refugees with resources and support, such as housing, medical care, education, and employment. We also work to advocate for the rights and needs of refugees on all levels, locally, nationally and internationally. But we can not do it alone, with your help, by volunteering, donating, spreading awareness, or simply welcoming new refugees in your community, you can make a meaningful difference in the lives of refugees. Join us in creating a more inclusive and welcoming world for all.",
+        "our-team" : "Our Team",
+        "our-team-countries" : {
+            "view-all": "View All",
+            "USA": "USA",
+            "Lebanon": "Lebanon",
+            "Turkey": "Turkey"
+        },
+        "our-team-job-title" : {
+            "job-title": "Web Developer"
+        },
+        "your-story" : "Share your story, help others and get help from others",
+        "your-story-paragraph" : "RefuBook changed my life as a refugee by providing the resources and support to secure a job and support my family. Thanks to their help, I could give my children better opportunities and watch them thrive. I am grateful for the RefuBook community's support and generosity."
     }
 }
