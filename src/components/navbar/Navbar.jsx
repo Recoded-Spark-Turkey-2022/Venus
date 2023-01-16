@@ -93,14 +93,19 @@ const Navbar = () => {
           {isLoggedIn && (
             <>
             <li className="md:ml-8 text-xl md:my-0 my-7">
-            <Link
-              to='/writeblog'
-              className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
-              "
-            >
-              Write
-            </Link>
-          </li>
+              <Link
+                to='/userProfile'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                My Profile
+              </Link>
+              </li>
+              <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link
+                to='/writeblog'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                Write
+              </Link>
+              </li>
             <button
               id="mediumBlue-button"
               className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
