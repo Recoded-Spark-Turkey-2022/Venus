@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex flex-col md:flex-row justify-around items-center py-12 "
+  style={
+    Object {
+      "opacity": 0,
+      "transform": "scale(0.5) translateZ(0)",
+    }
+  }
+>
+  <div
+    className="flex justify-center items-center "
+  >
+    <img
+      alt="World Map "
+      className="w-2/3 md:w-full"
+      src="world_map_ 1.svg"
+    />
+  </div>
+  <div
+    className="flex justify-end w-full md:w-1/2 "
+  >
+    <Swiper
+      autoplay={
+        Object {
+          "delay": 2500,
+          "disableOnInteraction": false,
+        }
+      }
+      className="mySwiper pt-[100px]"
+      modules={
+        Array [
+          "Pagination",
+          undefined,
+        ]
+      }
+      pagination={
+        Object {
+          "clickable": true,
+          "dynamicBullets": true,
+        }
+      }
+    >
+      <SwiperSlide>
+        <div
+          className="w-1/2 reference-div text-center sm:text-left pb-[65px]"
+        >
+          <h3
+            className="pt-2"
+          >
+            Home.r1
+          </h3>
+          <p
+            className="text-[#b7b7b7] pt-2"
+          >
+            Home.r1-h
+          </p>
+          <p
+            className="text-[#b7b7b7] text-sm"
+          >
+            Home.r1-p
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div
+          className="w-1/2 reference-div text-center sm:text-left pb-[65px]"
+        >
+          <h3
+            className="pt-2"
+          >
+            Home.r2
+          </h3>
+          <p
+            className="text-[#b7b7b7] pt-2"
+          >
+            Home.r2-h
+          </p>
+          <p
+            className="text-[#b7b7b7] text-sm"
+          >
+            Home.r2-p
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div
+          className="w-1/2 reference-div text-center sm:text-left pb-[65px]"
+        >
+          <h3
+            className="pt-2"
+          >
+            Home.r3
+          </h3>
+          <p
+            className="text-[#b7b7b7] pt-2"
+          >
+            Home.r3-h
+          </p>
+          <p
+            className="text-[#b7b7b7] text-sm"
+          >
+            Home.r3-p
+          </p>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  </div>
+</div>
+`;

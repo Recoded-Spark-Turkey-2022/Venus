@@ -3,15 +3,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 
-import '../index.css';
+import '../../index.css';
 
-import '../Reference.css';
+import './Reference.css';
 
-import worldMap from '../assets/world_map_ 1.svg';
+import worldMap from '../../assets/world_map_ 1.svg';
 
 function Reference() {
+  const { t }= useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -20,7 +22,7 @@ function Reference() {
       className="flex flex-col md:flex-row justify-around items-center py-12 "
     >
       <div className="flex justify-center items-center ">
-        <img className="w-2/3 md:w-full" src={worldMap} alt="World Map" />
+        <img className="w-2/3 md:w-full" src={worldMap} alt="World Map " />
       </div>
       <div className="flex justify-end w-full md:w-1/2 ">
         <Swiper
@@ -33,36 +35,39 @@ function Reference() {
             dynamicBullets: true,
           }}
           modules={[Pagination, Autoplay]}
-          className="mySwiper"
+          className="mySwiper pt-[100px]"
         >
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              {t("Home.r1")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r1-h")}</p>
+              <p className="text-[#b7b7b7] text-sm">
+              {t("Home.r1-p")}
+              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              {t("Home.r2")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r2-h")}</p>
+              <p className="text-[#b7b7b7] text-sm">
+              {t("Home.r2-p")}
+              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-1/2 reference-div text-center sm:text-left">
+            <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
               <h3 className="pt-2">
-                Two lines of a short testimonial from someone want to say
-                something, and can say more to explain.
+              {t("Home.r3")}
               </h3>
-              <p className="text-[#b7b7b7] pt-2">Louis Li</p>
-              <p className="text-[#b7b7b7] text-sm">Trainer at Recoded</p>
+              <p className="text-[#b7b7b7] pt-2">{t("Home.r3-h")}</p>
+              <p className="text-[#b7b7b7] text-sm">
+              {t("Home.r3-p")}
+              </p>
             </div>
           </SwiperSlide>
         </Swiper>
