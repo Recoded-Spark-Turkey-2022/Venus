@@ -23,6 +23,6 @@ export const db = getFirestore();
 
 export const googleProvider = new GoogleAuthProvider();
 export const faceBookProvider = new FacebookAuthProvider();
-
+export const auth = getAuth(app);
 export const authentication = getAuth();
 export const storage = getStorage(app);

@@ -24,7 +24,7 @@ const Form = ({setOpen, onChange, upload, file}) => {
                   : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               } alt="profile" className="manImg" />
           { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
-          <label htmlFor="file" className="cam-btn" >
+          <label htmlFor="file" className="cam-btn text-center" >
             <ion-icon size="large" name="camera-outline" />
           </label>
           <input
