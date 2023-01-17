@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 import logo from '../../assets/homePage-graphic.svg';
 import circleLogo from '../../assets/signup-vector.svg';
 import Button from '../UI/Button';
 
+
 const HeroSection = () => {
+  const { t }= useTranslation();
   return (
     <section className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
@@ -28,13 +31,9 @@ const HeroSection = () => {
               Express Freely
             </h2>
             <p className="text  w-full  md:max-w-[25rem]">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              laboriosam iure dolores illo soluta cum aliquid minima quos culpa
-              officia?
+            {t("Home.hero")}
             </p>
-            <Link to="/signup">
-            <Button>Sign-up</Button>
-            </Link>
+            <Link to="/signup"><Button >{t("Button.su")}</Button></Link>
           </div>
         </motion.div>
         <motion.div

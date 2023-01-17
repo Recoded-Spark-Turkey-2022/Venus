@@ -1,16 +1,46 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/Logo.svg';
+import {
+  selectUserLoggedIn,
+  setUserLoggedIn,
+  setUserLoggedOut,
+} from '../../features/userSlice/userSlice';
+import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
+  const { t } = useTranslation();
+  const isLoggedIn = useSelector(selectUserLoggedIn);
+  const dispatch = useDispatch();
   const Links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'BLog', link: '/blogs' },
-    { name: 'Contact', link: '/contact' },
+    { name: t('Nav.home'), link: '/' },
+    { name: t('Nav.about'), link: '/about' },
+    { name: t('Nav.blogs'), link: '/blogs' },
+    { name: t('Nav.contact'), link: '/contact' },
   ];
+
   const [open, setOpen] = useState(true);
+  const handleSignOut = async () => {
+    try {
+      await authentication.signOut();
+
+      dispatch(
+        setUserLoggedIn({
+          isLoggedIn: false,
+        })
+      );
+
+      dispatch(setUserLoggedOut());
+      localStorage.setItem('token', '');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <nav className="shadow-md w-full fixed z-1000 top-0 left-0">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
@@ -19,7 +49,9 @@ const Navbar = () => {
       text-cyan-600"
         >
           <span className="text-3xl text-cyan-600 mr-1 pt-2">
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </span>
         </div>
 
@@ -40,28 +72,51 @@ const Navbar = () => {
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               <Link
                 to={link.link}
-                className="text-gray-800 hover:text-cyan-600 duration-500"
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
+                "
               >
                 {link.name}
               </Link>
             </li>
           ))}
-
-        <Link to='./signin'>
-          <button
-            data-testid='si-button' className="bg-mediumBlue btn-default transition-colors
-     hover:bg-white ease-in duration-300 
-     hover:text-mediumBlue
-border
-border-mediumBlue
-     hover:border-mediumBlue  
-     ml-0    md:ml-9
-     text-white font-bold px-6 rounded-2xl  py-1"
-            type="button"
-          >
-            Sign in
-          </button>
+          <Link to="/signin ">
+            {!isLoggedIn && (
+              <button
+                data-testid='si-button'
+                id="mediumBlue-button"
+                className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+                type="button"
+              >
+                {t('Button.si')}
+              </button>
+            )}
           </Link>
+          {isLoggedIn && (
+            <>
+            <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link
+                to='/userProfile'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                My Profile
+              </Link>
+              </li>
+              <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link
+                to='/writeblog'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                Write
+              </Link>
+              </li>
+            <button
+              id="mediumBlue-button"
+              className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+              type="button"
+              onClick={handleSignOut}
+            >
+              {t('Button.so')}
+            </button>
+            </>
+          )}
         </ul>
       </div>
     </nav>

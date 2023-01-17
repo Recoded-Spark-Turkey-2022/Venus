@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Pagination,  Autoplay} from "swiper";
+import { useTranslation } from 'react-i18next';
 import p1 from '../../assets/1.png'
 import p2 from '../../assets/2.png'
 import p3 from '../../assets/3.png'
@@ -13,12 +14,12 @@ import './Partners.css'
 
 
 function Partners(){
-   
+  const { t }= useTranslation();
     return(
       <div>
         
         <div className='mt-4'>
-            <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>Our Partners</h4></div>
+            <div className='text-partners flex items-center justify-center text-xl font-bold'><h4>{t("Home.partners")}</h4></div>
             <div className='swiper-div flex justify-center  items-center w-full  px-6 mt-0 md:mt-5 pb-2'>
             <Swiper
     autoplay={{

@@ -1,0 +1,254 @@
+
+.BigContainer{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    width: 100%;
+}
+.Container1{
+    flex: 1;
+    
+    
+    width: 100%;
+    
+    
+
+    margin-top: 2.2em;
+	position: relative;
+   
+    
+}
+.Container1 h1{
+    margin-bottom: 10px;
+    
+}
+
+.manImg{
+    width: 150px;
+    height: 150px;
+   
+
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+			margin-bottom: 1.5em;
+            margin-top: 100px;
+			border-radius: 100%;
+            
+   
+
+    
+}
+.cam-btn{
+    flex: 2;
+  background-color: #4699C2 !important;
+  color: white;
+  border-radius: 50%;
+   position: absolute;
+   right: 47%;
+   bottom: 23%;
+   width: 40px;
+   padding-top: 5px;
+  
+   
+}
+.name{
+    text-align: center;
+    font-size: x-large;
+}
+.Container2{
+    flex: 2;
+    
+    
+    width: 100%;
+    padding: 20px;
+} 
+.name-div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+input{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: rgb(90, 90, 90) 1px solid;
+}
+input:hover{
+    border: #4699C2 2px solid; 
+}
+input:focus{
+   border: #2d627c 2px solid !important
+   ;
+}
+
+
+.name-sur{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Bio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.Bio-div> input{
+    width: 620px;
+}
+.Loc-div> input{
+    width: 620px;
+}
+.Container2 h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: bold;
+    color: #4699C2 !important;
+}
+
+.Container4{
+    flex: 3;
+    
+    width: 100%;
+    margin-top: 0px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Container4 button{
+    margin-top: 50px;
+}
+.save-btn{
+    background-color: #4699C2 !important;
+        color: white ;
+        border: #4699C2 solid 2px;
+        height: 60px;
+        width: 130px;
+        font-size: x-large;
+        border-radius: 999px;
+        margin-right: 20px;
+}
+.save-btn:hover{
+    color: #4699C2;
+    background-color: white !important;
+    font-size: x-large;
+}
+.cancel-btn{
+    color: #4699C2;
+    background-color: white !important;
+    font-size: x-large;
+    border-radius: 999px;
+    height: 60px;
+    width: 130px;
+    border: #4699C2 solid 2px;
+
+}
+.cancel-btn:hover{
+    background-color: #4699C2 !important;
+        color: white ;
+}
+@media screen and  (max-width:1350px){
+    .manImg{
+        margin-top: 135px;
+    }
+    .cam-btn{
+        position: absolute;
+        right: 46%;
+        bottom: 19%;
+    }
+}
+@media screen and  (max-width:1150px){
+    .manImg{
+        margin-top: 125px;
+    }
+    .cam-btn{
+        position: absolute;
+        right: 45%;
+        bottom: 20%;
+    }
+}
+@media screen and  (max-width:1000px){
+    .manImg{
+        margin-top: 105px;
+    }
+    
+        .cam-btn{
+            position: absolute;
+            right: 43%;
+            bottom: 20%;
+
+    }
+}
+@media screen and  (max-width:768px){
+    .Bio input{
+        width: 520px;
+    }
+    .name-sur input{
+        width: 250px;
+    }
+    .Container4 button {
+        height: 50px;
+    width: 110px;
+    }
+    .manImg{
+        margin-top: 40px;
+    }
+}
+@media screen and  (max-width:	640px){
+    
+    .Bio input{
+        width: 320px;
+    }
+    .name-sur{
+        flex-direction: column;
+        justify-content: center;
+    align-items: center;
+    }
+    .name-sur input{
+        width: 320px;
+    }
+    .Bio-div input{
+        height: 75px;
+    }
+    .Container4 button {
+        height: 50px;
+    width: 110px;
+    }
+    .manImg{
+        margin-top: 40px;
+    }
+    .cam-btn{
+        right: 30%;
+    }
+    .cancel-btn{
+        background-color: #4699C2 !important;
+        color: white ;
+        border: #4699C2 solid 2px;
+        border: #4699C2 solid 2px;
+        border-radius: 999px;
+        font-size: large;
+    }
+    .cancel-btn:hover{
+        color: #4699C2;
+    background-color: white !important;
+    font-size: large;
+    }
+    .save-btn{
+        font-size: large;
+
+    }
+    .save-btn:hover{
+        font-size: large;
+
+    }
+    .name-div{
+        margin-right: 0px;
+    }
+}
