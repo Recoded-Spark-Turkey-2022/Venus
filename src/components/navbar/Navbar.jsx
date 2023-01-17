@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate  } from 'react-router-dom';
 import logo from '../../assets/Logo.svg';
 import {
   selectUserLoggedIn,
@@ -14,6 +12,7 @@ import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [
@@ -39,6 +38,8 @@ const Navbar = () => {
     } catch (error) {
       console.log(error);
     }
+
+    navigate("/");
   };
 
   return (
