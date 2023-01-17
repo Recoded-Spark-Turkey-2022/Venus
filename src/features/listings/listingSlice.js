@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getDocs, collection } from 'firebase/firestore';
+import { getDocs, collection, addDoc } from 'firebase/firestore';
 
 import { db } from '../../firebase/firebase.config';
 
@@ -25,10 +25,26 @@ export const fetchListsing = createAsyncThunk(
     }
   }
 );
+export const addListing = createAsyncThunk(
+  'listing/addListing',
+  async (_, { getState }) => {
+    try {
+      const collectionRef = collection(db, 'listings');
+      const response = await addDoc(collectionRef, getState().listing.listing);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 export const listingSlice = createSlice({
   name: 'listing',
   initialState,
-  reducers: {},
+  reducers: {
+    addToListing: (state, action) => {
+      state.listing = state.listing.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchListsing.pending, (state) => {
       state.loading = true;
@@ -43,10 +59,13 @@ export const listingSlice = createSlice({
       state.error = action.error.message;
       state.listing = [];
     });
+    builder.addCase(addListing.fulfilled, (state, action) => {
+      state.listing = [...state.listing, action.payload];
+    });
   },
 });
 
 export default listingSlice.reducer;
-
+export const { addToListing } = listingSlice.actions;
 export const getAllListings = (state) => state.listing.listing;
 export const loadingState = (state) => state.listing.loading;

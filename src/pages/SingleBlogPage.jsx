@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { useParams } from 'react-router-dom';
 import SingleBlog from '../components/singleBlog/SingleBlog';
 
-import { fetchListsing, loadingState } from '../features/listings/listingSlice';
+import { loadingState } from '../features/listings/listingSlice';
 import { db } from '../firebase/firebase.config';
 import Spinner from '../components/spinner/Spinner';
 
@@ -16,11 +16,8 @@ const SingleBlogPage = () => {
   const params = useParams();
 
   const loading = useSelector(loadingState);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchListsing());
-
     const fetchListingData = async () => {
       try {
         const listingRef = collection(db, 'listings');

@@ -2,10 +2,10 @@ import React from 'react';
 import { AiFillHeart } from 'react-icons/ai';
 
 import './blogs.css';
-
 import { useNavigate } from 'react-router-dom';
+import man from '../../assets/man.png';
 
-const BlogItem = (props) => {
+const BlogItem = ({ data, fullWidth }) => {
   const navigate = useNavigate();
   const {
     ImageUrl,
@@ -13,10 +13,10 @@ const BlogItem = (props) => {
     text,
     title,
     userName,
-    fullWidth,
+
     userRef,
     upVote,
-  } = props;
+  } = data;
 
   return (
     <div
@@ -52,7 +52,7 @@ const BlogItem = (props) => {
         <div className="px-6 pt-4 pb-2 flex items-center justify-between">
           <div className="flex items-center">
             <img
-              src={avatars[0]}
+              src={avatars[0] ? avatars[0] : man}
               className="rounded-full !w-[40px] md:w-[70px] h-13"
               alt=""
             />

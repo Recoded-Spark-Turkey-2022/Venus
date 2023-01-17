@@ -27,6 +27,8 @@ import './singleBlog.css';
 import { db } from '../../firebase/firebase.config';
 
 const SingleBlog = ({ data }) => {
+  const params = useParams();
+
   const {
     avatars,
     title,
@@ -37,7 +39,6 @@ const SingleBlog = ({ data }) => {
     timeStamp,
     upVote: vote,
   } = data[0];
-  const params = useParams();
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
   const [docId, setDocId] = useState('');
@@ -45,7 +46,7 @@ const SingleBlog = ({ data }) => {
   const [date, setDate] = useState('');
   const randomNumber = Math.floor(Math.random() * dataStore.length) - 1;
   const randomNum1 = randomNumber > 0 ? randomNumber : 0;
-  const randomNum2 = randomNumber > 0 ? randomNumber + 1 : 5;
+  const randomNum2 = randomNumber > 0 ? randomNumber + 1 : 4;
   const randomArr = [];
   randomArr.push(dataStore[randomNum1]);
   randomArr.push(dataStore[randomNum2]);
@@ -215,7 +216,7 @@ const SingleBlog = ({ data }) => {
             {randomArr?.map((singlePost) => (
               <BlogItem
                 key={singlePost.userRef}
-                {...singlePost}
+                data={singlePost}
                 // eslint-disable-next-line react/jsx-boolean-value
                 fullWidth={true}
               />
