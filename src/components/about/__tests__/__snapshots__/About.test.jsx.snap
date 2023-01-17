@@ -11,24 +11,31 @@ exports[`renders correctly 1`] = `
       <h2
         className="text-center text-darkBlue font-bold text-[28px] mt-[43px]"
       >
-        About
+        Home.about
       </h2>
       <p
-        className=" text-center text-[14px] max-w-[637px] p-[7px] leading-5"
+        className=" text-center text-[17px] max-w-[800px] p-[7px] leading-5"
       >
-        In quo quaerimus, non emolumento aliquo, sed ipsius honestatis decore laudandis, id est et quas molestias excepturi sint, obcaecati cupiditate non numquam eius modi tempora incidunt, ut earum rerum hic tenetur a natura ipsa natura incorrupte atque integre iudicante itaque aiunt hanc quasi involuta aperiri.
+        Home.about-p
       </p>
     </div>
     <div
       className=" self-center"
     >
-      <button
-        className="my-9 px-6 rounded-2xl  py-1"
-        id="mediumBlue-button"
-        type="button"
+      <a
+        href="/about"
+        onClick={[Function]}
       >
-        Learn more
-      </button>
+        <button
+          className="my-9 px-6 rounded-2xl  py-1"
+          id="mediumBlue-button"
+          type="button"
+        >
+           
+          Button.learn
+        </button>
+         
+      </a>
     </div>
   </div>
   <div
@@ -64,13 +71,13 @@ exports[`renders correctly 1`] = `
             <h5
               className="font-bold text-[16px] p-[13px]"
             >
-              Motivation
+              Home.p1
             </h5>
           </div>
           <p
             className="text-left max-w-[224px]"
           >
-            Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+            Home.p1-p
           </p>
         </div>
         <div
@@ -97,13 +104,13 @@ exports[`renders correctly 1`] = `
             <h5
               className="font-bold text-[16px] p-[13px]"
             >
-              Efficiency
+              Home.p2
             </h5>
           </div>
           <p
             className="text-left max-w-[224px]"
           >
-            Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+            Home.p2-p
           </p>
         </div>
       </div>
@@ -134,13 +141,13 @@ exports[`renders correctly 1`] = `
             <h5
               className="font-bold text-[16px] p-[13px]"
             >
-              Creativity
+              Home.p3
             </h5>
           </div>
           <p
             className="text-left max-w-[224px]"
           >
-            Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+            Home.p3-p
           </p>
         </div>
         <div
@@ -167,13 +174,13 @@ exports[`renders correctly 1`] = `
             <h5
               className="font-bold text-[16px] p-[13px]"
             >
-              Reliability
+              Home.p4
             </h5>
           </div>
           <p
             className="text-left max-w-[224px]"
           >
-            Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+            Home.p4-p
           </p>
         </div>
       </div>
@@ -225,13 +232,13 @@ exports[`renders correctly 1`] = `
               <h5
                 className="font-bold text-[16px] p-[13px]"
               >
-                Reliability
+                Home.p1
               </h5>
             </div>
             <p
               className="text-left max-w-[224px]"
             >
-              Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+              Home.p1-p
             </p>
           </div>
         </SwiperSlide>
@@ -258,13 +265,13 @@ exports[`renders correctly 1`] = `
               <h5
                 className="font-bold text-[16px] p-[13px]"
               >
-                Motivation
+                Home.p2
               </h5>
             </div>
             <p
               className="text-left max-w-[224px]"
             >
-              Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+              Home.p2-p
             </p>
           </div>
         </SwiperSlide>
@@ -291,13 +298,13 @@ exports[`renders correctly 1`] = `
               <h5
                 className="font-bold text-[16px] p-[13px]"
               >
-                Efficiency
+                Home.p3
               </h5>
             </div>
             <p
               className="text-left max-w-[224px]"
             >
-              Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+              Home.p3-p
             </p>
           </div>
         </SwiperSlide>
@@ -324,13 +331,13 @@ exports[`renders correctly 1`] = `
               <h5
                 className="font-bold text-[16px] p-[13px]"
               >
-                Creativity
+                Home.p4
               </h5>
             </div>
             <p
               className="text-left max-w-[224px]"
             >
-              Certe, inquam, pertinax non recusandae itaque earum  rerum facilis est consec. Laudem et impetus quo aut in gravissimo bello animadversionis.
+              Home.p4-p
             </p>
           </div>
         </SwiperSlide>

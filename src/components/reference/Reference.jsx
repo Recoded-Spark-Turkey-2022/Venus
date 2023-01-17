@@ -4,16 +4,7 @@ import { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-
-<<<<<<<< HEAD:src/components/Reference/Reference.jsx
 import './Reference.css';
-========
-
-import '../../index.css';
-
-import './Reference.css';
-
->>>>>>>> c91c9e5b9e8c0f66102acaa3fab218683e6f7006:src/components/reference/Reference.jsx
 import worldMap from '../../assets/world_map_ 1.svg';
 
 function Reference() {

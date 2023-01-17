@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <footer
-  className=" flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5"
+  className=" relative z-10 flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5"
 >
   <div
     className="flex justify-center items-center  mt-5 mb-5 md:mt-1 md:mb-1 mx-auto flex-shrink-0"
@@ -32,7 +32,7 @@ exports[`renders correctly 1`] = `
           href="/"
           onClick={[Function]}
         >
-          Home
+          Footer.home
         </a>
       </li>
       <li
@@ -43,7 +43,7 @@ exports[`renders correctly 1`] = `
           href="/about"
           onClick={[Function]}
         >
-          About
+          Footer.about
         </a>
       </li>
       <li
@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
           href="/contact"
           onClick={[Function]}
         >
-          Contact
+          Footer.contact
         </a>
       </li>
       <li
@@ -65,7 +65,7 @@ exports[`renders correctly 1`] = `
           href="/blogs"
           onClick={[Function]}
         >
-          Blogs
+          Footer.blogs
         </a>
       </li>
     </ul>
@@ -88,7 +88,7 @@ exports[`renders correctly 1`] = `
             id="mediumBlue-button"
             type="button"
           >
-            Sign up
+            Button.su
           </button>
         </a>
       </div>
@@ -108,7 +108,7 @@ exports[`renders correctly 1`] = `
           <option
             value="ar"
           >
-            Arabic
+            العربية
           </option>
         </select>
       </div>

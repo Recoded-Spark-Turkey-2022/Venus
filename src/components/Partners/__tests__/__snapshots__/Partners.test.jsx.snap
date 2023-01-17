@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
       className="text-partners flex items-center justify-center text-xl font-bold"
     >
       <h4>
-        Our Partners
+        Home.partners
       </h4>
     </div>
     <div
