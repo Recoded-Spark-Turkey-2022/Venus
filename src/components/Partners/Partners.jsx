@@ -14,7 +14,7 @@ import './Partners.css'
 
 
 function Partners(){
-  const { t } = jest ? {t:s=>s} : useTranslation();
+  const { t } = useTranslation();
     return(
       <div>
         

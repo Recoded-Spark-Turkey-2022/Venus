@@ -11,6 +11,9 @@ jest.mock('swiper/react', () => ({
     Pagination: 'Pagination'
   }));
   
+  jest.mock('react-i18next', () => ({
+    useTranslation: () => ({t: key => key})
+  }));
 
   it(`renders correctly` , () => {
     const tree = renderer.create(<Partners />);

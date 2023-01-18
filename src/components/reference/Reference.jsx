@@ -8,7 +8,7 @@ import './Reference.css';
 import worldMap from '../../assets/world_map_ 1.svg';
 
 function Reference() {
-  const { t } = jest ? {t:s=>s} : useTranslation();
+  const { t } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}

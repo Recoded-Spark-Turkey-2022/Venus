@@ -17,7 +17,7 @@ import "./about.css";
 
 
 function About() {
-  const { t } = jest ? {t:s=>s} : useTranslation();
+  const { t } = useTranslation();
   return (
     <div > 
         <div className='aboutfont flex flex-col'>

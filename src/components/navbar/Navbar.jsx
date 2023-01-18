@@ -13,7 +13,7 @@ import {
 import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
-  const { t } = jest ? {t:s=>s} : useTranslation();
+  const { t } = useTranslation();
 
   const isLoggedIn = useSelector(selectUserLoggedIn);
 

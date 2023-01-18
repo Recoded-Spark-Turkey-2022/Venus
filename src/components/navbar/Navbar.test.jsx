@@ -6,6 +6,10 @@ import { store} from '../../app/store'
 import renderer from 'react-test-renderer';
 import Navbar from "./Navbar"
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({t: key => key})
+}));
+
 it('renders correctly' , () => {
   const tree = renderer.create(
     <Router>

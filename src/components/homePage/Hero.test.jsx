@@ -2,6 +2,10 @@ import { fireEvent, render, screen} from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from './HeroSection'
 
+jest.mock('react-i18next', () => ({
+    useTranslation: () => ({t: key => key})
+  }));
+  
 test('renders hero heading correctly', ()=>{
     render(<Router>
         <HeroSection/>

@@ -7,7 +7,7 @@ import Logo from '../../assets/Logo.svg';
 
 const Footer = () => {
 
-  const { t } = jest ? {t:s=>s} : useTranslation();
+  const { t } = useTranslation();
   
   const handleLanguageChange = (e) => {
 		i18next.changeLanguage(e.target.value);
