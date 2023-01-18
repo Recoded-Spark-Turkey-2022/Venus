@@ -51,7 +51,7 @@ const WriteBlogC = () => {
           //     userName: user.displayName,
           //     userRef: user.uid,
           //   };
-          setData({ ...data, userRef: user.uid, userName: user.displayName });
+          setData({ ...data, userId: user.uid, userName: user.displayName });
         } else {
           navigate('/');
         }
