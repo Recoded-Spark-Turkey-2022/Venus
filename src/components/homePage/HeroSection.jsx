@@ -8,7 +8,7 @@ import Button from '../UI/Button';
 
 
 const HeroSection = () => {
-  const { t }= useTranslation();
+  const { t } = jest ? {t:s=>s} : useTranslation();
   return (
     <section className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
