@@ -1,13 +1,18 @@
-import { render, screen} from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./Navbar";
+// eslint-disable-next-line no-unused-vars
+import * as react from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import { store} from '../../app/store'
+import renderer from 'react-test-renderer';
+import Navbar from "./Navbar"
 
-test('renders nav correctly', ()=>{
-  render(
-  <Router> 
-       <Navbar/> 
-   </Router> 
-   );
-  const Navbars = screen.getByTestId('nav')
-  expect(Navbars).toBeInTheDocument();
+it('renders correctly' , () => {
+  const tree = renderer.create(
+    <Router>
+      <Provider store={store}>
+        <Navbar />
+      </Provider>
+    </Router>
+  );
+  expect(tree).toMatchSnapshot();
 });
