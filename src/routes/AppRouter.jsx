@@ -13,6 +13,7 @@ import WriteBlog from '../pages/WriteBlog';
 import About from '../pages/About';
 import UserProfile from '../pages/UserProfile';
 import Contact from '../pages/Contact';
+import NotFound from '../components/Not found/NotFound';
 
 const AppRouter = () => {
   return (
@@ -23,7 +24,7 @@ const AppRouter = () => {
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
-
+        <Route path="/*" element={<NotFound />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:blogId" element={<ProtectedRoute />}>
           <Route path="" element={<SingleBlogPage />} />
