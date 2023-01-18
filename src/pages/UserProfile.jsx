@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
@@ -113,11 +114,16 @@ const UserProfile = () => {
                     spaceBetween: 20,
                   },
                   768: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 30,
                   },
                   1024: {
-                    slidesPerView: 3,
+                    slidesPerView:
+                      listing.length > 0
+                        ? listing.length > 3
+                          ? 3
+                          : listing.length
+                        : 1,
                     spaceBetween: 30,
                   },
                 }}
@@ -126,7 +132,7 @@ const UserProfile = () => {
                   dynamicBullets: true,
                 }}
                 modules={[Pagination, Autoplay]}
-                className="mySwiper w-full r"
+                className="mySwiper w-full  mt-20"
               >
                 {listing.map((singleList) => (
                   <SwiperSlide
