@@ -14,8 +14,11 @@ import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
   const { t } = useTranslation();
+
   const isLoggedIn = useSelector(selectUserLoggedIn);
+
   const dispatch = useDispatch();
+
   const Links = [
     { name: t('Nav.home'), link: '/' },
     { name: t('Nav.about'), link: '/about' },
@@ -42,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="shadow-md w-full fixed z-1000 top-0 left-0">
+    <nav data-testid='nav' className="shadow-md w-full fixed z-1000 top-0 left-0">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
@@ -50,13 +53,13 @@ const Navbar = () => {
         >
           <span className="text-3xl text-cyan-600 mr-1 pt-2">
             <Link to="/">
-              <img src={logo} alt="logo" />
+              <img data-testid='logo-img' src={logo} alt="logo" />
             </Link>
           </span>
         </div>
 
         <button
-          data-testid='h-menu' type="button"
+          type="button"
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
@@ -64,7 +67,7 @@ const Navbar = () => {
         </button>
 
         <ul
-          data-testid='n-links' className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             open ? 'top-30 ' : 'top-[-490px]'
           }`}
         >
@@ -82,7 +85,6 @@ const Navbar = () => {
           <Link to="/signin ">
             {!isLoggedIn && (
               <button
-                data-testid='si-button'
                 id="mediumBlue-button"
                 className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
                 type="button"
