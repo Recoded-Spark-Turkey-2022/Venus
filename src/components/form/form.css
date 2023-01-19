@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+  
     width: 100%;
 }
 .Container1{
@@ -197,8 +197,12 @@ input:focus{
         height: 50px;
     width: 110px;
     }
+    .manImg{
+        margin-top: 40px;
+    }
 }
 @media screen and  (max-width:	640px){
+    
     .Bio input{
         width: 320px;
     }
@@ -218,10 +222,10 @@ input:focus{
     width: 110px;
     }
     .manImg{
-        margin-top: 60px;
+        margin-top: 40px;
     }
     .cam-btn{
-        right: 40%;
+        right: 30%;
     }
     .cancel-btn{
         background-color: #4699C2 !important;

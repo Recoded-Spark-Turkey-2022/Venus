@@ -1,22 +1,38 @@
+
 import './form.css';
-import man from '../../assets/man.png';
 import img from '../../assets/signup-vector.svg';
 
-const Form = () => {
+const Form = ({setOpen, onChange, upload, file}) => {
+
+ 
+
+  const handleCancel=()=>{
+    setOpen(false);
+  }
+
   return (
-    <section className=" w-screen h-screen relative ">
+    <section className="h-[130vh] section-form overflow-hidden w-screen md:h-screen relative ">
       <img
         src={img}
-        className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[90vh] "
+        className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[110%] "
         alt="circle-logo"
       />
       <div className="BigContainer">
         <div className="Container1">
-          <img src={man} alt="p" className="manImg" />
-
-          <button className="cam-btn" type="button">
+          <img src={
+                file ? URL.createObjectURL(file)
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              } alt="profile" className="manImg" />
+          { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
+          <label htmlFor="file" className="cam-btn" >
             <ion-icon size="large" name="camera-outline" />
-          </button>
+          </label>
+          <input
+                  type="file"
+                  id="file"
+                  onChange={onChange}
+                  style={{ display: "none" }}
+                />
           <h1 className="name">Hi I am Here</h1>
         </div>
         <div className="Container2">
@@ -44,10 +60,10 @@ const Form = () => {
           </form>
         </div>
         <div className="Container4">
-          <button type="submit" className="save-btn">
+          <button onClick={upload} type="submit" className="save-btn">
             SAVE
           </button>
-          <button type="submit" className="cancel-btn">
+          <button type="submit" className="cancel-btn" onClick={handleCancel}>
             CANCEL
           </button>
         </div>

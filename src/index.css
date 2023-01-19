@@ -124,6 +124,31 @@ nav{
   color: #4699C1;
   
 }
+
+
+.input-div input,
+.blog-div textarea {
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+  
+}
+
+.input-div input {
+  height: 40px;
+  border-radius: 12px;
+  
+}
+.blog-div textarea {
+  height: 150px;
+  border-radius: 12px;
+}
+
+.image-div input{
+  border: none;
+  border-radius: 12px;
+
+}
 .LastBtm{
   background-color: white !important;
   color: #70cdd6;

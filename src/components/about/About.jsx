@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import AboutImg from '../../assets/about-image.svg'
 import Button from '../UI/Button'
-
 import 'swiper/swiper-bundle.css';
 import "./about.css";
 
