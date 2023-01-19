@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation  } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import SignUpForm from '../SignupForm/SignupForm';
@@ -7,6 +8,7 @@ import img from '../../assets/signup-vector.svg';
 import SocialLinks from './SocialLinks';
 
 const Signup = () => {
+  const { t } = useTranslation();
   return (
     <section className=" h-[100vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center">
       <div>
@@ -16,14 +18,14 @@ const Signup = () => {
           alt="circle-logo"
         />
         <div className="ContainerBox">
-          <h1 className="Title">SIGN UP WITH</h1>
+          <h1 className="Title">{t("Signup.Signup-with")}</h1>
           <SignUpForm />
           <SocialLinks />
           <div className="Container3">
-            <h1 className="Already ">Already a member?</h1>
+            <h1 className="Already ">{t("Signup.alreadyMember")}</h1>
             <Link to="/signin">
               <button className="LastBtm" type="button">
-                Sign in
+              {t("Button.si")}
               </button>
             </Link>
           </div>
