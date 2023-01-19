@@ -60,5 +60,14 @@
         },
         "your-story" : "Share your story, help others and get help from others",
         "your-story-paragraph" : "RefuBook changed my life as a refugee by providing the resources and support to secure a job and support my family. Thanks to their help, I could give my children better opportunities and watch them thrive. I am grateful for the RefuBook community's support and generosity."
+    },
+    "Signin": {
+        "Signin-with": "SIGN IN WITH",
+        "newMember" : "Want to be a member?"
+    },
+    "Signup": {
+        "Signup-with": "SIGN UP WITH",
+        "alreadyMember" : "Already a member?"
     }
+
 }
