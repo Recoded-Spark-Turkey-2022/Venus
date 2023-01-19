@@ -1,12 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { authentication } from '../../firebase/firebase.config';
 
 const SignInForm = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -74,7 +75,7 @@ const SignInForm = () => {
         id="mediumBlue-button"
         className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
       >
-        Sign In
+        {t("Button.si")}
       </button>
     </form>
   );
