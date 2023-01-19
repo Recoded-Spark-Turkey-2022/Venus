@@ -64,8 +64,8 @@
     "Contact": {
         "title" : "Get in Touch",
         "paragraph" : "We would love to hear from you.",
-        "email" : "email",
-        "message" : "message",
+        "email" : "Email",
+        "message" : "Message",
         "btn-text" : "Send"
         
     }
