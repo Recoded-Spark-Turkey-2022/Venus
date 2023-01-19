@@ -1,17 +1,13 @@
-
 import './form.css';
 import img from '../../assets/signup-vector.svg';
 
-const Form = ({setOpen, onChange, upload, file}) => {
-
- 
-
-  const handleCancel=()=>{
+const Form = ({ setOpen, onChange, upload, file }) => {
+  const handleCancel = () => {
     setOpen(false);
-  }
+  };
 
   return (
-    <section className="h-[130vh] section-form overflow-hidden w-screen md:h-screen relative ">
+    <section className="h-[130vh] section-form overflow-hidden w-screen md:h-[110vh] relative ">
       <img
         src={img}
         className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[110%] "
@@ -19,20 +15,36 @@ const Form = ({setOpen, onChange, upload, file}) => {
       />
       <div className="BigContainer">
         <div className="Container1">
-          <img src={
-                file ? URL.createObjectURL(file)
-                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-              } alt="profile" className="manImg" />
-          { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
-          <label htmlFor="file" className="cam-btn" >
-            <ion-icon size="large" name="camera-outline" />
-          </label>
+          <div className="image-wrapper">
+            <img
+              src={
+                file
+                  ? URL.createObjectURL(file)
+                  : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
+              }
+              alt="profile"
+              className="manImg"
+            />
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label htmlFor="file" className="cam-btn">
+              <ion-icon size="large" name="camera-outline" />
+            </label>
+          </div>
           <input
-                  type="file"
-                  id="file"
-                  onChange={onChange}
-                  style={{ display: "none" }}
-                />
+            type="file"
+            id="file"
+            onChange={onChange}
+            style={{ display: 'none' }}
+          />
+          <button
+            onClick={upload}
+            type="submit"
+            className="rounded-2xl py-1 px-2 "
+            id="mediumBlue-button"
+          >
+            Upload Avatar
+          </button>
+
           <h1 className="name">Hi I am Here</h1>
         </div>
         <div className="Container2">
