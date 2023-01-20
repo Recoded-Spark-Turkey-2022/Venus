@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import editicon from '../../assets/editicon.svg';
 import { authentication, db } from '../../firebase/firebase.config';
 
-const Avatar = ({ name, isOpen }) => {
+const Avatar = ({ isOpen }) => {
   const [image, setImage] = useState('');
+  const [name, setName] = useState('');
   useEffect(() => {
     onAuthStateChanged(authentication, async (user) => {
       try {
@@ -21,6 +22,7 @@ const Avatar = ({ name, isOpen }) => {
             return listing.push(doc.data());
           });
           setImage(listing[0].avatars);
+          setName(listing[0].userName);
         }
       } catch (error) {
         console.log(error);

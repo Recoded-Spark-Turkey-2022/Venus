@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { onAuthStateChanged } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
 import {
   collection,
   doc,
@@ -14,13 +15,16 @@ import {
 import { authentication, db, storage } from '../../firebase/firebase.config';
 
 import img from '../../assets/signup-vector.svg';
+import { fetchListsing } from '../../features/listings/listingSlice';
 
 const Form = ({ setOpen, onChange, file }) => {
   const [image, setImage] = useState();
+  const [userName, setName] = useState('');
   const nameInput = useRef();
   const surNameInput = useRef();
   const biographyInput = useRef();
   const locationInput = useRef();
+  const dispatch = useDispatch();
   const handleCancel = () => {
     setOpen(false);
   };
@@ -101,6 +105,7 @@ const Form = ({ setOpen, onChange, file }) => {
         }
       }
     });
+    dispatch(fetchListsing());
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -132,18 +137,21 @@ const Form = ({ setOpen, onChange, file }) => {
           );
 
           const querySnap = await getDocs(queryRef);
-
+          const listing = [];
           // Updating avatar image
           querySnap.docs.forEach(async (singleDoc) => {
             const reference = singleDoc.ref;
-
+            listing.push(singleDoc.data());
             await updateDoc(reference, { userName: enteredName });
           });
+          setName(listing[0].userName);
         }
       } catch (error) {
         console.log(error);
       }
     });
+    dispatch(fetchListsing());
+    setOpen(false);
     e.target.reset();
   };
 
@@ -151,6 +159,13 @@ const Form = ({ setOpen, onChange, file }) => {
     onAuthStateChanged(authentication, async (user) => {
       try {
         if (user) {
+          const docRef = collection(db, 'users');
+          const docSnap = await getDocs(docRef);
+          const userInfo = [];
+          docSnap.forEach((snap) => {
+            return userInfo.push(snap.data());
+          });
+
           const listingRef = collection(db, 'listings');
           const queryRef = query(
             listingRef,
@@ -162,6 +177,9 @@ const Form = ({ setOpen, onChange, file }) => {
             return listing.push(document.data());
           });
           setImage(listing[0].avatars);
+          setName(listing[0].userName);
+
+          // ***
         }
       } catch (error) {
         console.log(error);
@@ -185,6 +203,8 @@ const Form = ({ setOpen, onChange, file }) => {
             <div className="image-wrapper">
               <img
                 src={
+                  (file.ImageUrl?.length > 0 &&
+                    URL.createObjectURL(file.ImageUrl[0])) ||
                   image ||
                   'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
                 }
@@ -211,7 +231,7 @@ const Form = ({ setOpen, onChange, file }) => {
             </button>
           </form>
 
-          <h1 className="name">Hi I am Here</h1>
+          <h1 className="name">Hi I am {userName} </h1>
         </div>
         <div className="Container2">
           <form onSubmit={handleSubmit}>
@@ -257,18 +277,19 @@ const Form = ({ setOpen, onChange, file }) => {
                 />
               </div>
             </div>
-            <button type="submit" className="save-btn">
-              SAVE
-            </button>
+            <div className="Container4">
+              <button type="submit" className="save-btn">
+                SAVE
+              </button>
+              <button
+                type="button"
+                className="cancel-btn"
+                onClick={handleCancel}
+              >
+                CANCEL
+              </button>
+            </div>
           </form>
-        </div>
-        <div className="Container4">
-          <button type="submit" className="save-btn">
-            SAVE
-          </button>
-          <button type="button" className="cancel-btn" onClick={handleCancel}>
-            CANCEL
-          </button>
         </div>
       </div>
       <ToastContainer transition={Flip} limit={3} />
