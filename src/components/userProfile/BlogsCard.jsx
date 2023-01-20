@@ -1,6 +1,32 @@
-import React from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { authentication, db } from '../../firebase/firebase.config';
 
-const BlogsCard = ({ title, name, file, text }) => {
+const BlogsCard = ({ title, name, text }) => {
+  const [image, setImage] = useState('');
+  useEffect(() => {
+    onAuthStateChanged(authentication, async (user) => {
+      try {
+        if (user) {
+          const listingRef = collection(db, 'listings');
+          const queryRef = query(
+            listingRef,
+            where('userId', '==', authentication?.currentUser.uid)
+          );
+          const listing = [];
+          const querySnap = await getDocs(queryRef);
+          querySnap.forEach((doc) => {
+            return listing.push(doc.data());
+          });
+          setImage(listing[0].avatars);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  }, []);
+
   return (
     <div className="bg-white w-[100%] md:w-[70%] lg:w-[400px] flex h-[300px]  justify-center rounded-3xl overflow-hidden shadow-md py-8 px-3 mb-2">
       <div className="text-xl mb-2 text-left  flex flex-col justify-between">
@@ -15,9 +41,8 @@ const BlogsCard = ({ title, name, file, text }) => {
             <img
               className="rounded-full  aspect-square"
               src={
-                file
-                  ? URL.createObjectURL(file)
-                  : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
+                image ||
+                'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
               }
               alt="Avatar of User"
             />

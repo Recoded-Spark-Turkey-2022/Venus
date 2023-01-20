@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import { Autoplay, Pagination } from 'swiper';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
-import { authentication, db, storage } from '../firebase/firebase.config';
+
 import Form from '../components/form/Form';
 import Container from '../components/UI/Container';
 import BlogsCard from '../components/userProfile/BlogsCard';
@@ -14,15 +13,14 @@ import Avatar from '../components/userProfile/Avatar';
 import article from '../data/Article';
 import circleLogo from '../assets/signup-vector.svg';
 import '../components/userProfile/userProfile.css';
+import { authentication, db } from '../firebase/firebase.config';
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState('');
   const [listing, setListing] = useState([]);
-  const [data, setData] = useState({});
   const navigate = useNavigate();
   // Getting user's personal blogs
-
   useEffect(() => {
     onAuthStateChanged(authentication, async (currentUser) => {
       if (currentUser) {
@@ -48,34 +46,12 @@ const UserProfile = () => {
       }
     });
   }, []);
-
-  const uploadFile = () => {
-    const name = new Date().getTime() + file.name;
-    console.log(name);
-    const storageRef = ref(storage, file.name);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on(
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setData((prev) => ({ ...prev, img: downloadURL }));
-        });
-      }
-    );
-  };
-
-  console.log(data);
-  console.log(listing);
-
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleChangeFile = (e) => {
-    setFile(e.target.files[0]);
+    setFile((prev) => ({ ...prev, ImageUrl: e.target.files }));
   };
 
   return (
@@ -84,7 +60,7 @@ const UserProfile = () => {
         <Form
           setOpen={setOpen}
           onChange={handleChangeFile}
-          upload={uploadFile}
+          // upload={uploadFile}
           file={file}
         />
       ) : (
