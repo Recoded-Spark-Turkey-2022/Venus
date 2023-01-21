@@ -21,8 +21,8 @@ const Avatar = ({ isOpen }) => {
           querySnap.forEach((doc) => {
             return listing.push(doc.data());
           });
-          setImage(listing[0].avatars);
-          setName(listing[0].userName);
+          setImage(listing[0]?.avatars);
+          setName(listing[0]?.userName || user.displayName);
         }
       } catch (error) {
         console.log(error);

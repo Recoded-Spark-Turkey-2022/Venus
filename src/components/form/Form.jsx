@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import {
   collection,
   doc,
+  getDoc,
   getDocs,
   query,
   updateDoc,
@@ -87,6 +88,7 @@ const Form = ({ setOpen, onChange, file }) => {
       if (user) {
         try {
           const listingRef = collection(db, 'listings');
+
           const queryRef = query(
             listingRef,
             where('userId', '==', authentication?.currentUser.uid)
@@ -96,10 +98,14 @@ const Form = ({ setOpen, onChange, file }) => {
 
           // Updating avatar image
           querySnap.docs.forEach(async (singleDoc) => {
+            console.log(singleDoc.data());
             const reference = singleDoc.ref;
-            console.log(updateImageUrl, 'line 93');
+
             await updateDoc(reference, { avatars: updateImageUrl });
           });
+          console.log(user.uid);
+          const userRef = doc(db, 'users', user.uid);
+          await updateDoc(userRef, { avatars: updateImageUrl });
         } catch (error) {
           console.log(error);
         }
@@ -114,6 +120,22 @@ const Form = ({ setOpen, onChange, file }) => {
     const enteredSurName = surNameInput.current.value;
     const enteredbiographyInput = biographyInput.current.value;
     const enteredlocationInput = locationInput.current.value;
+
+    const regexName = /^[A-Za-zşŞıİçÇöÖüÜĞğ ]+$/;
+    if (!regexName.test(enteredName)) {
+      toast.warn('You must enter a valid User Name', {
+        position: 'top-left',
+        autoClose: 1200,
+        className: 'mt-20',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      return;
+    }
 
     onAuthStateChanged(authentication, async (user) => {
       try {
@@ -137,14 +159,18 @@ const Form = ({ setOpen, onChange, file }) => {
           );
 
           const querySnap = await getDocs(queryRef);
+
           const listing = [];
           // Updating avatar image
           querySnap.docs.forEach(async (singleDoc) => {
-            const reference = singleDoc.ref;
-            listing.push(singleDoc.data());
-            await updateDoc(reference, { userName: enteredName });
+            if (singleDoc.exists) {
+              const reference = singleDoc.ref;
+
+              listing.push(singleDoc.data());
+              await updateDoc(reference, { userName: enteredName });
+              setName(listing[0].userName);
+            }
           });
-          setName(listing[0].userName);
         }
       } catch (error) {
         console.log(error);
@@ -159,12 +185,12 @@ const Form = ({ setOpen, onChange, file }) => {
     onAuthStateChanged(authentication, async (user) => {
       try {
         if (user) {
-          const docRef = collection(db, 'users');
-          const docSnap = await getDocs(docRef);
+          // Getting user information from   authenticated user
+
+          const docRef = doc(db, 'users', user.uid);
+          const docSnap = await getDoc(docRef);
           const userInfo = [];
-          docSnap.forEach((snap) => {
-            return userInfo.push(snap.data());
-          });
+          userInfo.push(docSnap.data());
 
           const listingRef = collection(db, 'listings');
           const queryRef = query(
@@ -176,8 +202,14 @@ const Form = ({ setOpen, onChange, file }) => {
           querySnap.forEach((document) => {
             return listing.push(document.data());
           });
-          setImage(listing[0].avatars);
-          setName(listing[0].userName);
+
+          if (listing.length === 0) {
+            console.log(userInfo);
+
+            setImage(userInfo[0]?.avatars[0]);
+            setName(userInfo[0]?.name || user.displayName);
+          }
+          //  setImage(listing[0]?.avatars);
 
           // ***
         }
@@ -242,6 +274,8 @@ const Form = ({ setOpen, onChange, file }) => {
                   type="text"
                   name="name"
                   required
+                  maxLength={18}
+                  max={18}
                   ref={nameInput}
                   className="nameform"
                 />
@@ -250,6 +284,7 @@ const Form = ({ setOpen, onChange, file }) => {
                 <h1>Surname:</h1>
                 <input
                   type="text"
+                  max={15}
                   name="surname"
                   ref={surNameInput}
                   className="surname"
@@ -263,6 +298,8 @@ const Form = ({ setOpen, onChange, file }) => {
                   type="text"
                   ref={biographyInput}
                   name="Biography"
+                  required
+                  min={5}
                   className="Biography"
                 />
               </div>
