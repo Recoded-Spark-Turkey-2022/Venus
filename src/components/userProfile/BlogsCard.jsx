@@ -3,8 +3,9 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { authentication, db } from '../../firebase/firebase.config';
 
-const BlogsCard = ({ title, name, text }) => {
+const BlogsCard = ({ title, text, name }) => {
   const [image, setImage] = useState('');
+
   useEffect(() => {
     onAuthStateChanged(authentication, async (user) => {
       try {

@@ -10,7 +10,7 @@ import Form from '../components/form/Form';
 import Container from '../components/UI/Container';
 import BlogsCard from '../components/userProfile/BlogsCard';
 import Avatar from '../components/userProfile/Avatar';
-import article from '../data/Article';
+
 import circleLogo from '../assets/signup-vector.svg';
 import '../components/userProfile/userProfile.css';
 import { authentication, db } from '../firebase/firebase.config';
@@ -19,6 +19,8 @@ const UserProfile = () => {
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState('');
   const [listing, setListing] = useState([]);
+  const [image, setImage] = useState('');
+  const [name, setName] = useState('');
   const navigate = useNavigate();
   // Getting user's personal blogs
   useEffect(() => {
@@ -45,7 +47,7 @@ const UserProfile = () => {
         fetchUserListing();
       }
     });
-  }, []);
+  }, [open]);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -60,13 +62,24 @@ const UserProfile = () => {
         <Form
           setOpen={setOpen}
           onChange={handleChangeFile}
-          // upload={uploadFile}
+          name={name}
+          setName={setName}
+          image={image}
+          setImage={setImage}
           file={file}
+          toggle={open}
         />
       ) : (
         <Container>
           <div className="relative z-10 flex justify-center object-center">
-            <Avatar name={article.userName} isOpen={handleOpen} file={file} />
+            <Avatar
+              name={name}
+              setName={setName}
+              image={image}
+              setImage={setImage}
+              isOpen={handleOpen}
+              file={file}
+            />
           </div>
           <img
             src={circleLogo}
@@ -117,7 +130,7 @@ const UserProfile = () => {
                     onClick={() => navigate(`/blogs/${singleList.userRef}`)}
                   >
                     <BlogsCard
-                      name={singleList.userName}
+                      name={name || singleList.userName}
                       file={file}
                       title={singleList.title}
                       text={singleList.text}

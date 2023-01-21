@@ -1,16 +1,30 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { useState, useEffect } from 'react';
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore';
+import { useEffect } from 'react';
+
 import editicon from '../../assets/editicon.svg';
+
 import { authentication, db } from '../../firebase/firebase.config';
 
-const Avatar = ({ isOpen }) => {
-  const [image, setImage] = useState('');
-  const [name, setName] = useState('');
+const Avatar = ({ isOpen, name, setName, image, setImage }) => {
   useEffect(() => {
     onAuthStateChanged(authentication, async (user) => {
       try {
         if (user) {
+          // Getting user information from   authenticated user
+
+          const docRef = doc(db, 'users', user.uid);
+          const docSnap = await getDoc(docRef);
+          const userInfo = [];
+          userInfo.push(docSnap.data());
+
           const listingRef = collection(db, 'listings');
           const queryRef = query(
             listingRef,
@@ -18,11 +32,21 @@ const Avatar = ({ isOpen }) => {
           );
           const listing = [];
           const querySnap = await getDocs(queryRef);
-          querySnap.forEach((doc) => {
-            return listing.push(doc.data());
+          querySnap.forEach((document) => {
+            if (document.exists()) {
+              listing.push(document.data());
+
+              setImage(listing[0]?.avatars);
+              // eslint-disable-next-line no-unused-expressions
+              name || setName(userInfo[0]?.name || user.displayName);
+            }
           });
-          setImage(listing[0]?.avatars);
-          setName(listing[0]?.userName || user.displayName);
+          if (listing.length === 0) {
+            setImage(userInfo[0]?.avatars[0]);
+
+            // eslint-disable-next-line no-unused-expressions
+            name || setName(userInfo[0]?.name || user.displayName);
+          }
         }
       } catch (error) {
         console.log(error);

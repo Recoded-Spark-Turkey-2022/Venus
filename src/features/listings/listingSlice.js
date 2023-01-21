@@ -7,6 +7,7 @@ import { db } from '../../firebase/firebase.config';
 
 const initialState = {
   listing: [],
+  userInfo: [],
   loading: true,
   error: '',
 };
@@ -18,6 +19,21 @@ export const fetchListsing = createAsyncThunk(
       const querySnapshot = await getDocs(collection(db, 'listings'));
       querySnapshot.forEach((doc) => {
         return newArr.push(doc.data());
+      });
+      return newArr;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+export const fetchUserListing = createAsyncThunk(
+  'listing/fetchUserListing',
+  async () => {
+    try {
+      const newArr = [];
+      const querySnapshot = await getDocs(collection(db, 'users'));
+      querySnapshot.forEach((doc) => {
+        return newArr.push({ ...doc.data(), documentId: doc.id });
       });
       return newArr;
     } catch (error) {
@@ -59,6 +75,19 @@ export const listingSlice = createSlice({
       state.error = action.error.message;
       state.listing = [];
     });
+    builder.addCase(fetchUserListing.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchUserListing.fulfilled, (state, action) => {
+      state.loading = false;
+      state.userInfo = action.payload;
+      state.error = '';
+    });
+    builder.addCase(fetchUserListing.rejected, (state, action) => {
+      state.loading = true;
+      state.error = action.error.message;
+      state.userInfo = [];
+    });
     builder.addCase(addListing.fulfilled, (state, action) => {
       state.listing = [...state.listing, action.payload];
     });
@@ -68,4 +97,5 @@ export const listingSlice = createSlice({
 export default listingSlice.reducer;
 export const { addToListing } = listingSlice.actions;
 export const getAllListings = (state) => state.listing.listing;
+export const getUserInfo = (state) => state.listing.userInfo;
 export const loadingState = (state) => state.listing.loading;

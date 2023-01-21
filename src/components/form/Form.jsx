@@ -1,5 +1,5 @@
 import './form.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -18,9 +18,16 @@ import { authentication, db, storage } from '../../firebase/firebase.config';
 import img from '../../assets/signup-vector.svg';
 import { fetchListsing } from '../../features/listings/listingSlice';
 
-const Form = ({ setOpen, onChange, file }) => {
-  const [image, setImage] = useState();
-  const [userName, setName] = useState('');
+const Form = ({
+  setOpen,
+  onChange,
+  file,
+  toggle,
+  image,
+  setImage,
+  setName,
+  name,
+}) => {
   const nameInput = useRef();
   const surNameInput = useRef();
   const biographyInput = useRef();
@@ -35,8 +42,8 @@ const Form = ({ setOpen, onChange, file }) => {
 
     const storeImage = async (imageData) => {
       return new Promise((resolve, reject) => {
-        const name = new Date().getTime() + imageData.name;
-        const storageRef = ref(storage, `Avatar/${name}`);
+        const nameId = new Date().getTime() + imageData.name;
+        const storageRef = ref(storage, `Avatar/${nameId}`);
 
         const uploadTask = uploadBytesResumable(storageRef, imageData);
 
@@ -98,12 +105,11 @@ const Form = ({ setOpen, onChange, file }) => {
 
           // Updating avatar image
           querySnap.docs.forEach(async (singleDoc) => {
-            console.log(singleDoc.data());
             const reference = singleDoc.ref;
 
             await updateDoc(reference, { avatars: updateImageUrl });
           });
-          console.log(user.uid);
+
           const userRef = doc(db, 'users', user.uid);
           await updateDoc(userRef, { avatars: updateImageUrl });
         } catch (error) {
@@ -136,6 +142,7 @@ const Form = ({ setOpen, onChange, file }) => {
       });
       return;
     }
+    setName(enteredName);
 
     onAuthStateChanged(authentication, async (user) => {
       try {
@@ -163,12 +170,12 @@ const Form = ({ setOpen, onChange, file }) => {
           const listing = [];
           // Updating avatar image
           querySnap.docs.forEach(async (singleDoc) => {
-            if (singleDoc.exists) {
+            if (singleDoc.exists()) {
               const reference = singleDoc.ref;
 
               listing.push(singleDoc.data());
               await updateDoc(reference, { userName: enteredName });
-              setName(listing[0].userName);
+              dispatch(fetchListsing());
             }
           });
         }
@@ -200,14 +207,14 @@ const Form = ({ setOpen, onChange, file }) => {
           const listing = [];
           const querySnap = await getDocs(queryRef);
           querySnap.forEach((document) => {
-            return listing.push(document.data());
+            if (document.exists()) {
+              listing.push(document.data());
+
+              setImage(listing[0]?.avatars[0]);
+            }
           });
-
           if (listing.length === 0) {
-            console.log(userInfo);
-
             setImage(userInfo[0]?.avatars[0]);
-            setName(userInfo[0]?.name || user.displayName);
           }
           //  setImage(listing[0]?.avatars);
 
@@ -217,7 +224,7 @@ const Form = ({ setOpen, onChange, file }) => {
         console.log(error);
       }
     });
-  }, []);
+  }, [toggle]);
 
   return (
     <section className="h-[130vh] section-form overflow-hidden w-screen md:h-[120vh] relative ">
@@ -263,7 +270,7 @@ const Form = ({ setOpen, onChange, file }) => {
             </button>
           </form>
 
-          <h1 className="name">Hi I am {userName} </h1>
+          <h1 className="name">Hi I am {name} </h1>
         </div>
         <div className="Container2">
           <form onSubmit={handleSubmit}>
