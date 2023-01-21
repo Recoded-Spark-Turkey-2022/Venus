@@ -1,34 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
 import {
   AiOutlineShareAlt,
   AiFillFacebook,
   AiOutlineTwitter,
   AiFillHeart,
+  AiTwotoneDelete,
 } from 'react-icons/ai';
 import { TfiCommentsSmiley } from 'react-icons/tfi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   query,
   updateDoc,
   where,
 } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
-
+import { useParams, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 import Container from '../UI/Container';
 import { getAllListings } from '../../features/listings/listingSlice';
 import BlogItem from '../blogs/BlogItem';
 import './singleBlog.css';
 
-import { db } from '../../firebase/firebase.config';
+import { authentication, db } from '../../firebase/firebase.config';
 
 const SingleBlog = ({ data }) => {
   const params = useParams();
-
+  const navigate = useNavigate();
   const {
     avatars,
     title,
@@ -42,6 +45,8 @@ const SingleBlog = ({ data }) => {
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
   const [docId, setDocId] = useState('');
+  const [userToken, setUserToken] = useState('');
+  const [userAuth, setUserAuth] = useState('');
   const [upVote, setVote] = useState(vote);
   const [date, setDate] = useState('');
   const randomNumber = Math.floor(Math.random() * dataStore.length) - 1;
@@ -73,6 +78,7 @@ const SingleBlog = ({ data }) => {
 
         querySnap.forEach((document) => {
           setDocId(document.id);
+          setUserToken(document.data().userId);
         });
 
         if (!querySnap) {
@@ -82,9 +88,14 @@ const SingleBlog = ({ data }) => {
         console.log(error.message);
       }
     };
-
+    onAuthStateChanged(authentication, async (user) => {
+      if (user) {
+        setUserAuth(user.uid);
+      }
+    });
     fetchListingData();
   }, [params.blogId]);
+  useEffect(() => {}, []);
 
   const currentUrl = window.location.href;
   const handleCopy = () => {
@@ -151,6 +162,12 @@ const SingleBlog = ({ data }) => {
     updateLike();
   }, [upVote]);
 
+  const handleDelete = async () => {
+    const documentRef = doc(db, 'listings', params.blogId);
+    await deleteDoc(documentRef);
+    navigate('/userProfile');
+  };
+
   return (
     <Container>
       <div className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container">
@@ -204,11 +221,23 @@ const SingleBlog = ({ data }) => {
             type="button"
             disabled={tooltip}
             onClick={handleLike}
-            className="heart-container shadow-md flex items-center justify-center absolute bottom-[-60px] right-5"
+            className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
           >
             <AiFillHeart className="text-rose text-2xl mr-1 duration-500 brightness-125 hover:brightness-75" />
             <span className="text-lg font-medium">{upVote}</span>
           </button>
+          {userAuth === userToken && (
+            <button
+              type="button"
+              onClick={handleLike}
+              className="heart-container shadow-md flex items-center  h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
+            >
+              <AiTwotoneDelete
+                onClick={handleDelete}
+                className="text-[#ff3000] text-2xl mr-1 duration-500 brightness-125 hover:brightness-75"
+              />
+            </button>
+          )}
         </article>
         <aside className="w-full md:w-[40%] h-fit mt-20 md:mt-0 ">
           <h2 className="text-2xl font-medium text-center mb-4">Read Also</h2>
