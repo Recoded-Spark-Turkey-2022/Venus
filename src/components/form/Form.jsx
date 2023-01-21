@@ -39,7 +39,20 @@ const Form = ({
 
   const uploadFile = async (e) => {
     e.preventDefault();
-
+    if (file === undefined || !file.ImageUrl) {
+      toast.warn('Do not forget to upload an avatar', {
+        position: 'top-left',
+        autoClose: 1200,
+        className: 'mt-20',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      return;
+    }
     const storeImage = async (imageData) => {
       return new Promise((resolve, reject) => {
         const nameId = new Date().getTime() + imageData.name;
@@ -151,7 +164,7 @@ const Form = ({
         if (user) {
           // updating user Information
           const docRef = doc(db, 'users', user.uid);
-
+          console.log(image);
           const obj = {
             name: enteredName,
             surName: enteredSurName,
