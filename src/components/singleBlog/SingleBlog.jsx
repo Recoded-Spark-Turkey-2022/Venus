@@ -250,13 +250,10 @@ const SingleBlog = ({ data }) => {
           {userAuth === userToken && (
             <button
               type="button"
-              onClick={handleLike}
+              onClick={handleEdit}
               className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
             >
-              <CiEdit
-                onClick={handleEdit}
-                className="text-[#ff8239] font-bolder text-2xl mr-1 duration-500 "
-              />
+              <CiEdit className="text-[#ff8239] font-bolder text-2xl mr-1 duration-500 " />
             </button>
           )}
         </article>
