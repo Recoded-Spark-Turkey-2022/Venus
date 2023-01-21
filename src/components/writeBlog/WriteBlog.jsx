@@ -34,7 +34,7 @@ const WriteBlogC = () => {
     upVote: 0,
 
     avatars:
-      'https://firebasestorage.googleapis.com/v0/b/capstoneprojectrefubook.appspot.com/o/Avatar%2Ffemale-avatar.svg?alt=media&token=de54c1a8-8970-4b23-b9be-a5d875b9b12e',
+      'https://firebasestorage.googleapis.com/v0/b/capstoneprojectrefubook.appspot.com/o/Avatar%2Fuser-group-296.png?alt=media&token=12e525db-f0b7-4141-9f96-afa612a2ca0f',
   });
   const { content, title, text } = data;
   const [loading, setLoading] = useState(false);
@@ -45,13 +45,18 @@ const WriteBlogC = () => {
   const isMounted = useRef(true);
   useEffect(() => {
     if (isMounted) {
-      onAuthStateChanged(authentication, (user) => {
+      onAuthStateChanged(authentication, async (user) => {
         if (user) {
-          //   const userInfo = {
-          //     userName: user.displayName,
-          //     userRef: user.uid,
-          //   };
-          setData({ ...data, userId: user.uid, userName: user.displayName });
+          const docRef = doc(db, 'users', user.uid);
+          const docSnap = await getDoc(docRef);
+          const userInfo = [];
+          userInfo.push(docSnap.data());
+          if (userInfo[0]?.avatars) {
+            const { name, avatars } = userInfo[0];
+            setData({ ...data, userId: user.uid, userName: name, avatars });
+          } else {
+            setData({ ...data, userId: user.uid, userName: user.displayName });
+          }
         } else {
           navigate('/');
         }

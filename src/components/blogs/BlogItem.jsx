@@ -53,7 +53,7 @@ const BlogItem = ({ data, fullWidth }) => {
           <div className="flex items-center">
             <img
               src={avatars[0] ? avatars[0] : man}
-              className="rounded-full !w-[40px] md:w-[70px] h-13"
+              className="rounded-full !w-[40px] aspect-square md:w-[70px] h-13"
               alt=""
             />
             <p className="text-xl inline-block">{userName} </p>

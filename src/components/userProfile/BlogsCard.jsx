@@ -18,9 +18,12 @@ const BlogsCard = ({ title, text, name }) => {
           const listing = [];
           const querySnap = await getDocs(queryRef);
           querySnap.forEach((doc) => {
-            return listing.push(doc.data());
+            if (doc.exists()) {
+              listing.push(doc.data());
+              setImage(listing[0].avatars);
+            }
           });
-          setImage(listing[0].avatars);
+          console.log(listing);
         }
       } catch (error) {
         console.log(error);

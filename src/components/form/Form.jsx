@@ -22,7 +22,7 @@ const Form = ({
   setOpen,
   onChange,
   file,
-  toggle,
+
   image,
   setImage,
   setName,
@@ -111,7 +111,9 @@ const Form = ({
           });
 
           const userRef = doc(db, 'users', user.uid);
+
           await updateDoc(userRef, { avatars: updateImageUrl });
+          setImage(updateImageUrl);
         } catch (error) {
           console.log(error);
         }
@@ -155,6 +157,7 @@ const Form = ({
             surName: enteredSurName,
             biography: enteredbiographyInput,
             location: enteredlocationInput,
+            avatars: image,
           };
           await updateDoc(docRef, obj);
 
@@ -213,9 +216,13 @@ const Form = ({
               setImage(listing[0]?.avatars[0]);
             }
           });
-          if (listing.length === 0) {
-            setImage(userInfo[0]?.avatars[0]);
-          }
+          // if (
+          //   listing.length === 0 &&
+          //   userInfo.length > 0 &&
+          //   userInfo[0].avatars
+          // ) {
+          //   setImage(userInfo[0]?.avatars[0]);
+          // }
           //  setImage(listing[0]?.avatars);
 
           // ***
@@ -224,7 +231,7 @@ const Form = ({
         console.log(error);
       }
     });
-  }, [toggle]);
+  }, []);
 
   return (
     <section className="h-[130vh] section-form overflow-hidden w-screen md:h-[120vh] relative ">
