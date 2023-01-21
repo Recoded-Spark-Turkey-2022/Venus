@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   AiOutlineShareAlt,
@@ -8,6 +8,7 @@ import {
   AiFillHeart,
   AiTwotoneDelete,
 } from 'react-icons/ai';
+import { CiEdit } from 'react-icons/ci';
 import { TfiCommentsSmiley } from 'react-icons/tfi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { Flip, toast, ToastContainer } from 'react-toastify';
@@ -23,7 +24,10 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import Container from '../UI/Container';
-import { getAllListings } from '../../features/listings/listingSlice';
+import {
+  fetchListsing,
+  getAllListings,
+} from '../../features/listings/listingSlice';
 import BlogItem from '../blogs/BlogItem';
 import './singleBlog.css';
 
@@ -32,6 +36,7 @@ import { authentication, db } from '../../firebase/firebase.config';
 const SingleBlog = ({ data }) => {
   const params = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     avatars,
     title,
@@ -165,7 +170,11 @@ const SingleBlog = ({ data }) => {
   const handleDelete = async () => {
     const documentRef = doc(db, 'listings', params.blogId);
     await deleteDoc(documentRef);
+    dispatch(fetchListsing());
     navigate('/userProfile');
+  };
+  const handleEdit = async () => {
+    navigate(`/editblog/${params.blogId}`);
   };
 
   return (
@@ -235,6 +244,18 @@ const SingleBlog = ({ data }) => {
               <AiTwotoneDelete
                 onClick={handleDelete}
                 className="text-[#ff3000] text-2xl mr-1 duration-500 brightness-125 hover:brightness-75"
+              />
+            </button>
+          )}
+          {userAuth === userToken && (
+            <button
+              type="button"
+              onClick={handleLike}
+              className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
+            >
+              <CiEdit
+                onClick={handleEdit}
+                className="text-[#ff8239] font-bolder text-2xl mr-1 duration-500 "
               />
             </button>
           )}

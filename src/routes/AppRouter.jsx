@@ -14,6 +14,8 @@ import About from '../pages/About';
 import UserProfile from '../pages/UserProfile';
 import Contact from '../pages/Contact';
 
+import EditBlogPage from '../pages/EditBlogPage';
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -30,11 +32,12 @@ const AppRouter = () => {
         </Route>
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/writeblog" element={<WriteBlog />} />
+        <Route path="/editblog/:blogId" element={<EditBlogPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/userProfile" element={<UserProfile />} />
-        
+
         <Route path="/signin" element={<SignIn />} />
-         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -42,5 +45,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-
-
