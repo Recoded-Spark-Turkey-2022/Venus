@@ -5,14 +5,12 @@ import { setUserLoggedIn } from './features/userSlice/userSlice';
 import { authentication } from './firebase/firebase.config';
 import AppRouter from './routes/AppRouter';
 
-
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const unsub = onAuthStateChanged(authentication, (user) => {
       if (user) {
-        console.log(user);
         dispatch(
           setUserLoggedIn({
             userName: user.displayName,
