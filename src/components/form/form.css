@@ -1,23 +1,25 @@
 
 .BigContainer{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
+  height: fit-content;
     width: 100%;
+    margin-bottom: 400px;
 }
 .Container1{
-    flex: 1;
+display: flex;
     
+flex-direction: column;
+justify-content: center;
+align-items: center;
     
     width: 100%;
     
-    
 
-    margin-top: 2.2em;
-	position: relative;
+
    
     
 }
@@ -26,14 +28,18 @@
     
 }
 
+.image-wrapper{
+    position: relative;
+}
 .manImg{
     width: 150px;
     height: 150px;
    
-
+object-fit: cover;
+aspect-ratio: 1;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 			margin-bottom: 1.5em;
             margin-top: 100px;
 			border-radius: 100%;
@@ -43,17 +49,25 @@
     
 }
 .cam-btn{
-    flex: 2;
+
   background-color: #4699C2 !important;
   color: white;
+  display: flex;
+  justify-content: center;
   border-radius: 50%;
    position: absolute;
-   right: 47%;
-   bottom: 23%;
-   width: 40px;
+   right: -10px;
+   bottom: 20px;
+   width: 45px;
+   height: 45px;
    padding-top: 5px;
-  
+   cursor: pointer;
+
+  transition: all 0.4s ease;
    
+}
+.cam-btn:hover{
+    background-color: #2d627c !important;
 }
 .name{
     text-align: center;
@@ -156,35 +170,21 @@ input:focus{
 }
 @media screen and  (max-width:1350px){
     .manImg{
-        margin-top: 135px;
+       
     }
-    .cam-btn{
-        position: absolute;
-        right: 46%;
-        bottom: 19%;
-    }
+ 
 }
 @media screen and  (max-width:1150px){
     .manImg{
-        margin-top: 125px;
+       
     }
-    .cam-btn{
-        position: absolute;
-        right: 45%;
-        bottom: 20%;
-    }
+ 
 }
 @media screen and  (max-width:1000px){
     .manImg{
-        margin-top: 105px;
+     
     }
-    
-        .cam-btn{
-            position: absolute;
-            right: 43%;
-            bottom: 20%;
 
-    }
 }
 @media screen and  (max-width:768px){
     .Bio input{
@@ -198,7 +198,7 @@ input:focus{
     width: 110px;
     }
     .manImg{
-        margin-top: 40px;
+     
     }
 }
 @media screen and  (max-width:	640px){
@@ -222,11 +222,9 @@ input:focus{
     width: 110px;
     }
     .manImg{
-        margin-top: 40px;
+       
     }
-    .cam-btn{
-        right: 30%;
-    }
+  
     .cancel-btn{
         background-color: #4699C2 !important;
         color: white ;

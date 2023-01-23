@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation} from 'react-i18next';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
@@ -8,6 +9,7 @@ import { authentication, db } from '../../firebase/firebase.config';
 import { setUserLoggedIn } from '../../features/userSlice/userSlice';
 
 const SignUpForm = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -109,7 +111,7 @@ const SignUpForm = () => {
         id="mediumBlue-button"
         className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
       >
-        Sign Up
+        {t("Button.su")}
       </button>
     </form>
   );
