@@ -23,7 +23,6 @@ const BlogsCard = ({ title, text, name }) => {
               setImage(listing[0].avatars);
             }
           });
-          console.log(listing);
         }
       } catch (error) {
         console.log(error);
