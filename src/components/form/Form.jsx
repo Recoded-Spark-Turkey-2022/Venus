@@ -258,7 +258,7 @@ const Form = ({
   }, []);
 
   return (
-    <section className="h-[130vh] section-form overflow-hidden w-screen md:h-[120vh] relative ">
+    <section className="h-[145vh] sm:h-[130vh] section-form overflow-hidden w-screen md:h-[120vh] relative ">
       <img
         src={img}
         className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[110%] "
