@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import imageIcon from '../../assets/topViewLetters.jpg';
 import userIcon from '../../assets/man.png';
 
@@ -15,6 +15,7 @@ import userIcon from '../../assets/man.png';
 // };
 
 export default function StoryComponent({ data }) {
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]">
       <div>
@@ -25,11 +26,14 @@ export default function StoryComponent({ data }) {
         />
       </div>
       <div className="flex-col text-[#ffffff]">
-        <Link to={`/blogs/${data?.userRef}`}>
-          <div className="bg-[#FEDB9B] text-left rounded-[3px] text-[14px] relative duration-500 ease-in after:content-['&#x2192;'] after:absolute after:opacity-0 hover:after:opacity-100 after:duration-300 after:ease-in  hover:after:right-1 after:text-[20px] after:font-extrabold after:right-[0px] z-10 after:bottom-[6px]  hover:w-[8rem]  w-[6rem] text-[#4699C2] font-bold leading-4 tracking-[0.3px] px-[10px] py-[5px] mt-[17px] md:mt-[25px]">
-            Read More
-          </div>
-        </Link>
+        <button
+          type="button"
+          onClick={() => navigate(`/blogs/${data?.userRef}`)}
+          className="bg-[#FEDB9B] text-left rounded-[3px] text-[14px] relative duration-500 ease-in after:content-['&#x2192;'] after:absolute after:opacity-0 hover:after:opacity-100 after:duration-300 after:ease-in  hover:after:right-1 after:text-[20px] after:font-extrabold after:right-[0px] z-10 after:bottom-[6px]  hover:w-[8rem]  w-[6rem] text-[#4699C2] font-bold leading-4 tracking-[0.3px] px-[10px] py-[5px] mt-[17px] md:mt-[25px]"
+        >
+          Read More
+        </button>
+
         <p className="text-[18px]  first-letter:uppercase  md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-light mt-[10px] md:mt-[20px] md:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
           {data?.text}
         </p>
