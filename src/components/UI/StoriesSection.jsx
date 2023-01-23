@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchListsing,
@@ -10,7 +10,6 @@ import StoryComponent from '../story/StoryComponent';
 import Container from './Container';
 
 export default function StoriesSection() {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
   const data = useSelector(getAllListings);
   console.log(data);
