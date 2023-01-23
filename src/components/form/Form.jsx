@@ -175,7 +175,7 @@ const Form = ({
         if (user) {
           // updating user Information
           const docRef = doc(db, 'users', user.uid);
-          console.log(image);
+
           const obj = {
             name: enteredName,
             surName: enteredSurName,

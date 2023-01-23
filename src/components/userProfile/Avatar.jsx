@@ -35,7 +35,7 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
           querySnap.forEach((document) => {
             if (document.exists()) {
               listing.push(document.data());
-              console.log(listing);
+
               setImage(listing[0]?.avatars);
               // eslint-disable-next-line no-unused-expressions
               name || setName(userInfo[0]?.name || user.displayName);
@@ -48,7 +48,7 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
             userInfo[0].avatars
           ) {
             // eslint-disable-next-line no-unused-expressions
-            console.log(userInfo);
+
             setImage(userInfo[0]?.avatars[0]);
 
             // eslint-disable-next-line no-unused-expressions

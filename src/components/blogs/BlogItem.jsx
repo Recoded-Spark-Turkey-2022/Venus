@@ -17,7 +17,7 @@ const BlogItem = ({ data, fullWidth }) => {
     userRef,
     upVote,
   } = data;
-
+  console.log(avatars);
   return (
     <div
       className={`rounded blogItem
