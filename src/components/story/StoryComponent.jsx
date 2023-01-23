@@ -15,13 +15,13 @@ import userIcon from '../../assets/man.png';
 // };
 
 export default function StoryComponent({ data }) {
-  const { ImageUrl, text, avatars, userName, userRef } = data;
+  const { text, avatars, userName, userRef } = data;
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]">
       <div>
         <img
           className="rounded aspect-square h-[100%] md:h-[500px]  w-[100%]"
-          src={ImageUrl || imageIcon}
+          src={data?.ImageUrl || imageIcon}
           alt=""
         />
       </div>
