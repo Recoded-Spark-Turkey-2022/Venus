@@ -78,6 +78,13 @@
         "btn-text" : "Send"
         
 
+    },
+    "Blog": {
+        "WriteBlog" : "Write a Blog",
+        "ChooseImage": "Choose a banner image:",
+        "Title" : "Title:",
+        "Blog" : "Blog",
+        "SubmitBlog" : "Submit Blog"
     }
 
 }
