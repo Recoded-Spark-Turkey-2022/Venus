@@ -96,14 +96,14 @@ const Navbar = () => {
               <Link
                 to='/userProfile'
                 className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
-                My Profile
+                {t("Nav.MyProfile")}
               </Link>
               </li>
               <li className="md:ml-8 text-xl md:my-0 my-7">
               <Link
                 to='/writeblog'
                 className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
-                Write
+                {t("Nav.Write")}
               </Link>
               </li>
             <button
