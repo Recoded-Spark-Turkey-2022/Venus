@@ -30,13 +30,14 @@ const SingleBlogPage = () => {
         );
 
         const querySnap = await getDocs(queryOflist);
-        const listingArr = [];
+   const listingObj=[];
         querySnap.forEach((document) => {
-          return listingArr.push(document.data());
+         return listingObj.push(document.data())
+          
         });
 
         if (querySnap) {
-          setListing(listingArr);
+          setListing(listingObj);
         } else {
           console.log('Could not fetch the data');
         }
@@ -48,11 +49,12 @@ const SingleBlogPage = () => {
     fetchListingData();
   }, [params.blogId]);
 
+
   if (loading && listing.length === 0) {
     return <Spinner />;
   }
 
-  return listing.length > 0 && <SingleBlog data={listing} />;
+  return listing.length>0 && <SingleBlog data={listing} />;
 };
 
 export default SingleBlogPage;

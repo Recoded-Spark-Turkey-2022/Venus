@@ -34,26 +34,18 @@ import './singleBlog.css';
 import { authentication, db } from '../../firebase/firebase.config';
 
 const SingleBlog = ({ data }) => {
+ console.log(data,"singleBlog")
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {
-    avatars,
-    title,
-    userName,
-    text,
-    content,
-    ImageUrl,
-    timeStamp,
-    upVote: vote,
-  } = data[0];
-  console.log(ImageUrl);
+
+
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
   const [docId, setDocId] = useState('');
   const [userToken, setUserToken] = useState('');
   const [userAuth, setUserAuth] = useState('');
-  const [upVote, setVote] = useState(vote);
+  const [upVoteLike, setVote] = useState(data[0]?.upVote);
   const [date, setDate] = useState('');
   const randomNumber = Math.floor(Math.random() * dataStore.length) - 1;
   const randomNum1 = randomNumber > 0 ? randomNumber : 0;
@@ -62,14 +54,14 @@ const SingleBlog = ({ data }) => {
   randomArr.push(dataStore[randomNum1]);
   randomArr.push(dataStore[randomNum2]);
 
-  const { seconds } = timeStamp;
+  const secondsValue = data[0]?.timeStamp?.seconds;
 
   useEffect(() => {
-    const output = new Date(seconds * 1000).toLocaleDateString();
+    const output = new Date(secondsValue * 1000).toLocaleDateString();
     setDate(output);
-    setVote(vote);
+    setVote(data[0]?.upVote);
     setTooltip(false);
-  }, [seconds]);
+  }, [secondsValue]);
   useEffect(() => {
     const fetchListingData = async () => {
       try {
@@ -149,7 +141,7 @@ const SingleBlog = ({ data }) => {
       });
     }
 
-    setVote(upVote + 1);
+    setVote(upVoteLike + 1);
 
     setTooltip(true);
   };
@@ -159,14 +151,14 @@ const SingleBlog = ({ data }) => {
         if (docId) {
           const docRef = doc(db, 'listings', docId);
 
-          await updateDoc(docRef, { upVote });
+          await updateDoc(docRef, { upVoteLike });
         }
       } catch (error) {
         console.log(error.message);
       }
     };
     updateLike();
-  }, [upVote]);
+  }, [upVoteLike]);
 
   const handleDelete = async () => {
     const documentRef = doc(db, 'listings', params.blogId);
@@ -183,13 +175,13 @@ const SingleBlog = ({ data }) => {
       <div className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container">
         <article className="flex flex-col w-full md:w-[60%] relative">
           <h1 className="text-3xl uppercase font-medium text-center mb-4">
-            {title}{' '}
+            {data[0]?.title}{' '}
           </h1>
           <div>
             <img
               className="w-[100%] object-cover rounded-xl"
-              src={ImageUrl}
-              alt={title}
+              src={data[0]?.ImageUrl}
+              alt={data[0]?.title}
             />
           </div>
           <div className="flex flex-col sm:flex-row  gap-5 sm:gap-1 items-center justify-around my-2">
@@ -197,10 +189,10 @@ const SingleBlog = ({ data }) => {
               <span>by</span>{' '}
               <img
                 className="w-[35px] h-[35px] rounded-full"
-                src={avatars[0]}
+                src={data[0]?.avatars[0]}
                 alt="avatar"
               />{' '}
-              <span> {userName} </span>
+              <span> {data[0]?.userName} </span>
             </p>
             <div className="flex gap-3 sm:gap-1 items-end">
               <div className=" flex  gap-5  mr-2">
@@ -224,8 +216,8 @@ const SingleBlog = ({ data }) => {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-medium my-3">{text} </h2>
-            <p>{content} </p>
+            <h2 className="text-xl font-medium my-3">{data[0]?.text} </h2>
+            <p>{data[0]?.content} </p>
           </div>
           <button
             type="button"
@@ -234,7 +226,7 @@ const SingleBlog = ({ data }) => {
             className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
           >
             <AiFillHeart className="text-rose text-2xl mr-1 duration-500 brightness-125 hover:brightness-75" />
-            <span className="text-lg font-medium">{upVote}</span>
+            <span className="text-lg font-medium">{upVoteLike}</span>
           </button>
           {userAuth === userToken && (
             <button
@@ -263,7 +255,7 @@ const SingleBlog = ({ data }) => {
           <div className="flex blog-aside flex-wrap justify-center gap-10 w-full blog-wrapper">
             {randomArr?.map((singlePost) => (
               <BlogItem
-                key={singlePost.userRef}
+                key={singlePost?.userRef}
                 data={singlePost}
                 // eslint-disable-next-line react/jsx-boolean-value
                 fullWidth={true}
