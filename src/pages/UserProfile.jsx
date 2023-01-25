@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Autoplay, Pagination } from 'swiper';
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
@@ -90,7 +90,13 @@ const UserProfile = () => {
             id="blog-div"
             className="relative z-10 blog-swiper flex justify-center bg-transparent"
           >
-            {listing.length === 0 && <p>You do not have any posts</p>}
+            {listing.length === 0 && (
+              <Link to="/writeblog">
+                <p className="text-2xl mt-5 text-center">
+                  You do not have any posts yet..
+                </p>
+              </Link>
+            )}
             {listing.length > 0 && (
               <Swiper
                 autoplay={{

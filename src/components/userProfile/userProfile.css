@@ -30,3 +30,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.userProfile-img{
+  border-radius: 100%;
+}
+.userPofile-btn{
+  position: absolute;
+right: 0;
+bottom: 0;
+filter:brightness(110%);
+transition: filter 0.4s ease;
+
+}
+.userPofile-btn:hover{
+  filter:brightness(70%)
+}

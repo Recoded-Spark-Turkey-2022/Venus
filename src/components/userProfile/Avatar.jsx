@@ -1,4 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
+import { useLocation } from 'react-router-dom';
 import {
   collection,
   doc,
@@ -14,6 +15,9 @@ import editicon from '../../assets/editicon.svg';
 import { authentication, db } from '../../firebase/firebase.config';
 
 const Avatar = ({ isOpen, name, setName, image, setImage }) => {
+  const location = useLocation();
+  const { pathname } = location;
+
   useEffect(() => {
     onAuthStateChanged(authentication, async (user) => {
       try {
@@ -35,7 +39,7 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
           querySnap.forEach((document) => {
             if (document.exists()) {
               listing.push(document.data());
-              console.log(listing);
+
               setImage(listing[0]?.avatars);
               // eslint-disable-next-line no-unused-expressions
               name || setName(userInfo[0]?.name || user.displayName);
@@ -48,7 +52,7 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
             userInfo[0].avatars
           ) {
             // eslint-disable-next-line no-unused-expressions
-            console.log(userInfo);
+
             setImage(userInfo[0]?.avatars[0]);
 
             // eslint-disable-next-line no-unused-expressions
@@ -64,7 +68,11 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
   return (
     <div className="flex flex-col relative justify-center mt-10 m-3 w-48 h-48 ">
       <img
-        className="manImg  bg-openRose"
+        className={
+          pathname === '/userProfile'
+            ? 'userProfile-img'
+            : 'manImg  bg-openRose'
+        }
         src={
           image ||
           'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
@@ -73,7 +81,11 @@ const Avatar = ({ isOpen, name, setName, image, setImage }) => {
       />
       <button
         type="button"
-        className="flex items-center absolute bottom-0 right-0"
+        className={
+          pathname === '/userProfile'
+            ? 'userPofile-btn'
+            : 'flex items-center absolute bottom-0 right-0'
+        }
         onClick={isOpen}
       >
         <img

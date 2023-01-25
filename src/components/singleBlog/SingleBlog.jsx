@@ -47,6 +47,7 @@ const SingleBlog = ({ data }) => {
     timeStamp,
     upVote: vote,
   } = data[0];
+  console.log(ImageUrl);
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
   const [docId, setDocId] = useState('');

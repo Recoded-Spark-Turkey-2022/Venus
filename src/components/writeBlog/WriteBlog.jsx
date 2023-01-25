@@ -33,8 +33,9 @@ const WriteBlogC = () => {
 
     upVote: 0,
 
-    avatars:
+    avatars: [
       'https://firebasestorage.googleapis.com/v0/b/capstoneprojectrefubook.appspot.com/o/Avatar%2Fuser-group-296.png?alt=media&token=12e525db-f0b7-4141-9f96-afa612a2ca0f',
+    ],
   });
   const { content, title, text } = data;
   const [loading, setLoading] = useState(false);
