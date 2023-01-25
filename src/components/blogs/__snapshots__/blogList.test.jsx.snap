@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bloglist renders correctly 1`] = `
+<div
+  className="pt-20"
+>
+  <div
+    className=" filter flex  flex-col md:flex-row justify-between px-5 pt2 mb-5"
+  >
+    <h2
+      className="block text-center md:text-left"
+    >
+       
+    </h2>
+    <div
+      className="form-filter flex  justify-center "
+    >
+      <select
+        className="py-1 px-2"
+        onChange={[Function]}
+      >
+        <option
+          hidden={true}
+          value="Sort by"
+        >
+          Sort by
+           
+        </option>
+        <option
+          className="py-1 px-2"
+          value="Most Recent"
+        >
+          Most Recent
+        </option>
+        <option
+          value="Popularity"
+        >
+          Popularity
+        </option>
+      </select>
+      <form
+        className=" inline"
+        onSubmit={[Function]}
+      >
+        <input
+          className="py-1 px-2"
+          id=""
+          max={20}
+          min={5}
+          name=""
+          placeholder="Search by Title..."
+          required={true}
+          type="search"
+        />
+      </form>
+    </div>
+  </div>
+  <div>
+     
+     
+  </div>
+  <div
+    className="w-full blogs-swipper"
+  >
+    <Swiper
+      autoHeight={true}
+      autoplay={
+        Object {
+          "delay": 5000,
+          "disableOnInteraction": true,
+        }
+      }
+      className="mySwiper cursor-pointer  pb-16 mb-5"
+      effect="flip"
+      modules={
+        Array [
+          "Pagination",
+          "Navigation",
+          "Autoplay",
+          "EffectFlip",
+        ]
+      }
+      pagination={
+        Object {
+          "clickable": true,
+          "dynamicBullets": true,
+        }
+      }
+    />
+  </div>
+  <div
+    className="flex flex-wrap justify-center w-full gap-3"
+    id="sorting"
+  />
+  <div
+    className="Toastify"
+  />
+</div>
+`;

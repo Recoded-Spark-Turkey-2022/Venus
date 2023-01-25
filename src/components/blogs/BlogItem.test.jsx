@@ -12,7 +12,7 @@ const user = {
   upVote: '1',
 };
 
-test('renders 1 blog item correctly', ()=>{
+it('renders 1 blog item correctly', ()=>{
  const tree= renderer.create(
  <Router>
     <BlogItem data={user}/>
