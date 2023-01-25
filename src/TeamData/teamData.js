@@ -22,13 +22,14 @@ const TeamMembers = [
     linkedin: 'https://www.linkedin.com/in/abdullah-naifeh-9a82a1149/',
   },
   {
-    id: 4,
-    name: 'Halil Ibrahim Çelik',
+    id: 5,
+    name: 'Tasnim Al Hallak',
     jobTitle: 'Web Developer',
-    img: ibrahim,
-    country: 'Turkey',
-    linkedin: 'https://www.linkedin.com/in/halil-ibrahim-celik/',
+    img: tasnim,
+    country: 'Lebanon',
+    linkedin: 'https://github.com/tasnimalhallak',
   },
+
   {
     id: 3,
     name: 'Mohammad Saeed Alsaiyed',
@@ -39,12 +40,12 @@ const TeamMembers = [
   },
 
   {
-    id: 5,
-    name: 'Tasnim Al Hallak',
+    id: 4,
+    name: 'Halil Ibrahim Çelik',
     jobTitle: 'Web Developer',
-    img: tasnim,
-    country: 'Lebanon',
-    linkedin: 'https://github.com/tasnimalhallak',
+    img: ibrahim,
+    country: 'Turkey',
+    linkedin: 'https://www.linkedin.com/in/halil-ibrahim-celik/',
   },
 ];
 
