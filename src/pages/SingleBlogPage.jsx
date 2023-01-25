@@ -12,15 +12,14 @@ import Spinner from '../components/spinner/Spinner';
 
 const SingleBlogPage = () => {
   const [listing, setListing] = useState([]);
+  const dispatch = useDispatch();
 
   const params = useParams();
 
   const loading = useSelector(loadingState);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchListsing());
-
     const fetchListingData = async () => {
       try {
         const listingRef = collection(db, 'listings');

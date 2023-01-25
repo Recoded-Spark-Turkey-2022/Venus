@@ -1,12 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import {
-  addDoc,
-  collection,
-  doc,
-  getDoc,
-  serverTimestamp,
-  updateDoc,
-} from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import {
   getDownloadURL,
   getStorage,
@@ -17,15 +10,16 @@ import {
 import { useRef, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import { fetchListsing } from '../../features/listings/listingSlice';
 
 import { authentication, db } from '../../firebase/firebase.config';
 import Spinner from '../spinner/Spinner';
 
-const WriteBlogC = () => {
+const EditBlog = () => {
   const imageRef = useRef();
+  const params = useParams();
   const [data, setData] = useState({
     content: '',
     title: '',
@@ -33,17 +27,18 @@ const WriteBlogC = () => {
 
     upVote: 0,
 
-    avatars: [
+    avatars:
       'https://firebasestorage.googleapis.com/v0/b/capstoneprojectrefubook.appspot.com/o/Avatar%2Fuser-group-296.png?alt=media&token=12e525db-f0b7-4141-9f96-afa612a2ca0f',
-    ],
   });
+
   const { content, title, text } = data;
   const [loading, setLoading] = useState(false);
-  const [docId, setDocId] = useState('');
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const isMounted = useRef(true);
+
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(authentication, async (user) => {
@@ -51,10 +46,29 @@ const WriteBlogC = () => {
           const docRef = doc(db, 'users', user.uid);
           const docSnap = await getDoc(docRef);
           const userInfo = [];
+
+          const docRefListing = doc(db, 'listings', params.blogId);
+          const docSnapListing = await getDoc(docRefListing);
+          const previousData = docSnapListing.data();
+
+          const {
+            content: excontent,
+            text: extext,
+            upVote,
+            title: extitle,
+          } = previousData;
           userInfo.push(docSnap.data());
           if (userInfo[0]?.avatars) {
             const { name, avatars } = userInfo[0];
-            setData({ ...data, userId: user.uid, userName: name, avatars });
+            setData({
+              content: excontent,
+              text: extext,
+              upVote,
+              title: extitle,
+              userId: user.uid,
+              userName: name,
+              avatars,
+            });
           } else {
             setData({ ...data, userId: user.uid, userName: user.displayName });
           }
@@ -67,6 +81,7 @@ const WriteBlogC = () => {
       isMounted.current = false;
     };
   }, []);
+  console.log(data);
   const submitBlog = async (e) => {
     e.preventDefault();
 
@@ -175,12 +190,11 @@ const WriteBlogC = () => {
         timeStamp: serverTimestamp(),
       };
 
-      const docRef = await addDoc(collection(db, 'listings'), dataUpdated);
+      const docRef = doc(db, 'listings', params.blogId);
+      await updateDoc(docRef, dataUpdated);
 
       dispatch(fetchListsing());
       if (docRef.id) {
-        setDocId(docRef.id);
-
         // updating current id with collection id
 
         await updateDoc(docRef, { userRef: docRef.id });
@@ -241,18 +255,6 @@ const WriteBlogC = () => {
       }));
     }
   };
-  useEffect(() => {
-    const updateLike = async () => {
-      try {
-        if (docId) {
-          // dispatch(addToListing({}));
-        }
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    updateLike();
-  }, [docId]);
 
   if (loading) return <Spinner />;
   return (
@@ -285,6 +287,7 @@ const WriteBlogC = () => {
             type={text}
             placeholder="Write Title"
             required
+            value={data.title}
             onChange={handleChange}
             id="title"
             className="border-1  w-full border border-darkGrey"
@@ -297,6 +300,7 @@ const WriteBlogC = () => {
             placeholder="You write your blog preview.."
             required
             type={text}
+            value={data.text}
             onChange={handleChange}
             id="text"
             className="border-1 border w-full border-darkGrey"
@@ -308,6 +312,7 @@ const WriteBlogC = () => {
           <textarea
             placeholder="Write Blog"
             required
+            value={data.content}
             onChange={handleChange}
             id="content"
             className="rounded-full border max-h-[300px] border-1 border-darkGrey"
@@ -330,4 +335,4 @@ const WriteBlogC = () => {
     </div>
   );
 };
-export default WriteBlogC;
+export default EditBlog;

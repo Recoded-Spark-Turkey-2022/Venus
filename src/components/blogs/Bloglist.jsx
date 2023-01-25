@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Pagination, Navigation, Autoplay, EffectFlip } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import 'swiper/swiper-bundle.css';
 import './blogs.css';
@@ -25,7 +25,7 @@ const Bloglist = () => {
   const dispatch = useDispatch();
   const loading = useSelector(loadingState);
   const navigate = useNavigate();
-
+  const params = useParams();
   useEffect(() => {
     dispatch(fetchListsing());
   }, []);
@@ -50,6 +50,13 @@ const Bloglist = () => {
       setData(filteredByDate);
     }
   }, [filter]);
+  useEffect(() => {
+    const arrayForStort = [...data];
+    const filteredByDate = arrayForStort?.sort(
+      (a, b) => b.timeStamp.seconds - a.timeStamp.seconds
+    );
+    setData(filteredByDate);
+  }, [params.blogId]);
   const scroll = () => {
     const section = document.querySelector('#sorting');
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -66,7 +73,7 @@ const Bloglist = () => {
       );
       setReset(true);
       const filteredArr = newData.filter((a) => a !== '');
-      console.log(filteredArr);
+
       setData(filteredArr);
       if (filteredArr.length === 0) {
         setReset(true);
@@ -172,13 +179,15 @@ const Bloglist = () => {
         >
           {(allData.length === 0 ? data : allData)?.map((singlePost) => (
             <SwiperSlide
-              key={singlePost.userRef}
+              className="w-full"
+              key={`${singlePost.userRef}`}
               onClick={() => navigate(`/blogs/${singlePost.userRef}`)}
             >
-              <div className="flex flex-wrap justify-center w-full ">
+              <div className="flex  flex-wrap justify-center w-[100%] ">
                 <BlogItem
-                  key={singlePost.userRef}
-                  {...singlePost}
+                  key={`${singlePost.userRef}`}
+                  data={singlePost}
+                  id={`${singlePost.userRef}`}
                   // eslint-disable-next-line react/jsx-boolean-value
                   fullWidth={true}
                 />
@@ -192,8 +201,9 @@ const Bloglist = () => {
           if (index < 4) {
             return (
               <BlogItem
-                key={singlePost.userRef}
-                {...singlePost}
+                key={`${singlePost.userRef}`}
+                data={singlePost}
+                id={`${singlePost.userRef}`}
                 // eslint-disable-next-line react/jsx-boolean-value
                 fullWidth={false}
               />
