@@ -3,14 +3,18 @@ import renderer from "react-test-renderer";
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
 
- jest.mock('react-i18next', () => ({
-    useTranslation: () => ({t: key => key})
-  }));  
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str) => str
+    };
+  },
+}));
 
   jest.mock('react-redux', () => ({
     useSelector: () => ({
       user: {
-        name: 'user',
+        isLoggedIn: 'user',
       },
     }),
     useDispatch: () => jest.fn(),
