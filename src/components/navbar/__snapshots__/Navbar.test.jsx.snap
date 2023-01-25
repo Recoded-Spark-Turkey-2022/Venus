@@ -96,7 +96,7 @@ exports[`Navbar renders correctly 1`] = `
           href="/userProfile"
           onClick={[Function]}
         >
-          My Profile
+          Nav.MyProfile
         </a>
       </li>
       <li
@@ -107,7 +107,7 @@ exports[`Navbar renders correctly 1`] = `
           href="/writeblog"
           onClick={[Function]}
         >
-          Write
+          Nav.Write
         </a>
       </li>
       <button
