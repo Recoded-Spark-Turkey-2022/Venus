@@ -13,13 +13,18 @@ jest.mock('swiper/react', () => ({
   }));
 
   jest.mock('react-i18next', () => ({
-    useTranslation: () => ({t: key => key})
+    // this mock makes sure any components using the translate hook can use it without a warning being shown
+    useTranslation: () => {
+      return {
+        t: (str) => str
+      };
+    },
   }));
   
 it(`renders correctly` , () => {
     const tree = renderer.create(
     <Router>
-    <About />
+    <About t={key => key}/>
     </Router>);
     expect(tree).toMatchSnapshot();
 });

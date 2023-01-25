@@ -4,13 +4,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "../Footer";
 
 jest.mock('react-i18next', () => ({
-    useTranslation: () => ({t: key => key})
+    useTranslation: () => {
+      return {
+        t: (str) => str
+      };
+    },
   }));
-  
+
 it(`renders correctly` , () => {
     const tree = renderer.create(
     <Router>
-        <Footer />
+        <Footer t={key => key}/>
     </Router>);
     expect(tree).toMatchSnapshot();
 });

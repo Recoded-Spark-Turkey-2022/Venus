@@ -12,7 +12,11 @@ jest.mock('swiper', () => ({
 }));
 
 jest.mock('react-i18next', () => ({
-  useTranslation: () => ({t: key => key})
+  useTranslation: () => {
+    return {
+      t: (str) => str
+    };
+  },
 }));
 
 it(`renders correctly`, () => {

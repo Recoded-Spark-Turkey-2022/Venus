@@ -10,7 +10,7 @@ import Navbar from "./Navbar";
   jest.mock('react-redux', () => ({
     useSelector: () => ({
       user: {
-        name: 'test',
+        name: 'user',
       },
     }),
     useDispatch: () => jest.fn(),

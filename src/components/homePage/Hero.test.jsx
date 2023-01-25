@@ -3,7 +3,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from './HeroSection'
 
 jest.mock('react-i18next', () => ({
-    useTranslation: () => ({t: key => key})
+    useTranslation: () => {
+      return {
+        t: (str) => str
+      };
+    },
   }));
   
 test('renders hero heading correctly', ()=>{
