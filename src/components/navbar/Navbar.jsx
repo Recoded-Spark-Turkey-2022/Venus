@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import logo from '../../assets/Logo.svg';
 import {
@@ -14,6 +14,7 @@ import { authentication } from '../../firebase/firebase.config';
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const isLoggedIn = useSelector(selectUserLoggedIn);
   const dispatch = useDispatch();
   const Links = [
@@ -36,6 +37,7 @@ const Navbar = () => {
 
       dispatch(setUserLoggedOut());
       localStorage.setItem('token', '');
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
@@ -92,28 +94,30 @@ const Navbar = () => {
           </Link>
           {isLoggedIn && (
             <>
-            <li className="md:ml-8 text-xl md:my-0 my-7">
-              <Link
-                to='/userProfile'
-                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
-                My Profile
-              </Link>
+              <li className="md:ml-8 text-xl md:my-0 my-7">
+                <Link
+                  to="/userProfile"
+                  className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
+                >
+                  My Profile
+                </Link>
               </li>
               <li className="md:ml-8 text-xl md:my-0 my-7">
-              <Link
-                to='/writeblog'
-                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
-                Write
-              </Link>
+                <Link
+                  to="/writeblog"
+                  className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
+                >
+                  Write
+                </Link>
               </li>
-            <button
-              id="mediumBlue-button"
-              className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
-              type="button"
-              onClick={handleSignOut}
-            >
-              {t('Button.so')}
-            </button>
+              <button
+                id="mediumBlue-button"
+                className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+                type="button"
+                onClick={handleSignOut}
+              >
+                {t('Button.so')}
+              </button>
             </>
           )}
         </ul>
