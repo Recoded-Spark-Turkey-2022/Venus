@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container mx-auto px-10"
+>
+  <div
+    className="flex flex-col justify-center items-center mt-20"
+  >
+    <h1
+      className="font-extrabold text-4xl md:text-6xl mt-10 text-openRose text-center"
+    >
+      PAGE NOT FOUND
+    </h1>
+    <p
+      className="mt-5 text-darkGrey text-lg md:text-xl text-left md:text-center"
+    >
+      Sorry, the page you are looking for doesn't exist.
+    </p>
+    <p
+      className="text-darkGrey text-lg md:text-xl text-left md:text-center"
+    >
+      Don't worry, you will be directed to the home page in 5 seconds.
+    </p>
+    <img
+      alt="404"
+      className="w-full md:w-1/2"
+      src="404.png"
+    />
+  </div>
+</div>
+`;
