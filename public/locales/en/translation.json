@@ -17,7 +17,9 @@
         "home": "Home",
         "about": "About",
         "contact": "Contact",
-        "blogs": "Blog"
+        "blogs": "Blog",
+        "MyProfile" : "My Profile",
+        "Write" : "Write"
     },
     "Home": {
         "hero": "Connect and support refugees worldwide with Refubook. A community where individuals can find belonging, share experiences, and learn about different cultures and countries. Join us in making a difference in the lives of refugees today.",
@@ -78,6 +80,17 @@
         "btn-text" : "Send"
         
 
+    },
+    "Blog": {
+        "WriteBlog" : "Write a Blog",
+        "ChooseImage": "Choose a banner image:",
+        "Title" : "Title:",
+        "TitlePlaceholder" : "Write Title",
+        "Preview" :"Article Preview",
+        "PreviewPlaceholder" : "You write your blog preview..",
+        "Blog" : "Blog",
+        "BlogPlaceholder" : "Write Blog",
+        "SubmitBlog" : "Submit Blog"
     }
 
 }

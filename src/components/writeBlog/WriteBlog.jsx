@@ -16,7 +16,7 @@ import {
 
 import { useRef, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Flip, toast, ToastContainer } from 'react-toastify';
 import { fetchListsing } from '../../features/listings/listingSlice';
@@ -25,6 +25,7 @@ import { authentication, db } from '../../firebase/firebase.config';
 import Spinner from '../spinner/Spinner';
 
 const WriteBlogC = () => {
+  const { t } = useTranslation();
   const imageRef = useRef();
   const [data, setData] = useState({
     content: '',
@@ -265,7 +266,7 @@ const WriteBlogC = () => {
         <div className="image-div flex flex-col  gap-2 my-2 text-darkGrey">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label className="" htmlFor="imageUrl">
-            Choose a banner image:
+          {t("Blog.ChooseImage")}
           </label>
           <input
             className="bg-white w-full px-3 py-2.5"
@@ -280,10 +281,10 @@ const WriteBlogC = () => {
         </div>
         <div className="input-div flex flex-col  mt-5 gap-2 my-2 ">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">Title:</label>
+          <label className="text-darkGrey">{t("Blog.Title")}</label>
           <input
             type={text}
-            placeholder="Write Title"
+            placeholder={t("Blog.TitlePlaceholder")}
             required
             onChange={handleChange}
             id="title"
@@ -292,9 +293,9 @@ const WriteBlogC = () => {
         </div>
         <div className="input-div flex flex-col  mt-5 gap-2 my-2 ">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">Article Preview</label>
+          <label className="text-darkGrey">{t("Blog.Preview")}</label>
           <input
-            placeholder="You write your blog preview.."
+            placeholder={t("Blog.PreviewPlaceholder")}
             required
             type={text}
             onChange={handleChange}
@@ -304,9 +305,9 @@ const WriteBlogC = () => {
         </div>
         <div className="blog-div flex flex-col  mt-5 gap-2 my-2">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">Blog:</label>
+          <label className="text-darkGrey">{t("Blog.Blog")}</label>
           <textarea
-            placeholder="Write Blog"
+            placeholder={t("Blog.BlogPlaceholder")}
             required
             onChange={handleChange}
             id="content"
@@ -322,7 +323,7 @@ const WriteBlogC = () => {
             className="w-32 rounded-full mt-2 whitespace-nowrap py-2"
             type="submit"
           >
-            Submit Blog
+            {t("Blog.SubmitBlog")}
           </button>
         </div>
       </form>

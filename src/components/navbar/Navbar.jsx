@@ -94,21 +94,19 @@ const Navbar = () => {
           </Link>
           {isLoggedIn && (
             <>
-              <li className="md:ml-8 text-xl md:my-0 my-7">
-                <Link
-                  to="/userProfile"
-                  className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
-                >
-                  My Profile
-                </Link>
+            <li className="md:ml-8 text-xl md:my-0 my-7">
+              <Link
+                to='/userProfile'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                {t("Nav.MyProfile")}
+              </Link>
               </li>
               <li className="md:ml-8 text-xl md:my-0 my-7">
-                <Link
-                  to="/writeblog"
-                  className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
-                >
-                  Write
-                </Link>
+              <Link
+                to='/writeblog'
+                className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline">
+                {t("Nav.Write")}
+              </Link>
               </li>
               <button
                 id="mediumBlue-button"
