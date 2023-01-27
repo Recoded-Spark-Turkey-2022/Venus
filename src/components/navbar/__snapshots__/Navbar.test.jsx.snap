@@ -87,37 +87,15 @@ exports[`Navbar renders correctly 1`] = `
       <a
         href="/signin "
         onClick={[Function]}
-      />
-      <li
-        className="md:ml-8 text-xl md:my-0 my-7"
       >
-        <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
-          href="/userProfile"
-          onClick={[Function]}
+        <button
+          className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
+          id="mediumBlue-button"
+          type="button"
         >
-          Nav.MyProfile
-        </a>
-      </li>
-      <li
-        className="md:ml-8 text-xl md:my-0 my-7"
-      >
-        <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
-          href="/writeblog"
-          onClick={[Function]}
-        >
-          Nav.Write
-        </a>
-      </li>
-      <button
-        className="ml-0 md:ml-9 px-6 rounded-2xl py-1"
-        id="mediumBlue-button"
-        onClick={[Function]}
-        type="button"
-      >
-        Button.so
-      </button>
+          Button.si
+        </button>
+      </a>
     </ul>
   </div>
 </nav>
