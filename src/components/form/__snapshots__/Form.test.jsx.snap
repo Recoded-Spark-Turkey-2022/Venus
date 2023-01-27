@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form renders correctly 1`] = `
+<section
+  className="h-[145vh] sm:h-[130vh] section-form overflow-hidden w-screen md:h-[120vh] relative "
+>
+  <img
+    alt="circle-logo"
+    className="2xl:mt-16 absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[0px]  w-[100%] h-[110%] "
+    src="signup-vector.svg"
+  />
+  <div
+    className="BigContainer"
+  >
+    <div
+      className="Container1"
+    >
+      <form
+        className=" flex flex-col items-center justify-center mb-5"
+        onSubmit={[Function]}
+      >
+        <div
+          className="image-wrapper"
+        >
+          <img
+            alt="profile"
+            className="manImg"
+            src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+          />
+          <label
+            className="cam-btn"
+            htmlFor="file"
+          >
+            <ion-icon
+              name="camera-outline"
+              size="large"
+            />
+          </label>
+        </div>
+        <input
+          id="file"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+          type="file"
+        />
+        <button
+          className="rounded-2xl py-1 px-2 "
+          id="mediumBlue-button"
+          type="submit"
+        >
+          Upload Avatar
+        </button>
+      </form>
+      <h1
+        className="name"
+      >
+        Hi I am 
+         
+      </h1>
+    </div>
+    <div
+      className="Container2"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="name-sur"
+        >
+          <div
+            className="name-div"
+          >
+            <h1>
+              Name:
+            </h1>
+            <input
+              className="nameform"
+              max={18}
+              maxLength={18}
+              name="name"
+              required={true}
+              type="text"
+            />
+          </div>
+          <div
+            className="sur-div"
+          >
+            <h1>
+              Surname:
+            </h1>
+            <input
+              className="surname"
+              max={15}
+              name="surname"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="Bio"
+        >
+          <div
+            className="Bio-div"
+          >
+            <h1>
+              Biography:
+            </h1>
+            <input
+              className="Biography"
+              min={5}
+              name="Biography"
+              required={true}
+              type="text"
+            />
+          </div>
+          <div
+            className="Loc-div"
+          >
+            <h1>
+              Location:
+            </h1>
+            <input
+              className="Location"
+              name="Location"
+              required={true}
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="Container4"
+        >
+          <button
+            className="save-btn"
+            type="submit"
+          >
+            SAVE
+          </button>
+          <button
+            className="cancel-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            CANCEL
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="Toastify"
+  />
+</section>
+`;
