@@ -14,7 +14,7 @@ jest.mock('react-i18next', () => ({
 it(`renders correctly` , () => {
     const tree = renderer.create(
     <Router>
-        <Footer t={key => key}/>
+        <Footer />
     </Router>);
     expect(tree).toMatchSnapshot();
 });
