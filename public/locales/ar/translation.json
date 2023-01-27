@@ -79,6 +79,17 @@
         "message" : "الرسالة",
         "btn-text" : "إرسال"
         
+    },
+    "Blog": {
+        "WriteBlog" : "أضف مدونة جديدة",
+        "ChooseImage": "أختر الصورة الرئيسية",
+        "Title" : "العنوان",
+        "TitlePlaceholder" : "أكتب العنوان",
+        "Preview" :"مختصر المدونة",
+        "PreviewPlaceholder" : "أكتب مخصتر قصير للمدونة",
+        "Blog" : "المدونة",
+        "BlogPlaceholder" : "أكتب المدونة",
+        "SubmitBlog" : "إضافة المدونة"
     }
 
     

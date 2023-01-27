@@ -80,6 +80,17 @@
         "btn-text" : "Send"
         
 
+    },
+    "Blog": {
+        "WriteBlog" : "Write a Blog",
+        "ChooseImage": "Choose a banner image:",
+        "Title" : "Title:",
+        "TitlePlaceholder" : "Write Title",
+        "Preview" :"Article Preview",
+        "PreviewPlaceholder" : "You write your blog preview..",
+        "Blog" : "Blog",
+        "BlogPlaceholder" : "Write Blog",
+        "SubmitBlog" : "Submit Blog"
     }
 
 }
