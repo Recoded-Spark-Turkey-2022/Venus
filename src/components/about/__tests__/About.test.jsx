@@ -24,7 +24,7 @@ jest.mock('swiper/react', () => ({
 it(`renders correctly` , () => {
     const tree = renderer.create(
     <Router>
-    <About t={key => key}/>
+    <About />
     </Router>);
     expect(tree).toMatchSnapshot();
 });
