@@ -39,7 +39,6 @@ const SingleBlog = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
   const [docId, setDocId] = useState('');
