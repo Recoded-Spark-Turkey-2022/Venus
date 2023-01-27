@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders correctly 1`] = `
+<div
+  className="flex flex-col relative justify-center mt-10 m-3 w-48 h-48 "
+>
+  <img
+    alt="Avatar"
+    className="manImg  bg-openRose"
+    src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+  />
+  <button
+    className="flex items-center absolute bottom-0 right-0"
+    type="button"
+  >
+    <img
+      alt="edit-icon"
+      className="bg-mediumBlue rounded-full w-12 h-12"
+      src="editicon.svg"
+    />
+  </button>
+  <p
+    className="text-center py-2"
+  />
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bloglist renders correctly 1`] = `
+<div
+  className="fixed left-0 right-0 bottom-0 top-0"
+>
+  <img
+    alt="spinner"
+    className="absolute left-[50%] top-[50%]"
+    src="loadingSpinner.gif"
+    style={
+      Object {
+        "transform": "translate(-50%, -50%)",
+      }
+    }
+  />
+</div>
+`;

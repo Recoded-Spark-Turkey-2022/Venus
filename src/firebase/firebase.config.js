@@ -9,12 +9,12 @@ import {
 } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_API_ID,
+  apiKey: process.env.REACT_APP_FIREBASE_VENUS_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_VENUS_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_VENUS_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_VENUS_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_VENUS_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_VENUS_API_ID,
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

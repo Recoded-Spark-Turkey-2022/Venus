@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogsCard renders correctly 1`] = `
+<div
+  className="bg-white w-[100%] md:w-[70%] lg:w-[400px] flex h-[300px]  justify-center rounded-3xl overflow-hidden shadow-md py-8 px-3 mb-2"
+>
+  <div
+    className="text-xl mb-2 text-left  flex flex-col justify-between"
+  >
+    <div
+      className="py-2"
+    >
+      <p
+        className="font-bold blog-text"
+      />
+    </div>
+    <div
+      className="py-2"
+    >
+      <p
+        className="blog-text"
+      />
+    </div>
+    <div
+      className="flex justify-start"
+    >
+      <div
+        className="w-[70px]   rounded-full"
+      >
+        <img
+          alt="Avatar of User"
+          className="rounded-full  aspect-square"
+          src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+        />
+      </div>
+      <p
+        className="text-md text-mediumBlue pt-10 pl-5"
+      />
+    </div>
+  </div>
+</div>
+`;

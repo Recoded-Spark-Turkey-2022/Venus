@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact Form renders correctly 1`] = `
+<div
+  className="w-full"
+>
+  <form
+    className="flex flex-col justify-center md:justify-start mt-5 "
+    name="contact"
+    onSubmit={[Function]}
+  >
+    <label
+      className="text-darkGrey mb-2"
+      htmlFor="email"
+    >
+      Contact.email
+    </label>
+    <input
+      className="border-1 p-2 rounded-md border m-0 border-darkGrey bg-slate-50"
+      id="email"
+      placeholder="Email"
+      required={true}
+      type="email"
+    />
+    <label
+      className="text-darkGrey mb-2 mt-6"
+      htmlFor="message-box"
+    >
+      Contact.message
+    </label>
+    <textarea
+      className="border-1 p-2 outline-none rounded-md border max-h-[200px] border-darkGrey bg-slate-50 h-40"
+      id="message"
+      placeholder="Message"
+      required={true}
+    />
+    <div
+      className="flex justify-center md:justify-start items-center"
+    >
+      <button
+        className="w-32 rounded-full mt-5 whitespace-nowrap py-2"
+        id="mediumBlue-button"
+        type="submit"
+      >
+        Contact.btn-text
+      </button>
+    </div>
+  </form>
+  <div
+    className="flex justify-center md:justify-start"
+  >
+    <button
+      className="mt-5"
+      type="button"
+    >
+      <img
+        alt="Twitter-logo"
+        src="Twitter.svg"
+      />
+    </button>
+    <button
+      className="mt-5 pl-4"
+      type="button"
+    >
+      <img
+        alt="Instagram-logo"
+        src="Instagram.svg"
+      />
+    </button>
+    <button
+      className="mt-5 pl-4"
+      type="button"
+    >
+      <img
+        alt="Facebook-logo"
+        src="Facebook.svg"
+      />
+    </button>
+  </div>
+  <div
+    className="Toastify"
+  />
+</div>
+`;

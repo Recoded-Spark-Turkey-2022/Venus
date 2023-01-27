@@ -11,6 +11,14 @@ jest.mock('swiper', () => ({
   Pagination: 'Pagination',
 }));
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str) => str
+    };
+  },
+}));
+
 it(`renders correctly`, () => {
   const tree = renderer.create(<Reference />);
   expect(tree).toMatchSnapshot();

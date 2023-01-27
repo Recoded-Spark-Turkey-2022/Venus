@@ -273,7 +273,7 @@ const Form = ({
             <div className="image-wrapper">
               <img
                 src={
-                  (file.ImageUrl?.length > 0 &&
+                  (file?.ImageUrl?.length > 0 &&
                     URL.createObjectURL(file.ImageUrl[0])) ||
                   image ||
                   'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
