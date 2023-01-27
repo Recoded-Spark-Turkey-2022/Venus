@@ -4,16 +4,11 @@ import { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-
-
-import '../../index.css';
-
 import './Reference.css';
-
 import worldMap from '../../assets/world_map_ 1.svg';
 
 function Reference() {
-  const { t }= useTranslation();
+  const { t } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}

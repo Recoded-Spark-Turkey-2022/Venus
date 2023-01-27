@@ -16,7 +16,7 @@ import "./about.css";
 
 
 function About() {
-  const { t }= useTranslation();
+  const { t } = useTranslation();
   return (
     <div > 
         <div className='aboutfont flex flex-col'>

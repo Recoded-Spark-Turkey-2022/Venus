@@ -23,7 +23,7 @@ const Footer = () => {
           <img src={Logo} alt="Refubook-logo" />
         </a>
       </div>
-      <div className="w-full mb-2 md:mb-1 lg:ml-3 flex-grow lg:flex lg:items-center lg:w-auto">
+      <div data-testid='f-links' className="w-full mb-2 md:mb-1 lg:ml-3 flex-grow lg:flex lg:items-center lg:w-auto">
         <ul className="flex gap-8 items-center font-medium justify-center">
           <li className="">
             <Link className="text-darkGrey hover:text-darkBlue" to="/">

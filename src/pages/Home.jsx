@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <>
       <Container>
-        <h1 className="text-darkOrange bg-lightBlue">Hello</h1>
         <HeroSection />
       </Container>
       <ContainAbout />

@@ -8,7 +8,7 @@ import Button from '../UI/Button';
 
 
 const HeroSection = () => {
-  const { t }= useTranslation();
+  const { t } = useTranslation();
   return (
     <section className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
@@ -23,7 +23,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center md:text-left "
         >
-          <div className="z-10 mt-20 md:mt-20  md:mr-10 lg:mr-0">
+          <div data-testid='banner' className="z-10 mt-20 md:mt-20  md:mr-10 lg:mr-0">
             <h1 className="text-5xl lg:text-7xl font-bold text-mediumBlue my-5">
               RefuBook
             </h1>
@@ -42,7 +42,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <img
-            className="mx-auto mt-5 md:mt-0  w-full xl:w-[700px] md:mx-0  md:aspect-square"
+            data-testid='hero-img' className="mx-auto mt-5 md:mt-0  w-full xl:w-[700px] md:mx-0  md:aspect-square"
             src={logo}
             alt="hero-logo"
           />

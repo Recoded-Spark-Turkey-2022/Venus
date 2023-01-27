@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="mt-4"
+  >
+    <div
+      className="text-partners flex items-center justify-center text-xl font-bold"
+    >
+      <h4>
+        Home.partners
+      </h4>
+    </div>
+    <div
+      className="swiper-div flex justify-center  items-center w-full  px-6 mt-0 md:mt-5 pb-2"
+    >
+      <Swiper
+        autoplay={
+          Object {
+            "delay": 3000,
+            "disableOnInteraction": false,
+          }
+        }
+        breakpoints={
+          Object {
+            "1024": Object {
+              "slidesPerView": 5,
+              "spaceBetween": 30,
+            },
+            "320": Object {
+              "slidesPerView": 3,
+              "spaceBetween": 20,
+            },
+            "768": Object {
+              "slidesPerView": 4,
+              "spaceBetween": 30,
+            },
+          }
+        }
+        className="mySwiper w-full"
+        modules={
+          Array [
+            "Pagination",
+            undefined,
+          ]
+        }
+        pagination={
+          Object {
+            "clickable": true,
+            "dynamicBullets": true,
+          }
+        }
+      >
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="1.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="2.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="3.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="4.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="5.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="6.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="7.png"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className=""
+          >
+            <img
+              alt=""
+              className=" "
+              src="8.png"
+            />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  </div>
+</div>
+`;
