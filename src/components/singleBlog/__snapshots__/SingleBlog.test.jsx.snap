@@ -7,9 +7,19 @@ exports[`SingleBlog renders correctly 1`] = `
 >
   <div
     className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container"
+    style={
+      Object {
+        "transform": "scale(0.5) translateZ(0)",
+      }
+    }
   >
     <article
       className="flex flex-col w-full md:w-[60%] relative"
+      style={
+        Object {
+          "transform": "translateX(-100px) translateZ(0)",
+        }
+      }
     >
       <h1
         className="text-3xl uppercase font-medium text-center mb-4"
@@ -260,6 +270,11 @@ exports[`SingleBlog renders correctly 1`] = `
     </article>
     <aside
       className="w-full md:w-[40%] h-fit mt-20 md:mt-0 "
+      style={
+        Object {
+          "transform": "translateX(100px) translateZ(0)",
+        }
+      }
     >
       <h2
         className="text-2xl font-medium text-center mb-4"
