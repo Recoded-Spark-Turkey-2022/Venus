@@ -1,10 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 export default function TeamMemberCard({ name, href, img }) {
   const { t } = useTranslation();
   return (
-    <div className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 ">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      transition={{
+        duration: 0.9,
+        delay: 0.3,
+      }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+    >
       <a
         href={href}
         rel="noreferrer"
@@ -23,6 +33,6 @@ export default function TeamMemberCard({ name, href, img }) {
           {t('About.our-team-job-title.job-title')}
         </span>
       </a>
-    </div>
+    </motion.div>
   );
 }

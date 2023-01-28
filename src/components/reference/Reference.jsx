@@ -12,8 +12,9 @@ function Reference() {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.7, staggerChildren: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: false, amount: 0.5 }}
       className="flex flex-col md:flex-row justify-around items-center py-12 "
     >
       <div className="flex justify-center items-center ">
@@ -34,35 +35,23 @@ function Reference() {
         >
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
-              <h3 className="pt-2">
-              {t("Home.r1")}
-              </h3>
-              <p className="text-[#b7b7b7] pt-2">{t("Home.r1-h")}</p>
-              <p className="text-[#b7b7b7] text-sm">
-              {t("Home.r1-p")}
-              </p>
+              <h3 className="pt-2">{t('Home.r1')}</h3>
+              <p className="text-[#b7b7b7] pt-2">{t('Home.r1-h')}</p>
+              <p className="text-[#b7b7b7] text-sm">{t('Home.r1-p')}</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
-              <h3 className="pt-2">
-              {t("Home.r2")}
-              </h3>
-              <p className="text-[#b7b7b7] pt-2">{t("Home.r2-h")}</p>
-              <p className="text-[#b7b7b7] text-sm">
-              {t("Home.r2-p")}
-              </p>
+              <h3 className="pt-2">{t('Home.r2')}</h3>
+              <p className="text-[#b7b7b7] pt-2">{t('Home.r2-h')}</p>
+              <p className="text-[#b7b7b7] text-sm">{t('Home.r2-p')}</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="w-1/2 reference-div text-center sm:text-left pb-[65px]">
-              <h3 className="pt-2">
-              {t("Home.r3")}
-              </h3>
-              <p className="text-[#b7b7b7] pt-2">{t("Home.r3-h")}</p>
-              <p className="text-[#b7b7b7] text-sm">
-              {t("Home.r3-p")}
-              </p>
+              <h3 className="pt-2">{t('Home.r3')}</h3>
+              <p className="text-[#b7b7b7] pt-2">{t('Home.r3-h')}</p>
+              <p className="text-[#b7b7b7] text-sm">{t('Home.r3-p')}</p>
             </div>
           </SwiperSlide>
         </Swiper>

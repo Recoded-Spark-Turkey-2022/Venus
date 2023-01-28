@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import imageIcon from '../../assets/topViewLetters.jpg';
 import userIcon from '../../assets/man.png';
@@ -16,8 +17,15 @@ import userIcon from '../../assets/man.png';
 
 export default function StoryComponent({ data }) {
   const navigate = useNavigate();
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.7 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]"
+    >
       <div>
         <img
           className="rounded aspect-square h-[100%] md:h-[500px]  w-[100%]"
@@ -55,6 +63,6 @@ export default function StoryComponent({ data }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -3,6 +3,12 @@
 exports[`renders correctly 1`] = `
 <div
   className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]"
+  style={
+    Object {
+      "opacity": 0,
+      "transform": "translateY(20px) translateZ(0)",
+    }
+  }
 >
   <div>
     <img
