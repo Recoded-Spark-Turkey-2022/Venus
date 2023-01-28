@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "opacity": 0,
+      "transform": "scale(0.5) translateZ(0)",
+    }
+  }
+>
   <div
     className="mt-4"
   >

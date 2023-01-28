@@ -3,6 +3,7 @@
 exports[`Bloglist renders correctly 1`] = `
 <div
   className="fixed left-0 right-0 bottom-0 top-0"
+  data-testid="spinner"
 >
   <img
     alt="spinner"
