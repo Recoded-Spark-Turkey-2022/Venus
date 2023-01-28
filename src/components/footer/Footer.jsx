@@ -1,18 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
-
 import { Link } from 'react-router-dom';
+import { Flip, ToastContainer} from 'react-toastify';
+import { selectUserLoggedIn } from '../../features/userSlice/userSlice';
 import Logo from '../../assets/Logo.svg';
 
-const Footer = () => {
+const Footer = ({message}) => {
 
   const { t } = useTranslation();
   
+ 
   const handleLanguageChange = (e) => {
 		i18next.changeLanguage(e.target.value);
 	};
-
+  const isUserLoggedIn = useSelector(selectUserLoggedIn);
+  
   return (
     <footer className=" relative z-10 flex   container mx-auto flex-col md:flex-row items-center justify-center bg-white py-10 px-5">
       <div className="flex justify-center items-center  mt-5 mb-5 md:mt-1 md:mb-1 mx-auto flex-shrink-0">
@@ -50,7 +54,17 @@ const Footer = () => {
       <div className="mx-auto mt-5 sm:mt-1 flex lg:justify-center">
         <div className="flex justify-between flex-row">
           <div className="flex justify-between items-center mr-3">
-
+          {isUserLoggedIn && (
+              <button
+              onClick={message}
+                id="mediumBlue-button"
+                className="px-8 whitespace-nowrap rounded-full"
+                type="button"
+              >
+                {t('Button.su')}
+              </button>
+            )}
+            {!isUserLoggedIn && (
             <Link to="/signup">
               <button
                 id="mediumBlue-button"
@@ -60,6 +74,7 @@ const Footer = () => {
                 {t("Button.su")}
               </button>
             </Link>
+            )}
 
           </div>
           <div className="">
@@ -72,7 +87,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <ToastContainer transition={Flip} limit={3} />
     </footer>
+    
   );
 };
 export default Footer;

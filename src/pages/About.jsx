@@ -8,7 +8,7 @@ import Container from '../components/UI/Container';
 import ReferenceSection from '../components/UI/ReferenceSection';
 import Partners from '../components/Partners/Partners';
 
-const About = () => {
+const About = ({message}) => {
   return (
     <>
       <Cover />
@@ -21,7 +21,7 @@ const About = () => {
         <div className='text-[#025594]'>
         <Partners/>
         </div>
-        <Share />
+        <Share onClick={message}/>
       </Container>
     </>
   );

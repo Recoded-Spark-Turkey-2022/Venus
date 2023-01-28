@@ -6,11 +6,11 @@ import Partners from '../components/Partners/Partners';
 import StoriesSection from '../components/UI/StoriesSection';
 import ContainAbout from '../components/UI/ContainAbout';
 
-const Home = () => {
+const Home = ({message}) => {
   return (
     <>
       <Container>
-        <HeroSection />
+        <HeroSection messageClick={message}/>
       </Container>
       <ContainAbout />
       <Container>

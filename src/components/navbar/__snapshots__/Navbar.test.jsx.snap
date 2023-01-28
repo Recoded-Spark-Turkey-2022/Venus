@@ -9,8 +9,7 @@ exports[`Navbar renders correctly 1`] = `
     className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7"
   >
     <div
-      className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
- text-cyan-600"
+      className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins]  text-cyan-600"
     >
       <span
         className="text-3xl text-cyan-600 mr-1 pt-2"
@@ -45,8 +44,7 @@ exports[`Navbar renders correctly 1`] = `
         className="md:ml-8 text-xl md:my-0 my-7"
       >
         <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
- "
+          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
           href="/"
           onClick={[Function]}
         >
@@ -57,8 +55,7 @@ exports[`Navbar renders correctly 1`] = `
         className="md:ml-8 text-xl md:my-0 my-7"
       >
         <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
- "
+          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
           href="/about"
           onClick={[Function]}
         >
@@ -69,8 +66,7 @@ exports[`Navbar renders correctly 1`] = `
         className="md:ml-8 text-xl md:my-0 my-7"
       >
         <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
- "
+          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
           href="/blogs"
           onClick={[Function]}
         >
@@ -81,8 +77,7 @@ exports[`Navbar renders correctly 1`] = `
         className="md:ml-8 text-xl md:my-0 my-7"
       >
         <a
-          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
- "
+          className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
           href="/contact"
           onClick={[Function]}
         >

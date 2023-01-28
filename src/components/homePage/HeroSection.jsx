@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
+import { Flip, ToastContainer} from 'react-toastify';
+import { selectUserLoggedIn } from '../../features/userSlice/userSlice';
 import logo from '../../assets/homePage-graphic.svg';
 import circleLogo from '../../assets/signup-vector.svg';
 import Button from '../UI/Button';
 
 
-const HeroSection = () => {
+const HeroSection = ({messageClick}) => {
   const { t } = useTranslation();
+  const isUserLoggedIn = useSelector(selectUserLoggedIn);
+
   return (
     <section className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10">
       <img
@@ -33,7 +38,22 @@ const HeroSection = () => {
             <p className="text  w-full  md:max-w-[25rem]">
             {t("Home.hero")}
             </p>
-            <Link to="/signup"><Button >{t("Button.su")}</Button></Link>
+            {isUserLoggedIn && (
+              <button
+              onClick={messageClick}
+                id="mediumBlue-button"
+                className="px-8 py-1 whitespace-nowrap rounded-full"
+                type="button"
+              >
+                {t('Button.su')}
+              </button>
+            )}
+            {!isUserLoggedIn && (
+            <Link to="/signup">
+              <Button >{t("Button.su")}
+              </Button>
+              </Link>
+            )}
           </div>
         </motion.div>
         <motion.div
@@ -48,6 +68,7 @@ const HeroSection = () => {
           />
         </motion.div>
       </div>
+      <ToastContainer transition={Flip} limit={3} />
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {toast} from 'react-toastify';
 import Navbar from '../components/navbar/Navbar';
 import Home from '../pages/Home';
 import Footer from '../components/footer/Footer';
@@ -18,11 +19,25 @@ import NotFound from '../components/Not found/NotFound';
 import EditBlogPage from '../pages/EditBlogPage';
 
 const AppRouter = () => {
+
+  const handleMessageWarning=()=>{
+    toast.warn('You already logged in! 🤨', {
+      position: "top-left",
+      autoClose: 1200,
+      className: 'mt-20',
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home message={handleMessageWarning}/>} />
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
@@ -34,12 +49,12 @@ const AppRouter = () => {
 
         <Route path="/writeblog" element={<WriteBlog />} />
         <Route path="/editblog/:blogId" element={<EditBlogPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About message={handleMessageWarning}/>} />
         <Route path="/userProfile" element={<UserProfile />} />
 
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      <Footer message={handleMessageWarning}/>
     </BrowserRouter>
   );
 };
