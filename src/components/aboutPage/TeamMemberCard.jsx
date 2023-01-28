@@ -6,7 +6,7 @@ export default function TeamMemberCard({ name, href, img }) {
   const { t } = useTranslation();
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 20 }}
       transition={{
         duration: 0.9,
         delay: 0.3,

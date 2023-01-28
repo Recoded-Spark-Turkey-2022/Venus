@@ -114,15 +114,7 @@ const Bloglist = () => {
     return <Spinner />;
   }
   return (
-    <motion.div
-      initial={{ scale: 0.5 }}
-      transition={{
-        duration: 0.7,
-      }}
-      whileInView={{ scale: 1 }}
-      viewport={{ once: false, amount: 0.1 }}
-      className="pt-20"
-    >
+    <motion.div>
       <div className=" filter flex  flex-col md:flex-row justify-between px-5 pt2 mb-5">
         <h2 className="block text-center md:text-left">{filter} </h2>
         <div className="form-filter flex  justify-center ">
@@ -205,7 +197,13 @@ const Bloglist = () => {
           ))}
         </Swiper>
       </div>
-      <div id="sorting" className="flex flex-wrap justify-center w-full gap-3">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        id="sorting"
+        className="flex flex-wrap justify-center w-full gap-3"
+      >
         {(allData.length === 0 ? data : allData)?.map((singlePost, index) => {
           if (index < 4) {
             return (
@@ -222,7 +220,7 @@ const Bloglist = () => {
             return null;
           }
         })}
-      </div>
+      </motion.div>
       <ToastContainer transition={Flip} limit={3} />
     </motion.div>
   );

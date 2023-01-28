@@ -25,7 +25,7 @@ const Contact = () => {
             initial={{ x: -200 }}
             transition={{
               duration: 0.7,
-              delay: 1,
+              delay: 0.7,
             }}
             whileInView={{ x: 0 }}
             viewport={{ once: false, amount: 0.1 }}
