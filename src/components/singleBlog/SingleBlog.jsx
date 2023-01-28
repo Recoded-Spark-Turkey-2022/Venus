@@ -34,13 +34,13 @@ import './singleBlog.css';
 import { authentication, db } from '../../firebase/firebase.config';
 
 const SingleBlog = ({ data }) => {
- console.log(data,"singleBlog")
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
+  const [warning, setWarning] = useState(true);
   const [docId, setDocId] = useState('');
   const [userToken, setUserToken] = useState('');
   const [userAuth, setUserAuth] = useState('');
@@ -160,11 +160,27 @@ const SingleBlog = ({ data }) => {
   }, [upVoteLike]);
 
   const handleDelete = async () => {
-    const documentRef = doc(db, 'listings', params.blogId);
-    await deleteDoc(documentRef);
-    dispatch(fetchListsing());
-    navigate('/userProfile');
+    if (warning) {
+      toast.warning('Are you sure?', {
+        position: 'top-left',
+        autoClose: 1200,
+        className: 'mt-20',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      setWarning(false);
+    } else {
+      const documentRef = doc(db, 'listings', params.blogId);
+      await deleteDoc(documentRef);
+      dispatch(fetchListsing());
+      navigate('/userProfile');
+    }
   };
+
   const handleEdit = async () => {
     navigate(`/editblog/${params.blogId}`);
   };
@@ -222,7 +238,15 @@ const SingleBlog = ({ data }) => {
             type="button"
             disabled={tooltip}
             onClick={handleLike}
-            className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
+            className="heart-container shadow-md flex items-center h-[43px] 
+            after:content-['Like!']
+            after:absolute after:bottom-[-30px]
+            after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+             after:whitespace-nowrap after:font-bold after:opacity-0 
+             hover:after:opacity-100 after:duration-300 after:ease-in
+            
+            
+            justify-center absolute bottom-[-60px] right-5"
           >
             <AiFillHeart className="text-rose text-2xl mr-1 duration-500 brightness-125 hover:brightness-75" />
             <span className="text-lg font-medium">{upVoteLike}</span>
@@ -230,8 +254,13 @@ const SingleBlog = ({ data }) => {
           {userAuth === userToken && (
             <button
               type="button"
-              onClick={handleLike}
-              className="heart-container shadow-md flex items-center  h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
+              className="heart-container shadow-md flex items-center  
+              after:content-['Delete_Blog']
+               after:absolute after:bottom-[-30px]
+               after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+                after:whitespace-nowrap after:font-bold after:opacity-0 
+                hover:after:opacity-100 after:duration-300 after:ease-in 
+                 h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
             >
               <AiTwotoneDelete
                 onClick={handleDelete}
@@ -243,7 +272,14 @@ const SingleBlog = ({ data }) => {
             <button
               type="button"
               onClick={handleEdit}
-              className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
+              className="heart-container shadow-md flex items-center 
+              after:content-['Edit_Blog']
+              after:absolute after:bottom-[-30px]
+              after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+               after:whitespace-nowrap after:font-bold after:opacity-0 
+               hover:after:opacity-100 after:duration-300 after:ease-in
+              
+              h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
             >
               <CiEdit className="text-[#ff8239] font-bolder text-2xl mr-1 duration-500 " />
             </button>

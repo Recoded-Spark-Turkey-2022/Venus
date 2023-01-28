@@ -149,7 +149,13 @@ exports[`SingleBlog renders correctly 1`] = `
         </p>
       </div>
       <button
-        className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
+        className="heart-container shadow-md flex items-center h-[43px] 
+ after:content-['Like!']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in
+ justify-center absolute bottom-[-60px] right-5"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -178,8 +184,13 @@ exports[`SingleBlog renders correctly 1`] = `
         />
       </button>
       <button
-        className="heart-container shadow-md flex items-center  h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
-        onClick={[Function]}
+        className="heart-container shadow-md flex items-center  
+ after:content-['Delete_Blog']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in 
+ h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
         type="button"
       >
         <svg
@@ -207,7 +218,13 @@ exports[`SingleBlog renders correctly 1`] = `
         </svg>
       </button>
       <button
-        className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
+        className="heart-container shadow-md flex items-center 
+ after:content-['Edit_Blog']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in
+ h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
         onClick={[Function]}
         type="button"
       >
