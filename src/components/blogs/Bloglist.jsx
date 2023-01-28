@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-boolean-value */
 import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Pagination, Navigation, Autoplay, EffectFlip } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -113,7 +114,15 @@ const Bloglist = () => {
     return <Spinner />;
   }
   return (
-    <div className="pt-20">
+    <motion.div
+      initial={{ scale: 0.5 }}
+      transition={{
+        duration: 0.7,
+      }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: false, amount: 0.1 }}
+      className="pt-20"
+    >
       <div className=" filter flex  flex-col md:flex-row justify-between px-5 pt2 mb-5">
         <h2 className="block text-center md:text-left">{filter} </h2>
         <div className="form-filter flex  justify-center ">
@@ -215,7 +224,7 @@ const Bloglist = () => {
         })}
       </div>
       <ToastContainer transition={Flip} limit={3} />
-    </div>
+    </motion.div>
   );
 };
 

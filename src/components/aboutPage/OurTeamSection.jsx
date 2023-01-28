@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import Container from '../UI/Container';
 import TeamMembersNavigator from './TeamMembersNavigator';
 import TeamMemberCard from './TeamMemberCard';
@@ -27,7 +28,18 @@ export default function OurTeamSection() {
             setter={setShowByCountry}
             output={showByCountry}
           />
-          <div className="flex flex-wrap grid-rows-2 justify-center items-center  gap-x-[50px] gap-y-[93px] max-w-[1000px] content-center">
+          <motion.div
+            initial={{ scale: 0.5 }}
+            transition={{
+              duration: 0.7,
+
+              delayChildren: 20,
+              staggerChildren: 0.5,
+            }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="flex flex-wrap grid-rows-2 justify-center items-center  gap-x-[50px] gap-y-[93px] max-w-[1000px] content-center"
+          >
             {itemsToDisplay.map((teamMember) => (
               <TeamMemberCard
                 key={teamMember.id}
@@ -36,7 +48,7 @@ export default function OurTeamSection() {
                 href={teamMember.linkedin}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </div>

@@ -7,7 +7,7 @@ import Signup from '../components/signIn-up/Signup';
 import Signin from '../components/signIn-up/Signin';
 import Blogs from '../pages/Blogs';
 import ProtectedRoute from './ProtectedRoute';
-import SignIn from '../pages/SignIn';
+
 import SingleBlogPage from '../pages/SingleBlogPage';
 import WriteBlog from '../pages/WriteBlog';
 import About from '../pages/About';
@@ -31,13 +31,12 @@ const AppRouter = () => {
         <Route path="/blogs/:blogId" element={<ProtectedRoute />}>
           <Route path="" element={<SingleBlogPage />} />
         </Route>
-        <Route path="/sign-in" element={<SignIn />} />
+
         <Route path="/writeblog" element={<WriteBlog />} />
         <Route path="/editblog/:blogId" element={<EditBlogPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/userProfile" element={<UserProfile />} />
 
-        <Route path="/signin" element={<SignIn />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
