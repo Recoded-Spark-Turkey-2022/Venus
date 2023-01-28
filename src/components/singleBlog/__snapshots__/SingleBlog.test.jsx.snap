@@ -17,7 +17,7 @@ exports[`SingleBlog renders correctly 1`] = `
       className="flex flex-col w-full md:w-[60%] relative"
       style={
         Object {
-          "transform": "translateX(-100px) translateZ(0)",
+          "opacity": 0,
         }
       }
     >
@@ -254,7 +254,7 @@ exports[`SingleBlog renders correctly 1`] = `
       className="w-full md:w-[40%] h-fit mt-20 md:mt-0 "
       style={
         Object {
-          "transform": "translateX(100px) translateZ(0)",
+          "opacity": 0,
         }
       }
     >

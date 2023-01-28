@@ -88,12 +88,15 @@ const UserProfile = () => {
           />
           <div
             id="blog-div"
-            className="relative z-10 blog-swiper flex justify-center bg-transparent"
+            className="relative z-10 blog-swiper flex justify-center bg-transparent bottom-[-20px]"
           >
             {listing.length === 0 && (
               <Link to="/writeblog">
                 <p className="text-2xl mt-5 text-center">
-                  You do not have any posts yet..
+                  You do not have any posts yet.. <br />
+                  <span className="ease-in animate-pulse font-extrabold duration-1000 text-darkBlue">
+                    Go ahead write one !
+                  </span>
                 </p>
               </Link>
             )}

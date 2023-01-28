@@ -41,7 +41,7 @@ exports[`Navbar renders correctly 1`] = `
       className="md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in top-30 "
     >
       <li
-        className="md:ml-8 text-xl md:my-0 my-7"
+        className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7"
       >
         <a
           className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
@@ -52,7 +52,7 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </li>
       <li
-        className="md:ml-8 text-xl md:my-0 my-7"
+        className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7"
       >
         <a
           className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
@@ -63,7 +63,7 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </li>
       <li
-        className="md:ml-8 text-xl md:my-0 my-7"
+        className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7"
       >
         <a
           className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
@@ -74,7 +74,7 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </li>
       <li
-        className="md:ml-8 text-xl md:my-0 my-7"
+        className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7"
       >
         <a
           className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline "
