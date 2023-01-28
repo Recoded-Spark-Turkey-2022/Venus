@@ -7,9 +7,19 @@ exports[`SingleBlog renders correctly 1`] = `
 >
   <div
     className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container"
+    style={
+      Object {
+        "transform": "scale(0.5) translateZ(0)",
+      }
+    }
   >
     <article
       className="flex flex-col w-full md:w-[60%] relative"
+      style={
+        Object {
+          "transform": "translateX(-100px) translateZ(0)",
+        }
+      }
     >
       <h1
         className="text-3xl uppercase font-medium text-center mb-4"
@@ -149,7 +159,13 @@ exports[`SingleBlog renders correctly 1`] = `
         </p>
       </div>
       <button
-        className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
+        className="heart-container shadow-md flex items-center h-[43px] 
+ after:content-['Like!']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in
+ justify-center absolute bottom-[-60px] right-5"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -178,8 +194,13 @@ exports[`SingleBlog renders correctly 1`] = `
         />
       </button>
       <button
-        className="heart-container shadow-md flex items-center  h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
-        onClick={[Function]}
+        className="heart-container shadow-md flex items-center  
+ after:content-['Delete_Blog']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in 
+ h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
         type="button"
       >
         <svg
@@ -207,7 +228,13 @@ exports[`SingleBlog renders correctly 1`] = `
         </svg>
       </button>
       <button
-        className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
+        className="heart-container shadow-md flex items-center 
+ after:content-['Edit_Blog']
+ after:absolute after:bottom-[-30px]
+ after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+ after:whitespace-nowrap after:font-bold after:opacity-0 
+ hover:after:opacity-100 after:duration-300 after:ease-in
+ h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
         onClick={[Function]}
         type="button"
       >
@@ -243,6 +270,11 @@ exports[`SingleBlog renders correctly 1`] = `
     </article>
     <aside
       className="w-full md:w-[40%] h-fit mt-20 md:mt-0 "
+      style={
+        Object {
+          "transform": "translateX(100px) translateZ(0)",
+        }
+      }
     >
       <h2
         className="text-2xl font-medium text-center mb-4"

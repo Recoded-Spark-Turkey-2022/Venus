@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { motion } from 'framer-motion';
 import {
   AiOutlineShareAlt,
   AiFillFacebook,
@@ -34,13 +34,13 @@ import './singleBlog.css';
 import { authentication, db } from '../../firebase/firebase.config';
 
 const SingleBlog = ({ data }) => {
- console.log(data,"singleBlog")
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const dataStore = useSelector(getAllListings);
   const [tooltip, setTooltip] = useState(false);
+  const [warning, setWarning] = useState(true);
   const [docId, setDocId] = useState('');
   const [userToken, setUserToken] = useState('');
   const [userAuth, setUserAuth] = useState('');
@@ -160,19 +160,54 @@ const SingleBlog = ({ data }) => {
   }, [upVoteLike]);
 
   const handleDelete = async () => {
-    const documentRef = doc(db, 'listings', params.blogId);
-    await deleteDoc(documentRef);
-    dispatch(fetchListsing());
-    navigate('/userProfile');
+    if (warning) {
+      toast.warning('Are you sure?', {
+        position: 'top-left',
+        autoClose: 1200,
+        className: 'mt-20',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      setWarning(false);
+    } else {
+      const documentRef = doc(db, 'listings', params.blogId);
+      await deleteDoc(documentRef);
+      dispatch(fetchListsing());
+      navigate('/userProfile');
+    }
   };
+
   const handleEdit = async () => {
     navigate(`/editblog/${params.blogId}`);
   };
 
   return (
     <Container>
-      <div className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container">
-        <article className="flex flex-col w-full md:w-[60%] relative">
+      <motion.div
+        initial={{ scale: 0.5 }}
+        transition={{
+          duration: 0.7,
+          delayChildren: 50,
+          staggerChildren: 0.5,
+        }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container"
+      >
+        <motion.article
+          initial={{ x: -100 }}
+          transition={{
+            delay: 1,
+            duration: 0.6,
+          }}
+          whileInView={{ x: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          className="flex flex-col w-full md:w-[60%] relative"
+        >
           <h1 className="text-3xl uppercase font-medium text-center mb-4">
             {data[0]?.title}{' '}
           </h1>
@@ -222,7 +257,15 @@ const SingleBlog = ({ data }) => {
             type="button"
             disabled={tooltip}
             onClick={handleLike}
-            className="heart-container shadow-md flex items-center h-[43px] justify-center absolute bottom-[-60px] right-5"
+            className="heart-container shadow-md flex items-center h-[43px] 
+            after:content-['Like!']
+            after:absolute after:bottom-[-30px]
+            after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+             after:whitespace-nowrap after:font-bold after:opacity-0 
+             hover:after:opacity-100 after:duration-300 after:ease-in
+            
+            
+            justify-center absolute bottom-[-60px] right-5"
           >
             <AiFillHeart className="text-rose text-2xl mr-1 duration-500 brightness-125 hover:brightness-75" />
             <span className="text-lg font-medium">{upVoteLike}</span>
@@ -230,8 +273,13 @@ const SingleBlog = ({ data }) => {
           {userAuth === userToken && (
             <button
               type="button"
-              onClick={handleLike}
-              className="heart-container shadow-md flex items-center  h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
+              className="heart-container shadow-md flex items-center  
+              after:content-['Delete_Blog']
+               after:absolute after:bottom-[-30px]
+               after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+                after:whitespace-nowrap after:font-bold after:opacity-0 
+                hover:after:opacity-100 after:duration-300 after:ease-in 
+                 h-[43px] justify-center absolute bottom-[-60px] right-[6rem]"
             >
               <AiTwotoneDelete
                 onClick={handleDelete}
@@ -243,13 +291,29 @@ const SingleBlog = ({ data }) => {
             <button
               type="button"
               onClick={handleEdit}
-              className="heart-container shadow-md flex items-center   h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
+              className="heart-container shadow-md flex items-center 
+              after:content-['Edit_Blog']
+              after:absolute after:bottom-[-30px]
+              after:shadow-[1px 1px 5px 2px] after:rounded-[16px]
+               after:whitespace-nowrap after:font-bold after:opacity-0 
+               hover:after:opacity-100 after:duration-300 after:ease-in
+              
+              h-[43px] justify-center absolute bottom-[-60px] right-[10.3rem]"
             >
               <CiEdit className="text-[#ff8239] font-bolder text-2xl mr-1 duration-500 " />
             </button>
           )}
-        </article>
-        <aside className="w-full md:w-[40%] h-fit mt-20 md:mt-0 ">
+        </motion.article>
+        <motion.aside
+          initial={{ x: 100 }}
+          transition={{
+            delay: 1,
+            duration: 0.6,
+          }}
+          whileInView={{ x: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          className="w-full md:w-[40%] h-fit mt-20 md:mt-0 "
+        >
           <h2 className="text-2xl font-medium text-center mb-4">Read Also</h2>
           <div className="flex blog-aside flex-wrap justify-center gap-10 w-full blog-wrapper">
             {randomArr?.map((singlePost) => (
@@ -261,8 +325,8 @@ const SingleBlog = ({ data }) => {
               />
             ))}
           </div>
-        </aside>
-      </div>
+        </motion.aside>
+      </motion.div>
       <ToastContainer transition={Flip} limit={3} />
     </Container>
   );

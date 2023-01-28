@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getDocs, collection, addDoc } from 'firebase/firestore';
+import { getDocs, collection } from 'firebase/firestore';
 
 import { db } from '../../firebase/firebase.config';
 
@@ -41,18 +41,7 @@ export const fetchUserListing = createAsyncThunk(
     }
   }
 );
-export const addListing = createAsyncThunk(
-  'listing/addListing',
-  async (_, { getState }) => {
-    try {
-      const collectionRef = collection(db, 'listings');
-      const response = await addDoc(collectionRef, getState().listing.listing);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-);
+
 export const listingSlice = createSlice({
   name: 'listing',
   initialState,
@@ -87,9 +76,6 @@ export const listingSlice = createSlice({
       state.loading = true;
       state.error = action.error.message;
       state.userInfo = [];
-    });
-    builder.addCase(addListing.fulfilled, (state, action) => {
-      state.listing = [...state.listing, action.payload];
     });
   },
 });
