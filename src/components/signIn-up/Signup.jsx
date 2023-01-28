@@ -11,7 +11,7 @@ import SocialLinks from './SocialLinks';
 const Signup = () => {
   const { t } = useTranslation();
   return (
-    <section className=" h-[100vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center">
+    <section className=" h-[120vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center">
       <div>
         <img
           src={img}

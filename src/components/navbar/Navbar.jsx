@@ -46,7 +46,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav data-testid='nav' className="shadow-md w-full fixed z-1000 top-0 left-0">
+    <nav
+      data-testid="nav"
+      className="shadow-md w-full fixed z-1000 top-0 left-0"
+    >
       <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
@@ -54,7 +57,7 @@ const Navbar = () => {
         >
           <span className="text-3xl text-cyan-600 mr-1 pt-2">
             <Link to="/">
-              <img data-testid='logo-img' src={logo} alt="logo" />
+              <img data-testid="logo-img" src={logo} alt="logo" />
             </Link>
           </span>
         </div>
@@ -73,7 +76,10 @@ const Navbar = () => {
           }`}
         >
           {Links.map((link) => (
-            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+            <li
+              key={link.name}
+              className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7"
+            >
               <Link
                 to={link.link}
                 className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline
@@ -96,20 +102,20 @@ const Navbar = () => {
           </Link>
           {isLoggedIn && (
             <>
-              <li className="md:ml-8 text-xl md:my-0 my-7">
+              <li className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7">
                 <Link
                   to="/userProfile"
-                  className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
+                  className="text-cyan-600 whitespace-nowrap hover:text-cyan-600 duration-500 hover:underline"
                 >
-                   {t("Nav.MyProfile")}
+                  {t('Nav.MyProfile')}
                 </Link>
               </li>
-              <li className="md:ml-8 text-xl md:my-0 my-7">
+              <li className="md:ml-8 lg:text-xl text-[16px] md:my-0 my-7">
                 <Link
                   to="/writeblog"
                   className="text-cyan-600 hover:text-cyan-600 duration-500 hover:underline"
                 >
-                  {t("Nav.Write")}
+                  {t('Nav.Write')}
                 </Link>
               </li>
               <button
