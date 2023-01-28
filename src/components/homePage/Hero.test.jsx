@@ -1,4 +1,6 @@
-import { fireEvent, render, screen} from "@testing-library/react";
+import renderer from "react-test-renderer";
+import { Provider } from 'react-redux';
+import {store} from '../../app/store';
 import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from './HeroSection'
 
@@ -10,25 +12,12 @@ jest.mock('react-i18next', () => ({
     },
   }));
   
-test('renders hero heading correctly', ()=>{
-    render(<Router>
-        <HeroSection/>
+  it(`renders correctly` , () => {
+    const tree = renderer.create(
+    <Router>
+      <Provider store={store}>
+        <HeroSection />
+        </Provider>
     </Router>);
-    const hHeading = screen.getByTestId('banner')
-    expect(hHeading).toBeInTheDocument()
-})
-test('renders sign up button correctly', ()=>{
-    render(<Router>
-        <HeroSection/>
-    </Router>);
-    const suButton = screen.getByRole('button')
-    expect(suButton).toBeInTheDocument()
-})
-
-test('renders images of hero correctly', ()=>{
-    render(<Router>
-        <HeroSection/>
-    </Router>);
-    const heroImg = screen.getByTestId('hero-img')
-    expect(heroImg).toBeInTheDocument()
-})
+    expect(tree).toMatchSnapshot();
+});

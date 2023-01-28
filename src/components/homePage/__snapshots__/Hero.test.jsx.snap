@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className=" mt-[70px]  w-full  min-h-[90vh] relative overflow-hidden md:overflow-visible mb-10"
+>
+  <img
+    alt="circle-logo"
+    className="absolute image-hero z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-500px] top-[0px]  w-[100%] h-[90vh]"
+    src="signup-vector.svg"
+  />
+  <div
+    className=" items-center flex flex-col-reverse md:flex-row   md:w-full justify-between md:justify-between lg:justify-between "
+  >
+    <div
+      className="text-center md:text-left "
+      style={
+        Object {
+          "transform": "translateX(-1000px) scale(0.5) translateZ(0)",
+        }
+      }
+    >
+      <div
+        className="z-10 mt-20 md:mt-20  md:mr-10 lg:mr-0"
+        data-testid="banner"
+      >
+        <h1
+          className="text-5xl lg:text-7xl font-bold text-mediumBlue my-5"
+        >
+          RefuBook
+        </h1>
+        <h2
+          className="text-3xl lg:text-5xl text-openRose font-bold mb-4"
+        >
+          Express Freely
+        </h2>
+        <p
+          className="text  w-full  md:max-w-[25rem]"
+        >
+          Home.hero
+        </p>
+        <a
+          href="/signup"
+          onClick={[Function]}
+        >
+          <button
+            className="my-9 px-6 rounded-2xl  py-1"
+            id="mediumBlue-button"
+            type="button"
+          >
+            Button.su
+          </button>
+        </a>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "transform": "translateX(1000px) scale(0.5) translateZ(0)",
+        }
+      }
+    >
+      <img
+        alt="hero-logo"
+        className="mx-auto mt-5 md:mt-0  w-full xl:w-[700px] md:mx-0  md:aspect-square"
+        data-testid="hero-img"
+        src="homePage-graphic.svg"
+      />
+    </div>
+  </div>
+  <div
+    className="Toastify"
+  />
+</section>
+`;
