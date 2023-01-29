@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Flip, ToastContainer} from 'react-toastify';
 import { selectUserLoggedIn } from '../../features/userSlice/userSlice';
@@ -10,10 +11,19 @@ import Logo from '../../assets/Logo.svg';
 const Footer = ({message}) => {
 
   const { t } = useTranslation();
-  
+  const [lang, setLang] = useState({ lang: 'en', dir: 'ltr' });
  
   const handleLanguageChange = (e) => {
-		i18next.changeLanguage(e.target.value);
+	
+    const selected = e.target.value;
+    if (selected === 'ar') {
+      setLang({ lang: 'ar', dir: 'rtl' });
+    } else {
+      setLang({ lang: 'en', dir: 'ltr' });
+    }
+
+    i18next.changeLanguage(selected);
+  
 	};
   const isUserLoggedIn = useSelector(selectUserLoggedIn);
   
@@ -87,6 +97,9 @@ const Footer = ({message}) => {
           </div>
         </div>
       </div>
+      <Helmet>
+        <html lang={lang.lang} dir={lang.dir} />
+      </Helmet>
       <ToastContainer transition={Flip} limit={3} />
     </footer>
     
