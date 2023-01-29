@@ -10,7 +10,7 @@ import Logo from '../../assets/Logo.svg';
 
 const Footer = ({message}) => {
 
-  const [t] = useTranslation();
+  const { t } = useTranslation();
   const [lang, setLang] = useState({ lang: 'en', dir: 'ltr' });
  
   const handleLanguageChange = (e) => {
