@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
@@ -109,9 +109,9 @@ const SignUpForm = () => {
       <button
         type="submit"
         id="mediumBlue-button"
-        className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+        className="px-8 whitespace-nowrap w-[65%] md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
       >
-        {t("Button.su")}
+        {t('Button.su')}
       </button>
     </form>
   );

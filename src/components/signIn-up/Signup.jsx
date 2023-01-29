@@ -12,7 +12,7 @@ const Signup = () => {
   const { t } = useTranslation();
   return (
     <section className=" h-[120vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center">
-      <div>
+      <div className="w-[90%] md:w-auto">
         <img
           src={img}
           className="absolute image-hero rotate-90 md:rotate-0 z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[-20px]  w-[100%] h-[110%]"
