@@ -7,7 +7,7 @@ import Container from '../components/UI/Container';
 const Blogs = () => {
   return (
     <Container>
-      <section className="min-h-screen">
+      <section className="min-h-screen py-[100px]">
         <Bloglist />
       </section>
     </Container>
