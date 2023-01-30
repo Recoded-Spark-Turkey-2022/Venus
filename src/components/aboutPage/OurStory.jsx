@@ -6,10 +6,10 @@ export default function OurStory() {
   const { t } = useTranslation();
   return (
     <motion.div
-      initial={{ opacity: 0, x: [-200, 100], rotateY: 90 }}
-      transition={{ duration: 0.9, type: 'tween', stiffness: 100 }}
-      whileInView={{ opacity: 1, x: [30, 20, 0], rotateY: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
+      initial={{ opacity: 0, rotateY: 90 }}
+      transition={{ duration: 0.9 }}
+      whileInView={{ opacity: 1, rotateY: 0 }}
+      viewport={{ once: false, amount: 0.1 }}
       className="flex flex-col items-center"
     >
       <div>

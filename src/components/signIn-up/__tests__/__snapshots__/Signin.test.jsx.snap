@@ -5,7 +5,9 @@ exports[`renders correctly 1`] = `
   className=" h-[120vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center"
   style={Object {}}
 >
-  <div>
+  <div
+    className="w-[90%] md:w-auto"
+  >
     <img
       alt="circle-logo"
       className=" absolute image-hero  z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[-20px]  w-[100%] h-[110%]"
@@ -46,7 +48,7 @@ exports[`renders correctly 1`] = `
           type="password"
         />
         <button
-          className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+          className="px-8 whitespace-nowrap w-[65%] l md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
           id="mediumBlue-button"
           type="submit"
         >

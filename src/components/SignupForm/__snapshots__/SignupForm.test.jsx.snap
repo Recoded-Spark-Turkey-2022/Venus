@@ -33,7 +33,7 @@ exports[`renders correctly 1`] = `
     type="password"
   />
   <button
-    className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+    className="px-8 whitespace-nowrap w-[65%] md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
     id="mediumBlue-button"
     type="submit"
   >
