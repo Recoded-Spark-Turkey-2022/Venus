@@ -73,9 +73,9 @@ const SignInForm = () => {
       <button
         type="submit"
         id="mediumBlue-button"
-        className="px-8 whitespace-nowrap w-full md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+        className="px-8 whitespace-nowrap w-[65%] l md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
       >
-        {t("Button.si")}
+        {t('Button.si')}
       </button>
     </form>
   );

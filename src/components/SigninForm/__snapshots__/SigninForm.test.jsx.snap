@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  className="flex flex-col gap-4 items-center justify-center pt-2 pb-10 md:py-3   rounded-2xl"
+  onSubmit={[Function]}
+>
+  <input
+    aria-invalid="false"
+    className="border border-gray-300  w-full md:w-[80%]  px-0 md:px-3 m-0 py-1 md:py-2 text-gray-900 placeholder-gray-500 rounded"
+    name="email"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your Email"
+  />
+  <input
+    aria-invalid="false"
+    className="border border-gray-300 px-0 md:px-3 py-1 md:py-2 text-gray-900 m-0 placeholder-gray-500 rounded w-full md:w-[80%]"
+    name="password"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+  />
+  <button
+    className="px-8 whitespace-nowrap w-[65%] l md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+    id="mediumBlue-button"
+    type="submit"
+  >
+    Button.si
+  </button>
+</form>
+`;

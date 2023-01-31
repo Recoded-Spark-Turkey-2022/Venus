@@ -266,7 +266,7 @@ const WriteBlogC = () => {
         <div className="image-div flex flex-col  gap-2 my-2 text-darkGrey">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label className="" htmlFor="imageUrl">
-          {t("Blog.ChooseImage")}
+            {t('Blog.ChooseImage')}
           </label>
           <input
             className="bg-white w-full px-3 py-2.5"
@@ -281,10 +281,10 @@ const WriteBlogC = () => {
         </div>
         <div className="input-div flex flex-col  mt-5 gap-2 my-2 ">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">{t("Blog.Title")}</label>
+          <label className="text-darkGrey">{t('Blog.Title')}</label>
           <input
             type={text}
-            placeholder={t("Blog.TitlePlaceholder")}
+            placeholder={t('Blog.TitlePlaceholder')}
             required
             onChange={handleChange}
             id="title"
@@ -293,9 +293,9 @@ const WriteBlogC = () => {
         </div>
         <div className="input-div flex flex-col  mt-5 gap-2 my-2 ">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">{t("Blog.Preview")}</label>
+          <label className="text-darkGrey">{t('Blog.Preview')}</label>
           <input
-            placeholder={t("Blog.PreviewPlaceholder")}
+            placeholder={t('Blog.PreviewPlaceholder')}
             required
             type={text}
             onChange={handleChange}
@@ -305,16 +305,16 @@ const WriteBlogC = () => {
         </div>
         <div className="blog-div flex flex-col  mt-5 gap-2 my-2">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className="text-darkGrey">{t("Blog.Blog")}</label>
+          <label className="text-darkGrey">{t('Blog.Blog')}</label>
           <textarea
-            placeholder={t("Blog.BlogPlaceholder")}
+            placeholder={t('Blog.BlogPlaceholder')}
             required
             onChange={handleChange}
             id="content"
             className="rounded-full border max-h-[300px] border-1 border-darkGrey"
           />
         </div>
-        <div className="flex justify-center md:justify-start items-center mt-2">
+        <div className="flex justify-center md:justify-between items-center mt-2">
           <button
             // eslint-disable-next-line react/jsx-boolean-value
 
@@ -323,7 +323,17 @@ const WriteBlogC = () => {
             className="w-32 rounded-full mt-2 whitespace-nowrap py-2"
             type="submit"
           >
-            {t("Blog.SubmitBlog")}
+            {t('Blog.SubmitBlog')}
+          </button>
+          <button
+            // eslint-disable-next-line react/jsx-boolean-value
+
+            id="mediumBlue-button"
+            className="w-32 ml-4 rounded-full mt-2 whitespace-nowrap py-2"
+            type="button"
+            onClick={() => navigate(-1, { replace: true })}
+          >
+            Go Back
           </button>
         </div>
       </form>

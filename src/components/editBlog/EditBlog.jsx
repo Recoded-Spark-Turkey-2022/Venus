@@ -318,7 +318,7 @@ const EditBlog = () => {
             className="rounded-full border max-h-[300px] border-1 border-darkGrey"
           />
         </div>
-        <div className="flex justify-center md:justify-start items-center mt-2">
+        <div className="flex justify-center md:justify-between items-center mt-2">
           <button
             // eslint-disable-next-line react/jsx-boolean-value
 
@@ -328,6 +328,16 @@ const EditBlog = () => {
             type="submit"
           >
             Submit Blog
+          </button>
+          <button
+            // eslint-disable-next-line react/jsx-boolean-value
+
+            id="mediumBlue-button"
+            className="w-32 ml-4 rounded-full mt-2 whitespace-nowrap py-2"
+            type="button"
+            onClick={() => navigate(-1, { replace: true })}
+          >
+            Go Back
           </button>
         </div>
       </form>

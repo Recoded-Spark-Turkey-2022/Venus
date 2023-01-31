@@ -150,7 +150,7 @@ const SingleBlog = ({ data }) => {
         if (docId) {
           const docRef = doc(db, 'listings', docId);
 
-          await updateDoc(docRef, { upVoteLike });
+          await updateDoc(docRef, { upVote: upVoteLike });
         }
       } catch (error) {
         console.log(error.message);
@@ -191,7 +191,7 @@ const SingleBlog = ({ data }) => {
         initial={{ scale: 0.5 }}
         transition={{
           duration: 0.7,
-          delayChildren: 50,
+          delayChildren: 2,
           staggerChildren: 0.5,
         }}
         whileInView={{ scale: 1 }}
@@ -199,12 +199,12 @@ const SingleBlog = ({ data }) => {
         className="flex mt-[100px] flex-col gap-10 pb-0  md:pb-24 md:flex-row main-container"
       >
         <motion.article
-          initial={{ x: -100 }}
+          initial={{ opacity: 0 }}
           transition={{
-            delay: 1,
+            delay: 0.3,
             duration: 0.6,
           }}
-          whileInView={{ x: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.1 }}
           className="flex flex-col w-full md:w-[60%] relative"
         >
@@ -305,12 +305,12 @@ const SingleBlog = ({ data }) => {
           )}
         </motion.article>
         <motion.aside
-          initial={{ x: 100 }}
+          initial={{ opacity: 0 }}
           transition={{
-            delay: 1,
+            delay: 0.3,
             duration: 0.6,
           }}
-          whileInView={{ x: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.1 }}
           className="w-full md:w-[40%] h-fit mt-20 md:mt-0 "
         >

@@ -24,7 +24,7 @@ export default function StoryComponent({ data }) {
       transition={{ duration: 0.7 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
-      className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] mr-[80px] ml-[89px] md:mx-[0px]"
+      className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 mt-[50px] md:mt-[78px] pb-[24px] md:mr-[40px] md:ml-[40px] md:mx-[0px]"
     >
       <div>
         <img

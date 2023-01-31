@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className=" h-[120vh] relative  overflow-hidden mb-300px md:mb-0 w-full md:h-screen  flex justify-center items-center"
+>
+  <div
+    className="w-[90%] md:w-auto"
+  >
+    <img
+      alt="circle-logo"
+      className="absolute image-hero rotate-90 md:rotate-0 z-0 left-[-500px] md:left-[-200px] lg:left-[-300px] xl:left-[-400px] 2xl:left-[-600px] top-[-20px]  w-[100%] h-[110%]"
+      src="signup-vector.svg"
+    />
+    <div
+      className="ContainerBox"
+      style={
+        Object {
+          "transform": "translateY(-500px) translateZ(0)",
+        }
+      }
+    >
+      <h1
+        className="Title"
+      >
+        Signup.Signup-with
+      </h1>
+      <form
+        className="flex flex-col gap-5 lg:gap-4 items-center justify-center py-1 md:py-3"
+        onSubmit={[Function]}
+      >
+        <input
+          aria-invalid="false"
+          className="border border-gray-300 w-full md:w-[80%] px-0 md:px-3 m-0 py-1 md:py-2 text-gray-900 placeholder-gray-500 rounded"
+          maxLength={20}
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Name"
+          type="text"
+        />
+        <input
+          aria-invalid="false"
+          className="border border-gray-300  w-full md:w-[80%]  px-0 md:px-3 m-0 py-1 md:py-2 text-gray-900 placeholder-gray-500 rounded"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Your Email"
+        />
+        <input
+          aria-invalid="false"
+          className="border border-gray-300 px-0 md:px-3 py-1 md:py-2 text-gray-900 m-0 placeholder-gray-500 rounded w-full md:w-[80%]"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+        <button
+          className="px-8 whitespace-nowrap w-[65%] md:w-44 rounded-2xl py-2 md:py-1 flex justify-center items-center"
+          id="mediumBlue-button"
+          type="submit"
+        >
+          Button.su
+        </button>
+      </form>
+      <div
+        className="ContainerBtn"
+      >
+        <button
+          className="GoogleBtn"
+          onClick={[Function]}
+          type="button"
+        >
+          <ion-icon
+            name="logo-google"
+            size="large"
+          />
+        </button>
+        <h1
+          className="or"
+        >
+          OR
+        </h1>
+        <button
+          className="FacebookBtn"
+          onClick={[Function]}
+          type="button"
+        >
+          <ion-icon
+            className=""
+            name="logo-facebook"
+            size="large"
+          />
+        </button>
+      </div>
+      <div
+        className="Container3"
+      >
+        <h1
+          className="Already "
+        >
+          Signup.alreadyMember
+        </h1>
+        <a
+          href="/signin"
+          onClick={[Function]}
+        >
+          <button
+            className="LastBtm"
+            type="button"
+          >
+            Button.si
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Toastify"
+  />
+</section>
+`;

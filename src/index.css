@@ -88,6 +88,7 @@ nav{
 }
 #mediumBlue-button{
   background-color: #4699C1;
+  white-space: nowrap;
   color: #FFFFFF;
   font-weight: bold;
   border-width: 0.1em;

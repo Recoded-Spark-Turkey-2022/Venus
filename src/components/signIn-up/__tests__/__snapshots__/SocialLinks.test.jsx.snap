@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="ContainerBtn"
+>
+  <button
+    className="GoogleBtn"
+    onClick={[Function]}
+    type="button"
+  >
+    <ion-icon
+      name="logo-google"
+      size="large"
+    />
+  </button>
+  <h1
+    className="or"
+  >
+    OR
+  </h1>
+  <button
+    className="FacebookBtn"
+    onClick={[Function]}
+    type="button"
+  >
+    <ion-icon
+      className=""
+      name="logo-facebook"
+      size="large"
+    />
+  </button>
+</div>
+`;
