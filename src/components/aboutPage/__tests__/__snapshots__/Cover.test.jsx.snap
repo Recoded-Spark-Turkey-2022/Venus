@@ -3,6 +3,11 @@
 exports[`renders correctly 1`] = `
 <div
   className="flex justify-center"
+  style={
+    Object {
+      "transform": "scale(0.5) translateZ(0)",
+    }
+  }
 >
   <img
     alt="/"
