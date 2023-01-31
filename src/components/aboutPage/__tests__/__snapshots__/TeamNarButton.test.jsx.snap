@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="text-[#025594] font-medium rounded-full hover:bg-[#025594] hover:text-[#ffffff] px-[17px] py-[4px]"
+  type="button"
+/>
+`;

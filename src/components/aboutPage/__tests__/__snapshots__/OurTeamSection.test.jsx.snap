@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="bg-[#EAFBFF]"
+>
+  <h1
+    className="text-center text-[48px] font-bold leading-[56px] text-[#025594] pt-[25px] md:pt-[85px]"
+  >
+    About.our-team
+  </h1>
+  <div
+    className="container mx-auto px-10"
+    data-testid="container"
+  >
+    <div
+      className="flex flex-col items-center pb-[158px]"
+    >
+      <div
+        className="flex justify-center mt-[62px] mb-[82px]"
+      >
+        <button
+          className="text-[#025594] font-medium rounded-full hover:bg-[#025594] hover:text-[#ffffff] px-[17px] py-[4px]"
+          onClick={[Function]}
+          type="button"
+        >
+          About.our-team-countries.view-all
+        </button>
+        <button
+          className="text-[#025594] font-medium rounded-full hover:bg-[#025594] hover:text-[#ffffff] px-[17px] py-[4px]"
+          onClick={[Function]}
+          type="button"
+        >
+          About.our-team-countries.USA
+        </button>
+        <button
+          className="text-[#025594] font-medium rounded-full hover:bg-[#025594] hover:text-[#ffffff] px-[17px] py-[4px]"
+          onClick={[Function]}
+          type="button"
+        >
+          About.our-team-countries.Turkey
+        </button>
+        <button
+          className="text-[#025594] font-medium rounded-full hover:bg-[#025594] hover:text-[#ffffff] px-[17px] py-[4px]"
+          onClick={[Function]}
+          type="button"
+        >
+          About.our-team-countries.Lebanon
+        </button>
+      </div>
+      <div
+        className="flex flex-wrap grid-rows-2 justify-center items-center  gap-x-[50px] gap-y-[93px] max-w-[1000px] content-center"
+        style={
+          Object {
+            "transform": "scale(0.5) translateZ(0)",
+          }
+        }
+      >
+        <div
+          className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(20px) translateZ(0)",
+            }
+          }
+        >
+          <a
+            className="inline-flex flex-col items-center justify-center"
+            href="https://www.linkedin.com/in/dilaracetinberk"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="profile-pic"
+              className=" aspect-[3/4]  object-cover  rounded-[20px] "
+              src="Dilara_Cetinberk.jpg"
+            />
+            <h5
+              className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+            >
+              Dilara Çetinberk
+            </h5>
+            <span
+              className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+            >
+              About.our-team-job-title.job-title
+            </span>
+          </a>
+        </div>
+        <div
+          className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(20px) translateZ(0)",
+            }
+          }
+        >
+          <a
+            className="inline-flex flex-col items-center justify-center"
+            href="https://www.linkedin.com/in/abdullah-naifeh-9a82a1149/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="profile-pic"
+              className=" aspect-[3/4]  object-cover  rounded-[20px] "
+              src="Abdullah_img.jpeg"
+            />
+            <h5
+              className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+            >
+              Abdullah Naifeh
+            </h5>
+            <span
+              className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+            >
+              About.our-team-job-title.job-title
+            </span>
+          </a>
+        </div>
+        <div
+          className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(20px) translateZ(0)",
+            }
+          }
+        >
+          <a
+            className="inline-flex flex-col items-center justify-center"
+            href="https://github.com/tasnimalhallak"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="profile-pic"
+              className=" aspect-[3/4]  object-cover  rounded-[20px] "
+              src="tasnim-img.jpg"
+            />
+            <h5
+              className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+            >
+              Tasnim Al Hallak
+            </h5>
+            <span
+              className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+            >
+              About.our-team-job-title.job-title
+            </span>
+          </a>
+        </div>
+        <div
+          className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(20px) translateZ(0)",
+            }
+          }
+        >
+          <a
+            className="inline-flex flex-col items-center justify-center"
+            href="https://www.linkedin.com/in/mohammad-saeed-alsaiyed/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="profile-pic"
+              className=" aspect-[3/4]  object-cover  rounded-[20px] "
+              src="muhammad-img.png"
+            />
+            <h5
+              className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+            >
+              Mohammad Saeed Alsaiyed
+            </h5>
+            <span
+              className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+            >
+              About.our-team-job-title.job-title
+            </span>
+          </a>
+        </div>
+        <div
+          className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(20px) translateZ(0)",
+            }
+          }
+        >
+          <a
+            className="inline-flex flex-col items-center justify-center"
+            href="https://www.linkedin.com/in/halil-ibrahim-celik/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="profile-pic"
+              className=" aspect-[3/4]  object-cover  rounded-[20px] "
+              src="halil-img.jpg"
+            />
+            <h5
+              className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+            >
+              Halil Ibrahim Çelik
+            </h5>
+            <span
+              className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+            >
+              About.our-team-job-title.job-title
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
