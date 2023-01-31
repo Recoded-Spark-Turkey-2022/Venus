@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex justify-center"
+  style={
+    Object {
+      "transform": "scale(0.5) translateZ(0)",
+    }
+  }
+>
+  <img
+    alt="/"
+    className="w-full h-1/2"
+    src="aboutUs.png"
+  />
+</div>
+`;

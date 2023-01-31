@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="max-w-[263px] flex flex-col items-center justify-center brightness-110  duration-500 ease-in hover:brightness-75 "
+  style={
+    Object {
+      "opacity": 0,
+      "transform": "translateY(20px) translateZ(0)",
+    }
+  }
+>
+  <a
+    className="inline-flex flex-col items-center justify-center"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="profile-pic"
+      className=" aspect-[3/4]  object-cover  rounded-[20px] "
+    />
+    <h5
+      className="text-[#025594] text[14px] font-bold leading-[16.5px] tracking-[-0.32px] mt-10"
+    />
+    <span
+      className="text-[#025594] text[12px] font-light leading-[14px] tracking-[-0.27px]"
+    >
+      About.our-team-job-title.job-title
+    </span>
+  </a>
+</div>
+`;

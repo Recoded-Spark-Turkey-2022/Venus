@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex flex-col"
+  style={
+    Object {
+      "transform": "scale(0.5) translateZ(0)",
+    }
+  }
+>
+  <div>
+    <img
+      alt="/"
+      className="m-auto pt-6 pb-6"
+      src="shareStory.svg"
+    />
+  </div>
+  <div
+    className="self-center"
+  >
+    <h2
+      className="text-center text-darkBlue md:text-4xl leading-[46px] pb-6 font-light text-[20px]"
+    >
+      About.your-story
+    </h2>
+    <div
+      className="text-center max-w-[558px] m-auto"
+    >
+      <p
+        className=" text-[18px] font-[\\"Roboto\\"] ml:text-[30px] sm:w-full "
+      >
+        About.your-story-paragraph
+      </p>
+    </div>
+  </div>
+  <div
+    className=" self-center"
+  >
+    <a
+      href="/signin"
+      onClick={[Function]}
+    >
+      <button
+        className="my-9 px-6 rounded-2xl  py-1"
+        id="mediumBlue-button"
+        type="button"
+      >
+        Button.su
+      </button>
+    </a>
+  </div>
+  <div
+    className="Toastify"
+  />
+</div>
+`;
