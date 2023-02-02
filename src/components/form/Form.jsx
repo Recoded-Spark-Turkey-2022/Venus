@@ -121,17 +121,7 @@ const Form = ({
             const reference = singleDoc.ref;
 
             await updateDoc(reference, { avatars: updateImageUrl });
-            toast.success('Avatar is loaded!', {
-              position: 'top-left',
-              autoClose: 1200,
-              className: 'mt-20',
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: 'light',
-            });
+      
           });
 
           const userRef = doc(db, 'users', user.uid);
