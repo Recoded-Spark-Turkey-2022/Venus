@@ -367,7 +367,7 @@ const Form = ({
           </form>
         </div>
       </div>
-      <ToastContainer transition={Flip} limit={3} />
+      <ToastContainer transition={Flip} limit={1} />
     </section>
   );
 };
